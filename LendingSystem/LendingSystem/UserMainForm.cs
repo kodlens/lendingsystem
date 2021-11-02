@@ -22,6 +22,18 @@ namespace LendingSystem
             new User().all(this.flx);
         }
 
-        
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            UserAddEdit frm = new UserAddEdit(this);
+            frm.id = 0;
+            frm.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            UserAddEdit frm = new UserAddEdit(this);
+            frm.id = Convert.ToInt64(flx[flx.RowSel, "user_id"]);
+            frm.ShowDialog();
+        }
     }
 }

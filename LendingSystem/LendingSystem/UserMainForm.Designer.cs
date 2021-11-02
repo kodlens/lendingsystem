@@ -35,10 +35,14 @@ namespace LendingSystem
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.modifyUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.flx)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +65,18 @@ namespace LendingSystem
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newMemberToolStripMenuItem});
+            this.newMemberToolStripMenuItem,
+            this.modifyUserToolStripMenuItem,
+            this.refreshToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 98);
             // 
             // newMemberToolStripMenuItem
             // 
             this.newMemberToolStripMenuItem.Name = "newMemberToolStripMenuItem";
-            this.newMemberToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.newMemberToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.newMemberToolStripMenuItem.Text = "New User";
             // 
             // label1
@@ -84,36 +92,6 @@ namespace LendingSystem
             this.label1.Text = "CONTROLS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(7, 520);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 45);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "SAVE";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(127, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 45);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "EDIT";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(247, 520);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 45);
-            this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "DELETE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // lblHeader
             // 
             this.lblHeader.BackColor = System.Drawing.Color.RoyalBlue;
@@ -128,6 +106,73 @@ namespace LendingSystem
             this.lblHeader.Text = "USER LIST";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Image = global::LendingSystem.Properties.Resources.save_icon1;
+            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNew.Location = new System.Drawing.Point(7, 520);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnNew.Size = new System.Drawing.Size(98, 45);
+            this.btnNew.TabIndex = 22;
+            this.btnNew.Text = "NEW";
+            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Image = global::LendingSystem.Properties.Resources.Pencil_icon16x16;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(111, 520);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnEdit.Size = new System.Drawing.Size(93, 45);
+            this.btnEdit.TabIndex = 21;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::LendingSystem.Properties.Resources.delete_icon;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(210, 520);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnDelete.Size = new System.Drawing.Size(110, 45);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // modifyUserToolStripMenuItem
+            // 
+            this.modifyUserToolStripMenuItem.Name = "modifyUserToolStripMenuItem";
+            this.modifyUserToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.modifyUserToolStripMenuItem.Text = "Modify User";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
             // UserMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,9 +180,9 @@ namespace LendingSystem
             this.ClientSize = new System.Drawing.Size(831, 573);
             this.Controls.Add(this.flx);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -158,9 +203,13 @@ namespace LendingSystem
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem newMemberToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblHeader;
+        private System.Windows.Forms.ToolStripMenuItem modifyUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

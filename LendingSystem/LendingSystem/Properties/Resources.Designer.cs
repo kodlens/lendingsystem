@@ -73,6 +73,16 @@ namespace LendingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("delete-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Groups_Meeting_Dark_icon64x64 {
             get {
                 object obj = ResourceManager.GetObject("Groups-Meeting-Dark-icon64x64", resourceCulture);
@@ -86,6 +96,36 @@ namespace LendingSystem.Properties {
         internal static System.Drawing.Bitmap logout_icon64x64 {
             get {
                 object obj = ResourceManager.GetObject("logout-icon64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pencil_icon16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Pencil-icon16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_icon_png16x16 {
+            get {
+                object obj = ResourceManager.GetObject("save-icon.png16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("save-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

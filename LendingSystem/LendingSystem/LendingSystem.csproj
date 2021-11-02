@@ -172,5 +172,17 @@
   <ItemGroup>
     <None Include="Resources\security-icon128x128.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon.png16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon.png16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil-icon16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,7 +21,9 @@ namespace LendingSystem
         public string lname { set; get; }
         public string fname { set; get; }
         public string mname { set; get; }
+        public string sex { set; get; }
         public string password { set; get; }
+        public string role { set; get; }
 
 
         public void all(C1FlexGrid flx)
@@ -48,12 +50,15 @@ namespace LendingSystem
             int i = 0;
             con = Connection.con();
             con.Open();
-            query = @"INSERT INTO users SET username=?username,lname=?lname, fname=?fname, mname=?mname, sex=?sex";
+            query = @"INSERT INTO users SET username=?username, password=?pwd,lname=?lname, fname=?fname, mname=?mname, sex=?sex, role=?role";
             cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?username", this.username);
+            cmd.Parameters.AddWithValue("?pwd", this.password);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
             cmd.Parameters.AddWithValue("?mname", this.mname);
-            cmd.Parameters.AddWithValue("?sex", this.password);
+            cmd.Parameters.AddWithValue("?sex", this.sex);
+            cmd.Parameters.AddWithValue("?role", this.role);
             i = cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
@@ -69,13 +74,14 @@ namespace LendingSystem
             int i = 0;
             con = Connection.con();
             con.Open();
-            query = @"UPDATE users SET username=?username,lname=?lname, fname=?fname, mname=?mname, sex=?sex
+            query = @"UPDATE users SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, role=?role
                     WHERE user_id=?id";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
             cmd.Parameters.AddWithValue("?mname", this.mname);
-            cmd.Parameters.AddWithValue("?sex", this.password);
+            cmd.Parameters.AddWithValue("?sex", this.sex);
+            cmd.Parameters.AddWithValue("?role", this.role);
             cmd.Parameters.AddWithValue("?id", id);
             i = cmd.ExecuteNonQuery();
             cmd.Dispose();
