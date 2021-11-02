@@ -29,7 +29,7 @@ namespace LendingSystem
             //use the method under the class Login
             if (login.auth(this.textBoxusername.Text, this.textBoxpass.Text))
             {
-                MainForm frm = new MainForm(); //using this class so that we can hide the form and recall during logout
+                MainForm frm = new MainForm(this); //using this class so that we can hide the form and recall during logout
                 this.textBoxusername.Text = "";
                 this.textBoxpass.Text = "";
                 frm.Show();

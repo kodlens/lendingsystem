@@ -27,6 +27,8 @@ namespace LendingSystem
                 cmd.Parameters.AddWithValue("?pass", password);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
+                flag = dr.Read();
+
                 dr.Close();
                 cmd.Dispose();
                 con.Close();

@@ -30,7 +30,7 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUsers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonMembers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
@@ -39,7 +39,7 @@ namespace LendingSystem
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.toolStripButtonUsers,
             this.toolStripButtonMembers,
             this.toolStripButtonLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -48,15 +48,16 @@ namespace LendingSystem
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButtonUsers
             // 
-            this.toolStripButton1.Image = global::LendingSystem.Properties.Resources.Admin_icon64x64;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 83);
-            this.toolStripButton1.Text = "Users";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonUsers.Image = global::LendingSystem.Properties.Resources.Admin_icon64x64;
+            this.toolStripButtonUsers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUsers.Name = "toolStripButtonUsers";
+            this.toolStripButtonUsers.Size = new System.Drawing.Size(68, 83);
+            this.toolStripButtonUsers.Text = "Users";
+            this.toolStripButtonUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonUsers.Click += new System.EventHandler(this.toolStripButtonUsers_Click);
             // 
             // toolStripButtonMembers
             // 
@@ -78,6 +79,7 @@ namespace LendingSystem
             this.toolStripButtonLogout.Size = new System.Drawing.Size(68, 83);
             this.toolStripButtonLogout.Text = "Logout";
             this.toolStripButtonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonLogout.Click += new System.EventHandler(this.toolStripButtonLogout_Click);
             // 
             // MainForm
             // 
@@ -87,7 +89,8 @@ namespace LendingSystem
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "LENDING SYSTEM";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -98,7 +101,7 @@ namespace LendingSystem
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUsers;
         private System.Windows.Forms.ToolStripButton toolStripButtonMembers;
         private System.Windows.Forms.ToolStripButton toolStripButtonLogout;
     }

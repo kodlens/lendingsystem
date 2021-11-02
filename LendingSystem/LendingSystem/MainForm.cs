@@ -12,9 +12,14 @@ namespace LendingSystem
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+
+        LoginForm _frm;
+
+        public MainForm(LoginForm _frm)
         {
             InitializeComponent();
+            this._frm = _frm;
+
         }
 
         private void toolStripButtonMembers_Click(object sender, EventArgs e)
@@ -30,6 +35,36 @@ namespace LendingSystem
 
             Form frm = new MemberMainForm();
             frm.Show();
+        }
+
+        private void toolStripButtonUsers_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(UserMainForm))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form frm = new UserMainForm();
+            frm.Show();
+        }
+
+        private void toolStripButtonLogout_Click(object sender, EventArgs e)
+        {
+            if(Box.QBox("Are you sure you want to logout?"))
+            {
+                this.Close();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _frm.textBoxusername.Text = "";
+            _frm.textBoxpass.Text = "";
+            _frm.Show();
         }
     }
 }

@@ -31,67 +31,68 @@ namespace LendingSystem
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtBdate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtmname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtfname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtlname = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtstore_add = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtstore_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtcontact_no = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbBarangay = new System.Windows.Forms.ComboBox();
+            this.cmbCity = new System.Windows.Forms.ComboBox();
+            this.cmbProvince = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtStreet = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCapture = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtref2_contact = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtref1_contact = new System.Windows.Forms.TextBox();
+            this.txtref2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtref1 = new System.Windows.Forms.TextBox();
+            this.checkActive = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDebug = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtBdate);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbSex);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtmname);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtfname);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtlname);
             this.groupBox1.Location = new System.Drawing.Point(219, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(572, 235);
@@ -108,14 +109,14 @@ namespace LendingSystem
             this.label5.TabIndex = 9;
             this.label5.Text = "Birthdate: ";
             // 
-            // dateTimePicker1
+            // dtBdate
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 147);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtBdate.CustomFormat = "yyyy-MM-dd";
+            this.dtBdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtBdate.Location = new System.Drawing.Point(105, 147);
+            this.dtBdate.Name = "dtBdate";
+            this.dtBdate.Size = new System.Drawing.Size(200, 23);
+            this.dtBdate.TabIndex = 4;
             // 
             // label4
             // 
@@ -126,16 +127,16 @@ namespace LendingSystem
             this.label4.TabIndex = 7;
             this.label4.Text = "Sex:";
             // 
-            // comboBox1
+            // cmbSex
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE\t"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 23);
-            this.comboBox1.TabIndex = 3;
+            this.cmbSex.Location = new System.Drawing.Point(105, 113);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(204, 23);
+            this.cmbSex.TabIndex = 3;
             // 
             // label3
             // 
@@ -146,13 +147,13 @@ namespace LendingSystem
             this.label3.TabIndex = 5;
             this.label3.Text = "Middlename: ";
             // 
-            // textBox3
+            // txtmname
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Location = new System.Drawing.Point(105, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(446, 23);
-            this.textBox3.TabIndex = 2;
+            this.txtmname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtmname.Location = new System.Drawing.Point(105, 84);
+            this.txtmname.Name = "txtmname";
+            this.txtmname.Size = new System.Drawing.Size(446, 23);
+            this.txtmname.TabIndex = 2;
             // 
             // label2
             // 
@@ -163,13 +164,13 @@ namespace LendingSystem
             this.label2.TabIndex = 3;
             this.label2.Text = "Firstname: ";
             // 
-            // textBox2
+            // txtfname
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(105, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(446, 23);
-            this.textBox2.TabIndex = 1;
+            this.txtfname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtfname.Location = new System.Drawing.Point(105, 55);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(446, 23);
+            this.txtfname.TabIndex = 1;
             // 
             // label1
             // 
@@ -180,13 +181,13 @@ namespace LendingSystem
             this.label1.TabIndex = 1;
             this.label1.Text = "Lastname: ";
             // 
-            // textBox1
+            // txtlname
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(105, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(446, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtlname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtlname.Location = new System.Drawing.Point(105, 26);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(446, 23);
+            this.txtlname.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -196,17 +197,18 @@ namespace LendingSystem
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.txtstore_add);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtstore_name);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtcontact_no);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtemail);
             this.groupBox2.Location = new System.Drawing.Point(12, 304);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(380, 192);
@@ -223,13 +225,13 @@ namespace LendingSystem
             this.label7.TabIndex = 7;
             this.label7.Text = "Store Address:";
             // 
-            // textBox7
+            // txtstore_add
             // 
-            this.textBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox7.Location = new System.Drawing.Point(105, 118);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 23);
-            this.textBox7.TabIndex = 3;
+            this.txtstore_add.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtstore_add.Location = new System.Drawing.Point(105, 118);
+            this.txtstore_add.Name = "txtstore_add";
+            this.txtstore_add.Size = new System.Drawing.Size(250, 23);
+            this.txtstore_add.TabIndex = 3;
             // 
             // label6
             // 
@@ -240,13 +242,13 @@ namespace LendingSystem
             this.label6.TabIndex = 5;
             this.label6.Text = "Store Name:";
             // 
-            // textBox4
+            // txtstore_name
             // 
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Location = new System.Drawing.Point(105, 87);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 23);
-            this.textBox4.TabIndex = 2;
+            this.txtstore_name.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtstore_name.Location = new System.Drawing.Point(105, 87);
+            this.txtstore_name.Name = "txtstore_name";
+            this.txtstore_name.Size = new System.Drawing.Size(250, 23);
+            this.txtstore_name.TabIndex = 2;
             // 
             // label9
             // 
@@ -257,12 +259,12 @@ namespace LendingSystem
             this.label9.TabIndex = 3;
             this.label9.Text = "Contact No:";
             // 
-            // textBox5
+            // txtcontact_no
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 23);
-            this.textBox5.TabIndex = 1;
+            this.txtcontact_no.Location = new System.Drawing.Point(105, 55);
+            this.txtcontact_no.Name = "txtcontact_no";
+            this.txtcontact_no.Size = new System.Drawing.Size(250, 23);
+            this.txtcontact_no.TabIndex = 1;
             // 
             // label10
             // 
@@ -273,20 +275,20 @@ namespace LendingSystem
             this.label10.TabIndex = 1;
             this.label10.Text = "Email:";
             // 
-            // textBox6
+            // txtemail
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 26);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 23);
-            this.textBox6.TabIndex = 0;
+            this.txtemail.Location = new System.Drawing.Point(105, 26);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(250, 23);
+            this.txtemail.TabIndex = 0;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox4);
-            this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cmbBarangay);
+            this.groupBox3.Controls.Add(this.cmbCity);
+            this.groupBox3.Controls.Add(this.cmbProvince);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.txtStreet);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
@@ -297,6 +299,39 @@ namespace LendingSystem
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Address Information";
             // 
+            // cmbBarangay
+            // 
+            this.cmbBarangay.FormattingEnabled = true;
+            this.cmbBarangay.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE\t"});
+            this.cmbBarangay.Location = new System.Drawing.Point(122, 89);
+            this.cmbBarangay.Name = "cmbBarangay";
+            this.cmbBarangay.Size = new System.Drawing.Size(237, 23);
+            this.cmbBarangay.TabIndex = 2;
+            // 
+            // cmbCity
+            // 
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE\t"});
+            this.cmbCity.Location = new System.Drawing.Point(122, 58);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(237, 23);
+            this.cmbCity.TabIndex = 1;
+            // 
+            // cmbProvince
+            // 
+            this.cmbProvince.FormattingEnabled = true;
+            this.cmbProvince.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE\t"});
+            this.cmbProvince.Location = new System.Drawing.Point(122, 26);
+            this.cmbProvince.Name = "cmbProvince";
+            this.cmbProvince.Size = new System.Drawing.Size(237, 23);
+            this.cmbProvince.TabIndex = 0;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -305,6 +340,14 @@ namespace LendingSystem
             this.label8.Size = new System.Drawing.Size(77, 15);
             this.label8.TabIndex = 7;
             this.label8.Text = "Street/Purok:";
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStreet.Location = new System.Drawing.Point(122, 118);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(237, 23);
+            this.txtStreet.TabIndex = 3;
             // 
             // label11
             // 
@@ -332,57 +375,6 @@ namespace LendingSystem
             this.label13.Size = new System.Drawing.Size(56, 15);
             this.label13.TabIndex = 1;
             this.label13.Text = "Province:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Location = new System.Drawing.Point(122, 118);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(237, 23);
-            this.textBox8.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE\t"});
-            this.comboBox2.Location = new System.Drawing.Point(122, 26);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(237, 23);
-            this.comboBox2.TabIndex = 0;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE\t"});
-            this.comboBox3.Location = new System.Drawing.Point(122, 58);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 23);
-            this.comboBox3.TabIndex = 1;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE\t"});
-            this.comboBox4.Location = new System.Drawing.Point(122, 89);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(237, 23);
-            this.comboBox4.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 189);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // btnCapture
             // 
@@ -419,69 +411,19 @@ namespace LendingSystem
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.textBox11);
+            this.groupBox4.Controls.Add(this.txtref2_contact);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.txtref1_contact);
+            this.groupBox4.Controls.Add(this.txtref2);
             this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.textBox12);
+            this.groupBox4.Controls.Add(this.txtref1);
             this.groupBox4.Location = new System.Drawing.Point(12, 502);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(779, 105);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "References";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 35);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 15);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Reference 1:";
-            // 
-            // textBox12
-            // 
-            this.textBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox12.Location = new System.Drawing.Point(105, 32);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(333, 23);
-            this.textBox12.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(29, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Reference 2:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Location = new System.Drawing.Point(105, 61);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(333, 23);
-            this.textBox9.TabIndex = 2;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(446, 38);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 15);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Contact No:";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(523, 35);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(235, 23);
-            this.textBox10.TabIndex = 1;
             // 
             // label16
             // 
@@ -492,29 +434,100 @@ namespace LendingSystem
             this.label16.TabIndex = 11;
             this.label16.Text = "Contact No:";
             // 
-            // textBox11
+            // txtref2_contact
             // 
-            this.textBox11.Location = new System.Drawing.Point(523, 64);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(235, 23);
-            this.textBox11.TabIndex = 3;
+            this.txtref2_contact.Location = new System.Drawing.Point(523, 64);
+            this.txtref2_contact.Name = "txtref2_contact";
+            this.txtref2_contact.Size = new System.Drawing.Size(235, 23);
+            this.txtref2_contact.TabIndex = 3;
             // 
-            // checkBox1
+            // label15
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 630);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 19);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Active";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(446, 38);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 15);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Contact No:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(29, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 15);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Reference 2:";
+            // 
+            // txtref1_contact
+            // 
+            this.txtref1_contact.Location = new System.Drawing.Point(523, 35);
+            this.txtref1_contact.Name = "txtref1_contact";
+            this.txtref1_contact.Size = new System.Drawing.Size(235, 23);
+            this.txtref1_contact.TabIndex = 1;
+            // 
+            // txtref2
+            // 
+            this.txtref2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtref2.Location = new System.Drawing.Point(105, 61);
+            this.txtref2.Name = "txtref2";
+            this.txtref2.Size = new System.Drawing.Size(333, 23);
+            this.txtref2.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 35);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 15);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Reference 1:";
+            // 
+            // txtref1
+            // 
+            this.txtref1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtref1.Location = new System.Drawing.Point(105, 32);
+            this.txtref1.Name = "txtref1";
+            this.txtref1.Size = new System.Drawing.Size(333, 23);
+            this.txtref1.TabIndex = 0;
+            // 
+            // checkActive
+            // 
+            this.checkActive.AutoSize = true;
+            this.checkActive.Location = new System.Drawing.Point(12, 630);
+            this.checkActive.Name = "checkActive";
+            this.checkActive.Size = new System.Drawing.Size(59, 19);
+            this.checkActive.TabIndex = 4;
+            this.checkActive.Text = "Active";
+            this.checkActive.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnDebug
+            // 
+            this.btnDebug.Location = new System.Drawing.Point(573, 618);
+            this.btnDebug.Name = "btnDebug";
+            this.btnDebug.Size = new System.Drawing.Size(68, 25);
+            this.btnDebug.TabIndex = 13;
+            this.btnDebug.Text = "DEBUG";
+            this.btnDebug.UseVisualStyleBackColor = true;
+            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
             // 
             // MembersAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 661);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btnDebug);
+            this.Controls.Add(this.checkActive);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnClear);
@@ -537,9 +550,9 @@ namespace LendingSystem
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,47 +562,48 @@ namespace LendingSystem
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtmname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtfname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtlname;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbSex;
+        private System.Windows.Forms.DateTimePicker dtBdate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtcontact_no;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtstore_add;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtstore_name;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbProvince;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtStreet;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbBarangay;
+        private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtref2;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtref1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtref2_contact;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtref1_contact;
+        private System.Windows.Forms.CheckBox checkActive;
+        private System.Windows.Forms.Button btnDebug;
     }
 }

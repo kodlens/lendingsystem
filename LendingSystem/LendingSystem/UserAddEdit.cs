@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace LendingSystem
 {
-    public partial class UserMainForm : Form
+    public partial class UserAddEdit : Form
     {
-        public UserMainForm()
+        public UserAddEdit()
         {
             InitializeComponent();
         }
-
-        private void SampleForm_Load(object sender, EventArgs e)
-        {
-            new User().all(this.flx);
-        }
-
-        
     }
 }

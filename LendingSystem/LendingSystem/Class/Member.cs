@@ -8,7 +8,7 @@ using C1.Win.C1FlexGrid;
 using MySql.Data.MySqlClient;
 
 
-namespace LendingSystem.Class
+namespace LendingSystem
 {
     class Member
     {
