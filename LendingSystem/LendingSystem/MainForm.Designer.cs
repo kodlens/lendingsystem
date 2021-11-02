@@ -60,7 +60,7 @@ namespace LendingSystem
             // 
             // toolStripButtonMembers
             // 
-            this.toolStripButtonMembers.Image = global::LendingSystem.Properties.Resources.Admin_icon64x64;
+            this.toolStripButtonMembers.Image = global::LendingSystem.Properties.Resources.Groups_Meeting_Dark_icon64x64;
             this.toolStripButtonMembers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonMembers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonMembers.Name = "toolStripButtonMembers";
@@ -71,7 +71,7 @@ namespace LendingSystem
             // 
             // toolStripButtonLogout
             // 
-            this.toolStripButtonLogout.Image = global::LendingSystem.Properties.Resources.Admin_icon64x64;
+            this.toolStripButtonLogout.Image = global::LendingSystem.Properties.Resources.logout_icon64x64;
             this.toolStripButtonLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLogout.Name = "toolStripButtonLogout";

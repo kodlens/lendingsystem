@@ -150,5 +150,11 @@
   <ItemGroup>
     <None Include="Resources\Admin-icon64x64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-icon64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Groups-Meeting-Dark-icon64x64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
