@@ -76,7 +76,17 @@
   <ItemGroup>
     <Compile Include="Class\Box.cs" />
     <Compile Include="Class\Connection.cs" />
+<<<<<<< HEAD
     <Compile Include="Class\User.cs" />
+=======
+    <Compile Include="Class\Login.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+>>>>>>> 9923ca10d2126ec974557214d004901a934f172e
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +95,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="SampleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
+=======
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 9923ca10d2126ec974557214d004901a934f172e
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
