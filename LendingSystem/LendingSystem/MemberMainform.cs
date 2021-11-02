@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LendingSystem
 {
-    public partial class MemberMainform : Form
+    public partial class MemberMainForm : Form
     {
-        public MemberMainform()
+        public MemberMainForm()
         {
             InitializeComponent();
-        }
-
-        private void MemberMainform_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,12 +1,6 @@
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.exe.config
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.exe
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.pdb
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.Controls.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.Imaging.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.Math.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.Video.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AForge.Video.DirectShow.xml
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.AssemblyReference.cache
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MainForm.resources
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.Properties.Resources.resources
@@ -19,3 +13,4 @@ C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debu
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.SampleForm.resources
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe.licenses
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.LoginForm.resources

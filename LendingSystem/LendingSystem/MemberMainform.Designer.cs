@@ -1,7 +1,7 @@
 ﻿
 namespace LendingSystem
 {
-    partial class MemberMainform
+    partial class MemberMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberMainform));
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,15 +40,16 @@ namespace LendingSystem
             // flx
             // 
             this.flx.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle;
-            this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
+            this.flx.ColumnInfo = "5,1,0,0,0,95,Columns:1{Width:100;Name:\"user_id\";Caption:\"ID\";}\t2{Width:193;Name:\"" +
+    "lname\";Caption:\"Lastname\";}\t3{Width:165;Name:\"fname\";Caption:\"Firstname\";}\t4{Nam" +
+    "e:\"mname\";Caption:\"Middlename\";}\t";
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
-            this.flx.Location = new System.Drawing.Point(12, 93);
+            this.flx.Location = new System.Drawing.Point(23, 61);
             this.flx.Name = "flx";
-            this.flx.Rows.DefaultSize = 22;
+            this.flx.Rows.DefaultSize = 19;
             this.flx.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.flx.Size = new System.Drawing.Size(905, 419);
-            this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
+            this.flx.Size = new System.Drawing.Size(663, 363);
             this.flx.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -66,20 +66,14 @@ namespace LendingSystem
             this.newMemberToolStripMenuItem.Text = "New Member";
             this.newMemberToolStripMenuItem.Click += new System.EventHandler(this.newMemberToolStripMenuItem_Click);
             // 
-            // MemberMainform
+            // MemberMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 543);
+            this.ClientSize = new System.Drawing.Size(709, 569);
             this.Controls.Add(this.flx);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "MemberMainform";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Members";
-            this.Load += new System.EventHandler(this.MemberMainform_Load);
+            this.Name = "MemberMainForm";
+            this.Text = "MemberMainForm";
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
