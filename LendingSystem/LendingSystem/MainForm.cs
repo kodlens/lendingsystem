@@ -16,5 +16,20 @@ namespace LendingSystem
         {
             InitializeComponent();
         }
+
+        private void toolStripButtonMembers_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(MemberMainForm))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form frm = new MemberMainForm();
+            frm.Show();
+        }
     }
 }

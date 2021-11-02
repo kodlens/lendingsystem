@@ -120,6 +120,9 @@
     <EmbeddedResource Include="MemberMainForm.resx">
       <DependentUpon>MemberMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MembersAddEdit.resx">
+      <DependentUpon>MembersAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

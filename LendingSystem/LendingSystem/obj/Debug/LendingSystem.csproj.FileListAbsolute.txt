@@ -13,3 +13,4 @@ C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debu
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe.licenses
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.LoginForm.resources
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MemberMainForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MembersAddEdit.resources

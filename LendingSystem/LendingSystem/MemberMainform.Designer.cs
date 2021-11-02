@@ -75,6 +75,7 @@ namespace LendingSystem
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MemberMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MemberMainForm";
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
