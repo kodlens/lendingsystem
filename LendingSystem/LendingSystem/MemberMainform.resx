@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="flx.ColumnInfo" xml:space="preserve">
+    <value>7,1,0,0,0,95,Columns:0{Visible:False;}	1{Width:76;Name:"user_id";Caption:"ID";}	2{Width:149;Name:"lname";Caption:"Lastname";}	3{Width:140;Name:"fname";Caption:"Firstname";}	4{Width:118;Name:"mname";Caption:"Middlename";}	5{Caption:"Sex";}	6{Caption:"Birthdate";}	</value>
+  </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

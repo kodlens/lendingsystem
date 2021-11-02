@@ -30,6 +30,7 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberMainForm));
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,16 +41,14 @@ namespace LendingSystem
             // flx
             // 
             this.flx.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle;
-            this.flx.ColumnInfo = "5,1,0,0,0,95,Columns:1{Width:100;Name:\"user_id\";Caption:\"ID\";}\t2{Width:193;Name:\"" +
-    "lname\";Caption:\"Lastname\";}\t3{Width:165;Name:\"fname\";Caption:\"Firstname\";}\t4{Nam" +
-    "e:\"mname\";Caption:\"Middlename\";}\t";
+            this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
-            this.flx.Location = new System.Drawing.Point(23, 61);
+            this.flx.Location = new System.Drawing.Point(12, 80);
             this.flx.Name = "flx";
             this.flx.Rows.DefaultSize = 19;
             this.flx.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.flx.Size = new System.Drawing.Size(663, 363);
+            this.flx.Size = new System.Drawing.Size(700, 363);
             this.flx.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -57,7 +56,7 @@ namespace LendingSystem
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newMemberToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
             // 
             // newMemberToolStripMenuItem
             // 
@@ -70,8 +69,11 @@ namespace LendingSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 569);
+            this.ClientSize = new System.Drawing.Size(730, 569);
             this.Controls.Add(this.flx);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MemberMainForm";
             this.Text = "MemberMainForm";
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();

@@ -10,7 +10,6 @@ C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debu
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.pdb
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.dll
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.xml
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.SampleForm.resources
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe.licenses
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.LoginForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MemberMainForm.resources
