@@ -81,5 +81,10 @@ namespace LendingSystem
             ChangePasswordMainForm frm = new ChangePasswordMainForm();
             frm.ShowDialog();
         }
+
+        private void flx_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

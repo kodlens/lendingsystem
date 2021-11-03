@@ -34,6 +34,23 @@ namespace LendingSystem
         public byte is_active { set; get; }
 
 
+        public void all(C1FlexGrid flx)
+        {
+            con = Connection.con();
+            con.Open();
+            query = "SELECT * FROM members";
+            cmd = new MySqlCommand(query, con);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+            adptr.Fill(dt);
+            adptr.Dispose();
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+
+            flx.AutoGenerateColumns = false;
+            flx.DataSource = dt;
+        }
 
 
         public void find(C1FlexGrid flx, string kLname)
@@ -86,6 +103,7 @@ namespace LendingSystem
             return i;
         }
 
+    
 
         public int update(long id)
         {
