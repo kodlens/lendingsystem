@@ -30,6 +30,13 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbSex = new System.Windows.Forms.ComboBox();
@@ -39,21 +46,17 @@ namespace LendingSystem
             this.txtfname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtlname = new System.Windows.Forms.TextBox();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtRPassword = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkShowPassword = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkShowPassword);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtRPassword);
             this.groupBox1.Controls.Add(this.label6);
@@ -71,12 +74,73 @@ namespace LendingSystem
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtlname);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 55);
+            this.groupBox1.Location = new System.Drawing.Point(12, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(506, 308);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 83);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Re-type Password:";
+            // 
+            // txtRPassword
+            // 
+            this.txtRPassword.Location = new System.Drawing.Point(122, 80);
+            this.txtRPassword.Name = "txtRPassword";
+            this.txtRPassword.PasswordChar = '*';
+            this.txtRPassword.Size = new System.Drawing.Size(339, 23);
+            this.txtRPassword.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(56, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 15);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(122, 51);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(339, 23);
+            this.txtPassword.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(53, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 15);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Username:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(122, 22);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(339, 23);
+            this.txtUsername.TabIndex = 0;
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "ADMINISTRATOR",
+            "STAFF"});
+            this.cmbRole.Location = new System.Drawing.Point(122, 260);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(237, 23);
+            this.cmbRole.TabIndex = 7;
             // 
             // label5
             // 
@@ -158,68 +222,6 @@ namespace LendingSystem
             this.txtlname.Size = new System.Drawing.Size(339, 23);
             this.txtlname.TabIndex = 3;
             // 
-            // cmbRole
-            // 
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Items.AddRange(new object[] {
-            "ADMINISTRATOR",
-            "STAFF"});
-            this.cmbRole.Location = new System.Drawing.Point(122, 260);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(237, 23);
-            this.cmbRole.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(56, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 15);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Password:";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPassword.Location = new System.Drawing.Point(122, 51);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(339, 23);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(53, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Username:";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsername.Location = new System.Drawing.Point(122, 22);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(339, 23);
-            this.txtUsername.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 15);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Re-type Password:";
-            // 
-            // txtRPassword
-            // 
-            this.txtRPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRPassword.Location = new System.Drawing.Point(122, 80);
-            this.txtRPassword.Name = "txtRPassword";
-            this.txtRPassword.Size = new System.Drawing.Size(339, 23);
-            this.txtRPassword.TabIndex = 2;
-            // 
             // lblHeader
             // 
             this.lblHeader.BackColor = System.Drawing.Color.RoyalBlue;
@@ -257,11 +259,33 @@ namespace LendingSystem
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(83, 19);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkShowPassword
+            // 
+            this.checkShowPassword.AutoSize = true;
+            this.checkShowPassword.Location = new System.Drawing.Point(122, 109);
+            this.checkShowPassword.Name = "checkShowPassword";
+            this.checkShowPassword.Size = new System.Drawing.Size(109, 19);
+            this.checkShowPassword.TabIndex = 17;
+            this.checkShowPassword.Text = "Show Password";
+            this.checkShowPassword.UseVisualStyleBackColor = true;
+            this.checkShowPassword.CheckedChanged += new System.EventHandler(this.checkShowPassword_CheckedChanged);
+            // 
             // UserAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 456);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblHeader);
@@ -273,9 +297,11 @@ namespace LendingSystem
             this.Name = "UserAddEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADD / EDIT";
+            this.Load += new System.EventHandler(this.UserAddEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -301,5 +327,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox checkShowPassword;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

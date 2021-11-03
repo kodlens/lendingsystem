@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 using LendingSystem;
 using AForge.Video;
+using System.Collections;
+using System.Diagnostics;
 
 namespace LendingSystem
 {
@@ -33,7 +35,7 @@ namespace LendingSystem
         public TakePicMainForm(MembersAddEdit _frm)
         {
             InitializeComponent();
-            getListCameraUSB();
+            //getListCameraUSB();
             this._frm = _frm;
 
         }
@@ -44,6 +46,9 @@ namespace LendingSystem
             get { return _usbcamera; }
             set { _usbcamera = value; }
         }
+
+
+
 
        
     }

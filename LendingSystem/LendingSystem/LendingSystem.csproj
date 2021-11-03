@@ -74,8 +74,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePasswordMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordMainForm.Designer.cs">
+      <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Box.cs" />
     <Compile Include="Class\Connection.cs" />
+    <Compile Include="Class\Helper.cs" />
     <Compile Include="Class\Member.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Login.cs" />
@@ -124,6 +131,9 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePasswordMainForm.resx">
+      <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
