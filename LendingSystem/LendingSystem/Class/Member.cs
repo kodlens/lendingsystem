@@ -175,13 +175,13 @@ namespace LendingSystem
             {
 
                 this.lname = Convert.ToString(dt.Rows[0]["lname"]);
-                this.fname = Convert.ToString(dt.Rows.[0]["fname"]);
-                this.mname = Convert.ToString(dt.Rows.[0]["mname"]);
-                this.sex = Convert.ToString(dt.Rows.[0]["sex"]);
-                this.bdate = Convert.ToString(dt.Rows.[0]["bdate"]);
-                this.email = Convert.ToString(dt.Rows.[0]["email"]);
-                this.contact_no = Convert.ToString(dt.Rows.[0]["?contact_no"]);
-                this.contact_no = Convert.ToString(dt.Rows.[0]["?contact_no"]);
+                this.fname = Convert.ToString(dt.Rows[0]["fname"]);
+                this.mname = Convert.ToString(dt.Rows[0]["mname"]);
+                this.sex = Convert.ToString(dt.Rows[0]["sex"]);
+                this.bdate = Convert.ToString(dt.Rows[0]["bdate"]);
+                this.email = Convert.ToString(dt.Rows[0]["email"]);
+                this.contact_no = Convert.ToString(dt.Rows[0]["contact_no"]);
+                //this.contact_no = Convert.ToString(dt.Rows.[0]["contact_no"]);
 
             }
 

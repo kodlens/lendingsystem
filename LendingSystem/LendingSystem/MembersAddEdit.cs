@@ -133,7 +133,7 @@ namespace LendingSystem
             txtfname.Text = member.fname;
             txtmname.Text = member.mname;
             cmbSex.Text = member.sex;
-            dtBdate.Value = member.bdate;
+            dtBdate.Text = member.bdate;
             txtemail.Text = member.email;
             txtcontact_no.Text = member.contact_no;
             txtstore_name.Text = member.store_name;

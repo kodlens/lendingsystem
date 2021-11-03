@@ -79,3 +79,5 @@ C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug
 C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.xml
 C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ChangePasswordMainForm.resources
 C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ChangePasswordMainForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.TakePicMainForm.resources
