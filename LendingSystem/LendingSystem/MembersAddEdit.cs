@@ -38,8 +38,8 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
-            
-            if(member.save() > 0)
+
+            if (member.save() > 0)
             {
                 Box.InfoBox("Member successfully saved!");
             }
@@ -107,7 +107,7 @@ namespace LendingSystem
                 Box.WarnBox("Please input lastname.");
                 return;
             }
-            
+
 
         }
 
@@ -120,7 +120,28 @@ namespace LendingSystem
 
         private void MembersAddEdit_Load(object sender, EventArgs e)
         {
+            if(id > 0)
+            {
+                getData();
+            }
+        }
 
+        void getData()
+        {
+            member.getData(id);
+            txtlname.Text = member.lname;
+            txtfname.Text = member.fname;
+            txtmname.Text = member.mname;
+            cmbSex.Text = member.sex;
+            dtBdate.Value = member.bdate;
+            txtemail.Text = member.email;
+            txtcontact_no.Text = member.contact_no;
+            txtstore_name.Text = member.store_name;
+            txtstore_add.Text = member.store_address;
+            cmbProvince.Text = member.province;
+            cmbCity.Text = member.city;
+            cmbBarangay.Text = member.barangay;
+            txtStreet.Text = member.street;
         }
     }
 }

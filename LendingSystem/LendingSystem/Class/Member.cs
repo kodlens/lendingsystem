@@ -156,6 +156,36 @@ namespace LendingSystem
             return i;
         }
 
+        public void getData(long id)
+        {
+            con = Connection.con();
+            con.Open();
+            query = "SELECT * FROM members where member_id=?";
+            cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?id", id);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+            adptr.Fill(dt);
+            adptr.Dispose();
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+
+            if(dt.Rows.Count>0)
+            {
+
+                this.lname = Convert.ToString(dt.Rows[0]["lname"]);
+                this.fname = Convert.ToString(dt.Rows.[0]["fname"]);
+                this.mname = Convert.ToString(dt.Rows.[0]["mname"]);
+                this.sex = Convert.ToString(dt.Rows.[0]["sex"]);
+                this.bdate = Convert.ToString(dt.Rows.[0]["bdate"]);
+                this.email = Convert.ToString(dt.Rows.[0]["email"]);
+                this.contact_no = Convert.ToString(dt.Rows.[0]["?contact_no"]);
+                this.contact_no = Convert.ToString(dt.Rows.[0]["?contact_no"]);
+
+            }
+
+        }
 
 
     }

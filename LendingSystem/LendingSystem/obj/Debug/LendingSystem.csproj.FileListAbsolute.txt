@@ -72,3 +72,10 @@ C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\bin\D
 C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.dll
 C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.xml
 C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.exe.config
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.exe
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\LendingSystem.pdb
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.dll
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.xml
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ChangePasswordMainForm.resources
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
