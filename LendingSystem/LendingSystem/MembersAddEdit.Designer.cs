@@ -544,6 +544,7 @@ namespace LendingSystem
             this.Name = "MembersAddEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add / Edit";
+            this.Load += new System.EventHandler(this.MembersAddEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -590,7 +591,6 @@ namespace LendingSystem
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbBarangay;
         private System.Windows.Forms.ComboBox cmbCity;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblHeader;
@@ -605,5 +605,6 @@ namespace LendingSystem
         private System.Windows.Forms.TextBox txtref1_contact;
         private System.Windows.Forms.CheckBox checkActive;
         private System.Windows.Forms.Button btnDebug;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

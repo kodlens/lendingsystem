@@ -117,5 +117,10 @@ namespace LendingSystem
         {
             debug();
         }
+
+        private void MembersAddEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

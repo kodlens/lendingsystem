@@ -109,6 +109,7 @@ namespace LendingSystem
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCapture
             // 
@@ -119,9 +120,10 @@ namespace LendingSystem
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(110, 45);
             this.btnCapture.TabIndex = 29;
-            this.btnCapture.Text = "Snapshoot";
+            this.btnCapture.Text = "Snapshot";
             this.btnCapture.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // pictureBox2
             // 
@@ -143,6 +145,7 @@ namespace LendingSystem
             this.btnStop.TabIndex = 37;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStart
             // 
@@ -153,6 +156,7 @@ namespace LendingSystem
             this.btnStart.TabIndex = 36;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // label4
             // 
@@ -191,7 +195,7 @@ namespace LendingSystem
             this.Controls.Add(this.pictureBox2);
             this.Name = "TakePicMainForm";
             this.Text = "TakePicMainForm";
-           
+            this.Load += new System.EventHandler(this.TakePicMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

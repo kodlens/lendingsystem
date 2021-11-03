@@ -49,6 +49,7 @@ namespace LendingSystem
             this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
+            this.flx.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.flx.Location = new System.Drawing.Point(14, 92);
             this.flx.Name = "flx";
             this.flx.Rows.DefaultSize = 22;
@@ -104,6 +105,7 @@ namespace LendingSystem
             this.button1.TabIndex = 15;
             this.button1.Text = "EDIT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -114,6 +116,7 @@ namespace LendingSystem
             this.button2.TabIndex = 16;
             this.button2.Text = "SAVE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -146,6 +149,7 @@ namespace LendingSystem
             this.Name = "MemberMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MEMBER";
+            this.Load += new System.EventHandler(this.MemberMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
