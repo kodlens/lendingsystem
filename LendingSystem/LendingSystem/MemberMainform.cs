@@ -31,8 +31,7 @@ namespace LendingSystem
         
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MembersAddEdit frm = new MembersAddEdit(this);
-            frm.ShowDialog();
+            btnNew_Click(sender, e);
         }
 
        private void MemberMainForm_Load(object sender, EventArgs e)
@@ -46,11 +45,7 @@ namespace LendingSystem
             member.all(flx);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -83,6 +78,13 @@ namespace LendingSystem
                 Box.InfoBox("User deleted successfully.");
                 loadData();
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            MembersAddEdit frm = new MembersAddEdit(this);
+            frm.id = 0;
+            frm.ShowDialog();
         }
     }
 }

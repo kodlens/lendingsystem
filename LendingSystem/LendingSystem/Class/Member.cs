@@ -78,8 +78,7 @@ namespace LendingSystem
             int i = 0;
             con = Connection.con();
             con.Open();
-            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
-                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active";
+            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
