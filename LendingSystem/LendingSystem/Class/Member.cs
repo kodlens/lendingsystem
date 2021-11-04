@@ -79,7 +79,7 @@ namespace LendingSystem
             con = Connection.con();
             con.Open();
             query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
-                        contact_no=?contact, store_name=?storename, store_address=?storeadd, province=?prov, city=?city, barangay=?brgy, street=?st, is_active=isactive";
+                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -88,12 +88,12 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?bdate", this.bdate);
             cmd.Parameters.AddWithValue("?email", this.email);
             cmd.Parameters.AddWithValue("?contact_no", this.contact_no);
-            cmd.Parameters.AddWithValue("?storename", this.store_name);
-            cmd.Parameters.AddWithValue("?storeadd", this.store_address);
-            cmd.Parameters.AddWithValue("?prov", this.store_address);
-            cmd.Parameters.AddWithValue("?city", this.store_address);
-            cmd.Parameters.AddWithValue("?brgy", this.store_address);
-            cmd.Parameters.AddWithValue("?street", this.store_address);
+            cmd.Parameters.AddWithValue("?store_name", this.store_name);
+            cmd.Parameters.AddWithValue("?store_address", this.store_address);
+            cmd.Parameters.AddWithValue("?province", this.province);
+            cmd.Parameters.AddWithValue("?city", this.city);
+            cmd.Parameters.AddWithValue("?barangay", this.barangay);
+            cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
             i = cmd.ExecuteNonQuery();
             cmd.Dispose();
@@ -111,7 +111,7 @@ namespace LendingSystem
             con = Connection.con();
             con.Open();
             query = @"UPDATE members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
-                        contact_no=?contact, store_name=?storename, store_address=?storeadd, province=?prov, city=?city, barangay=?brgy, street=?st, is_active=isactive WHERE member_id = ?id";
+                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=is_active WHERE member_id = ?id";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -120,12 +120,12 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?bdate", this.bdate);
             cmd.Parameters.AddWithValue("?email", this.email);
             cmd.Parameters.AddWithValue("?contact_no", this.contact_no);
-            cmd.Parameters.AddWithValue("?storename", this.store_name);
-            cmd.Parameters.AddWithValue("?storeadd", this.store_address);
-            cmd.Parameters.AddWithValue("?prov", this.store_address);
-            cmd.Parameters.AddWithValue("?city", this.store_address);
-            cmd.Parameters.AddWithValue("?brgy", this.store_address);
-            cmd.Parameters.AddWithValue("?street", this.store_address);
+            cmd.Parameters.AddWithValue("?store_name", this.store_name);
+            cmd.Parameters.AddWithValue("?store_address", this.store_address);
+            cmd.Parameters.AddWithValue("?province", this.province);
+            cmd.Parameters.AddWithValue("?city", this.city);
+            cmd.Parameters.AddWithValue("?barangay", this.barangay);
+            cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
             cmd.Parameters.AddWithValue("?id", id);
 
