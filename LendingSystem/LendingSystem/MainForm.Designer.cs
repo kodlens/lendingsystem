@@ -81,6 +81,7 @@ namespace LendingSystem
             this.toolStripButtonLoan.Size = new System.Drawing.Size(68, 83);
             this.toolStripButtonLoan.Text = "Loan";
             this.toolStripButtonLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonLoan.Click += new System.EventHandler(this.toolStripButtonLoan_Click);
             // 
             // toolStripButtonLogout
             // 

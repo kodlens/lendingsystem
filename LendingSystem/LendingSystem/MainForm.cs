@@ -66,5 +66,20 @@ namespace LendingSystem
             _frm.textBoxpass.Text = "";
             _frm.Show();
         }
+
+        private void toolStripButtonLoan_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ApplyLoanMainForm))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form frm = new ApplyLoanMainForm();
+            frm.Show();
+        }
     }
 }

@@ -86,6 +86,18 @@
     <Compile Include="Class\Member.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Login.cs" />
+    <Compile Include="ApplyLoanBrowseMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyLoanBrowseMember.Designer.cs">
+      <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyLoanMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyLoanMainForm.Designer.cs">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     </Compile>
     <EmbeddedResource Include="ChangePasswordMainForm.resx">
       <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyLoanBrowseMember.resx">
+      <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyLoanMainForm.resx">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
