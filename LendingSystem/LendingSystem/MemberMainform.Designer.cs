@@ -93,7 +93,7 @@ namespace LendingSystem
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 45);
             this.button2.TabIndex = 16;
-            this.button2.Text = "SAVE";
+            this.button2.Text = "NEW";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

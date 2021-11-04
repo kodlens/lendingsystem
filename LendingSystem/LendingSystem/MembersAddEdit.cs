@@ -112,12 +112,7 @@ namespace LendingSystem
                 Box.WarnBox("Please input Firstname.");
                 return;
             }
-            if (String.IsNullOrEmpty(txtmname.Text))
-            {
-                txtmname.Focus();
-                Box.WarnBox("Please input Middlename.");
-                return;
-            }
+           
             if (String.IsNullOrEmpty(cmbSex.Text))
             {
                 cmbSex.Focus();
@@ -204,20 +199,15 @@ namespace LendingSystem
                 return;
             }
 
+
             //if id is greater than zero, update mode, else insert mode
             if (id > 0)
             {
-                if (member.update(id) > 0)
-                {
-                    Box.InfoBox("User successfully updated.");
-                }
+                update();
             }
             else
             {
-                if (member.save() > 0)
-                {
-                    Box.InfoBox("User successfully saved.");
-                }
+                save();
             }
 
             _frm.loadData();

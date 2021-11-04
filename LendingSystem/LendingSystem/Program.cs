@@ -16,7 +16,7 @@ namespace LendingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ApplyLoanMainForm());
+            Application.Run(new LoginForm());
         }
     }
 }
