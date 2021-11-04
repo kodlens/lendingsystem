@@ -86,5 +86,15 @@ namespace LendingSystem
             frm.id = 0;
             frm.ShowDialog();
         }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(sender, e);
+        }
     }
 }

@@ -180,8 +180,13 @@ namespace LendingSystem
                 this.bdate = Convert.ToString(dt.Rows[0]["bdate"]);
                 this.email = Convert.ToString(dt.Rows[0]["email"]);
                 this.contact_no = Convert.ToString(dt.Rows[0]["contact_no"]);
-                //this.contact_no = Convert.ToString(dt.Rows.[0]["contact_no"]);
-
+                this.store_name = Convert.ToString(dt.Rows[0]["store_name"]);
+                this.store_address = Convert.ToString(dt.Rows[0]["store_address"]);
+                this.province = Convert.ToString(dt.Rows[0]["province"]);
+                this.city = Convert.ToString(dt.Rows[0]["city"]);
+                this.barangay = Convert.ToString(dt.Rows[0]["barangay"]);
+                this.street = Convert.ToString(dt.Rows[0]["street"]);
+           
             }
 
         }
