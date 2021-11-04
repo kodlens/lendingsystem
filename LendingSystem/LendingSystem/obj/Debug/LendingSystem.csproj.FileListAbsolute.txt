@@ -81,3 +81,5 @@ C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug
 C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ChangePasswordMainForm.resources
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.TakePicMainForm.resources
+C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanBrowseMember.resources
+C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanMainForm.resources
