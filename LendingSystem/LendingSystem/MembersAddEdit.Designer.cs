@@ -331,6 +331,7 @@ namespace LendingSystem
             this.cmbProvince.Name = "cmbProvince";
             this.cmbProvince.Size = new System.Drawing.Size(237, 23);
             this.cmbProvince.TabIndex = 0;
+   
             // 
             // label8
             // 

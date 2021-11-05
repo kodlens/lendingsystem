@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\Province.cs" />
     <Compile Include="TakePicMainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -81,5 +81,10 @@ namespace LendingSystem
             Form frm = new ApplyLoanMainForm();
             frm.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

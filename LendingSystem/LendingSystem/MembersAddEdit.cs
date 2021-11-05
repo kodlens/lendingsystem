@@ -8,21 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data.MySqlClient;
 namespace LendingSystem
 {
+
     public partial class MembersAddEdit : Form
     {
+
+        MySqlCommand cmd;
+        MySqlConnection con;
+
+        Province pro;
+
         MemberMainForm _frm;
-      
         Member member;
         public long id;
+
+       
+
+
 
         public MembersAddEdit(MemberMainForm _frm)
         {
             InitializeComponent();
             this._frm = _frm;
             member = new Member();
+
+            pro = new Province();
+
         }
+
 
 
         void save()
@@ -95,7 +110,7 @@ namespace LendingSystem
 
         }
 
-       
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             //filters
@@ -112,7 +127,7 @@ namespace LendingSystem
                 Box.WarnBox("Please input Firstname.");
                 return;
             }
-           
+
             if (String.IsNullOrEmpty(cmbSex.Text))
             {
                 cmbSex.Focus();
@@ -145,31 +160,31 @@ namespace LendingSystem
             }
             if (String.IsNullOrEmpty(txtstore_add.Text))
             {
-               txtstore_add.Focus();
+                txtstore_add.Focus();
                 Box.WarnBox("Please input Store Address.");
                 return;
             }
             if (String.IsNullOrEmpty(cmbProvince.Text))
             {
-               cmbProvince.Focus();
+                cmbProvince.Focus();
                 Box.WarnBox("Please input Province.");
                 return;
             }
             if (String.IsNullOrEmpty(cmbCity.Text))
             {
-              cmbCity.Focus();
+                cmbCity.Focus();
                 Box.WarnBox("Please input City.");
                 return;
             }
             if (String.IsNullOrEmpty(cmbBarangay.Text))
             {
-               cmbBarangay.Focus();
+                cmbBarangay.Focus();
                 Box.WarnBox("Please input Barangay.");
                 return;
             }
             if (String.IsNullOrEmpty(txtStreet.Text))
             {
-               txtStreet.Focus();
+                txtStreet.Focus();
                 Box.WarnBox("Please input Street.");
                 return;
             }
@@ -181,7 +196,7 @@ namespace LendingSystem
             }
             if (String.IsNullOrEmpty(txtref2.Text))
             {
-               txtref2.Focus();
+                txtref2.Focus();
                 Box.WarnBox("Please input Reference.");
                 return;
             }
@@ -194,7 +209,7 @@ namespace LendingSystem
             }
             if (String.IsNullOrEmpty(txtref2_contact.Text))
             {
-               txtref2_contact.Focus();
+                txtref2_contact.Focus();
                 Box.WarnBox("Please input Reference 2 Contact Information.");
                 return;
             }
@@ -214,17 +229,19 @@ namespace LendingSystem
             this.Close();
         }
 
-       
+
 
         //for debugging purpose only
-       private void btnDebug_Click(object sender, EventArgs e)
+        private void btnDebug_Click(object sender, EventArgs e)
         {
             debug();
         }
 
         private void MembersAddEdit_Load(object sender, EventArgs e)
         {
-            if(id > 0)
+           
+
+            if (id > 0)
             {
                 getData();
             }
@@ -237,7 +254,7 @@ namespace LendingSystem
             txtfname.Text = member.fname;
             txtmname.Text = member.mname;
             cmbSex.Text = member.sex;
-          //  dtBdate.Text = member.bdate;
+            //  dtBdate.Text = member.bdate;
             txtemail.Text = member.email;
             txtcontact_no.Text = member.contact_no;
             txtstore_name.Text = member.store_name;
@@ -247,7 +264,14 @@ namespace LendingSystem
             cmbBarangay.Text = member.barangay;
             txtStreet.Text = member.street;
         }
-    }
 
-  
-}
+      
+    }
+}      
+       
+
+
+    
+
+
+
