@@ -122,9 +122,9 @@
     <Compile Include="MembersAddEdit.Designer.cs">
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\NAddress.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Class\Province.cs" />
     <Compile Include="TakePicMainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
+
 namespace LendingSystem
 {
 
@@ -18,7 +19,9 @@ namespace LendingSystem
         MySqlCommand cmd;
         MySqlConnection con;
 
-        Province pro;
+        NAddress address;
+      
+     
 
         MemberMainForm _frm;
         Member member;
@@ -34,8 +37,9 @@ namespace LendingSystem
             this._frm = _frm;
             member = new Member();
 
-            pro = new Province();
-
+          address = new NAddress();
+          
+           
         }
 
 
@@ -239,6 +243,14 @@ namespace LendingSystem
 
         private void MembersAddEdit_Load(object sender, EventArgs e)
         {
+            //load data from database to combobox
+            con = Connection.con();
+            con.Open();
+         address.fillCmbProvince(con, cmbProvince);
+           
+            con.Close();
+            con.Dispose();
+
            
 
             if (id > 0)
@@ -265,7 +277,32 @@ namespace LendingSystem
             txtStreet.Text = member.street;
         }
 
-      
+        private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                address.barangays(this.cmbProvince.Text, this.cmbCity.Text, cmbBarangay);
+            }
+            catch (Exception er)
+            {
+
+                Box.ErrBox(er.Message);
+            }
+        }
+
+        private void cmbProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                address.cities(this.cmbProvince.Text, cmbCity);
+            }
+            catch (Exception er)
+            {
+
+                Box.ErrBox(er.Message);
+            }
+        }
     }
 }      
        

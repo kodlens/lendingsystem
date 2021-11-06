@@ -85,3 +85,5 @@ C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debu
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanMainForm.resources
 C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanBrowseMember.resources
 C:\Users\USER\Desktop\myprojects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanMainForm.resources
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanBrowseMember.resources
+C:\Users\PC\Desktop\projects\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanMainForm.resources

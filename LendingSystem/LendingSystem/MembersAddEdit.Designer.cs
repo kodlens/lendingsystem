@@ -115,7 +115,7 @@ namespace LendingSystem
             this.dtBdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtBdate.Location = new System.Drawing.Point(105, 147);
             this.dtBdate.Name = "dtBdate";
-            this.dtBdate.Size = new System.Drawing.Size(200, 23);
+            this.dtBdate.Size = new System.Drawing.Size(204, 23);
             this.dtBdate.TabIndex = 4;
             // 
             // label4
@@ -320,6 +320,7 @@ namespace LendingSystem
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(237, 23);
             this.cmbCity.TabIndex = 1;
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // cmbProvince
             // 
@@ -331,7 +332,7 @@ namespace LendingSystem
             this.cmbProvince.Name = "cmbProvince";
             this.cmbProvince.Size = new System.Drawing.Size(237, 23);
             this.cmbProvince.TabIndex = 0;
-   
+            this.cmbProvince.SelectedIndexChanged += new System.EventHandler(this.cmbProvince_SelectedIndexChanged);
             // 
             // label8
             // 
