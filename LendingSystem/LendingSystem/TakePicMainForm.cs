@@ -35,11 +35,19 @@ namespace LendingSystem
         public TakePicMainForm(MembersAddEdit _frm)
         {
             InitializeComponent();
-            //getListCameraUSB();
+            getListCameraUSB();
             this._frm = _frm;
 
         }
 
+        private static string _usbcamera;
+        public string usbcamera
+        {
+            get { return _usbcamera; }
+            set { _usbcamera = value; }
+        }
+
+        
         private void OpenCamera()
         {
             try
@@ -90,13 +98,7 @@ namespace LendingSystem
 
         }
 
-        private static string _usbcamera;
-        public string usbcamera
-        {
-            get { return _usbcamera; }
-            set { _usbcamera = value; }
-        }
-
+      
         private void getListCameraUSB()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -122,7 +124,7 @@ namespace LendingSystem
 
         private void TakePicMainForm_Load(object sender, EventArgs e)
         {
-
+            btnStart_Click(sender, e);
         }
 
         private void btnCapture_Click(object sender, EventArgs e)
@@ -237,6 +239,20 @@ namespace LendingSystem
             return ((Bitmap)img).Clone(rect, img.PixelFormat);
         }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            OpenCamera();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            CloseCurrentVideoSource();
+        }
+
+        private void TakePicMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseCurrentVideoSource();
+        }
 
         private void videoSourcePlayer1_NewFrame(object sender, ref Bitmap image)
         {
@@ -257,16 +273,6 @@ namespace LendingSystem
             }
             catch
             { }
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            OpenCamera();
-        }
-
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            CloseCurrentVideoSource();
         }
     }
 }

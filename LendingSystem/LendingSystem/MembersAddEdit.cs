@@ -59,10 +59,12 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
-
-            if (member.save() > 0)
+            long i = member.save();
+            if (i > 0)
             {
+                saveImage(i);
                 Box.InfoBox("Member successfully saved!");
+
             }
         }
 
@@ -302,6 +304,25 @@ namespace LendingSystem
 
                 Box.ErrBox(er.Message);
             }
+        }
+
+       
+
+        void saveImage(long i)
+        {
+            Image img;
+            img = pictureBox1.Image;
+
+            string dir = Application.StartupPath;
+            string nFilename = txtlname.Text + "_" + txtfname.Text;
+            img.Save(dir + "\\img\\" + i.ToString() + "_" + nFilename + ".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            //img.Save(@"F:\test\" + nFilename + ".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+        }
+
+        private void btnCapture_Click(object sender, EventArgs e)
+        {
+            TakePicMainForm frm = new TakePicMainForm(this);
+            frm.ShowDialog();
         }
     }
 }      

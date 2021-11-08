@@ -17,7 +17,7 @@ namespace LendingSystem
         MySqlCommand cmd;
         string query;
 
-
+        public long member_id { set; get; }
         public string lname { set; get; }
         public string fname { set; get; }
         public string mname { set; get; }
@@ -73,12 +73,12 @@ namespace LendingSystem
         }
 
 
-        public int save()
+        public long save()
         {
-            int i = 0;
+            long i = 0;
             con = Connection.con();
             con.Open();
-            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active";
+            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active; SELECT LAST_INSERT_ID();";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -94,7 +94,8 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?barangay", this.barangay);
             cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
-            i = cmd.ExecuteNonQuery();
+            //i = cmd.ExecuteNonQuery();
+            i = Convert.ToInt64(cmd.ExecuteScalar());
             cmd.Dispose();
             con.Close();
             con.Dispose();

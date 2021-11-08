@@ -50,7 +50,7 @@ namespace LendingSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(84, 93);
+            this.label3.Location = new System.Drawing.Point(20, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 20);
             this.label3.TabIndex = 34;
@@ -61,7 +61,7 @@ namespace LendingSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(97, 162);
+            this.label2.Location = new System.Drawing.Point(33, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 33;
@@ -72,7 +72,7 @@ namespace LendingSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(410, 162);
+            this.label1.Location = new System.Drawing.Point(346, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 32;
@@ -80,20 +80,19 @@ namespace LendingSystem
             // 
             // videoSourcePlayer1
             // 
-            this.videoSourcePlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.videoSourcePlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.videoSourcePlayer1.Location = new System.Drawing.Point(82, 182);
+            this.videoSourcePlayer1.Location = new System.Drawing.Point(18, 170);
             this.videoSourcePlayer1.Name = "videoSourcePlayer1";
-            this.videoSourcePlayer1.Size = new System.Drawing.Size(315, 242);
+            this.videoSourcePlayer1.Size = new System.Drawing.Size(317, 242);
             this.videoSourcePlayer1.TabIndex = 31;
             this.videoSourcePlayer1.Text = "videoSourcePlayer1";
             this.videoSourcePlayer1.VideoSource = null;
+            this.videoSourcePlayer1.NewFrame += new AForge.Controls.VideoSourcePlayer.NewFrameHandler(this.videoSourcePlayer1_NewFrame);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(214, 92);
+            this.comboBox1.Location = new System.Drawing.Point(150, 80);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 21);
             this.comboBox1.TabIndex = 30;
@@ -103,11 +102,13 @@ namespace LendingSystem
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(609, 430);
+            this.btnClose.Location = new System.Drawing.Point(566, 418);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 45);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnClose.Size = new System.Drawing.Size(87, 45);
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -116,8 +117,9 @@ namespace LendingSystem
             this.btnCapture.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapture.Image = ((System.Drawing.Image)(resources.GetObject("btnCapture.Image")));
             this.btnCapture.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapture.Location = new System.Drawing.Point(493, 430);
+            this.btnCapture.Location = new System.Drawing.Point(450, 418);
             this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnCapture.Size = new System.Drawing.Size(110, 45);
             this.btnCapture.TabIndex = 29;
             this.btnCapture.Text = "Snapshot";
@@ -129,7 +131,7 @@ namespace LendingSystem
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(410, 182);
+            this.pictureBox2.Location = new System.Drawing.Point(346, 170);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(307, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +141,7 @@ namespace LendingSystem
             // btnStop
             // 
             this.btnStop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(328, 119);
+            this.btnStop.Location = new System.Drawing.Point(264, 107);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(108, 27);
             this.btnStop.TabIndex = 37;
@@ -150,7 +152,7 @@ namespace LendingSystem
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(214, 119);
+            this.btnStart.Location = new System.Drawing.Point(150, 107);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(108, 27);
             this.btnStart.TabIndex = 36;
@@ -180,7 +182,7 @@ namespace LendingSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 491);
+            this.ClientSize = new System.Drawing.Size(671, 491);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnStop);
@@ -193,8 +195,13 @@ namespace LendingSystem
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TakePicMainForm";
-            this.Text = "TakePicMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Take Picture";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TakePicMainForm_FormClosing);
             this.Load += new System.EventHandler(this.TakePicMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

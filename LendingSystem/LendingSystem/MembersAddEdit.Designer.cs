@@ -384,8 +384,9 @@ namespace LendingSystem
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(95, 40);
             this.btnCapture.TabIndex = 10;
-            this.btnCapture.Text = "Capture";
+            this.btnCapture.Text = "Take Pic";
             this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // btnClear
             // 
