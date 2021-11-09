@@ -37,7 +37,7 @@ namespace LendingSystem
             this._frm = _frm;
             member = new Member();
 
-          address = new NAddress();
+            address = new NAddress();
           
            
         }
@@ -59,6 +59,8 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
+            
+
             long i = member.save();
             if (i > 0)
             {

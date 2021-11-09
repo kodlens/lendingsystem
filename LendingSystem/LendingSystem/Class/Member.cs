@@ -33,6 +33,7 @@ namespace LendingSystem
         public string street { set; get; }
         public byte is_active { set; get; }
 
+        public string avatar_path {set;get;}
 
         public void all(C1FlexGrid flx)
         {
@@ -78,7 +79,7 @@ namespace LendingSystem
             long i = 0;
             con = Connection.con();
             con.Open();
-            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active; SELECT LAST_INSERT_ID();";
+            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active, avatar_path=?apath; SELECT LAST_INSERT_ID();";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -94,6 +95,7 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?barangay", this.barangay);
             cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
+            cmd.Parameters.AddWithValue("?apath", this.lname + "_" + this.fname);
             //i = cmd.ExecuteNonQuery();
             i = Convert.ToInt64(cmd.ExecuteScalar());
             cmd.Dispose();
@@ -111,7 +113,7 @@ namespace LendingSystem
             con = Connection.con();
             con.Open();
             query = @"UPDATE members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
-                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=is_active WHERE member_id = ?id";
+                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=is_active, avatar_path=?apath WHERE member_id = ?id";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -127,6 +129,7 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?barangay", this.barangay);
             cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
+            cmd.Parameters.AddWithValue("?apath", this.lname + "_" + this.fname);
             cmd.Parameters.AddWithValue("?id", id);
 
             i = cmd.ExecuteNonQuery();
@@ -187,7 +190,8 @@ namespace LendingSystem
                 this.city = Convert.ToString(dt.Rows[0]["city"]);
                 this.barangay = Convert.ToString(dt.Rows[0]["barangay"]);
                 this.street = Convert.ToString(dt.Rows[0]["street"]);
-           
+                this.avatar_path = Convert.ToString(dt.Rows[0]["avatar_path"]);
+
             }
 
         }
