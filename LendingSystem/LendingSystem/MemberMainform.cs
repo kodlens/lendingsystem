@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
 using C1.Win.C1FlexGrid;
+using System.IO;
 
 namespace LendingSystem
 {
@@ -74,7 +75,14 @@ namespace LendingSystem
             if (Box.QBox("Are you sure you want to delete this data?"))
             {
                 long id = Convert.ToInt64(flx[flx.RowSel, "member_id"]);
-               member.delete(id);
+                string path = Application.StartupPath + "/" + "img/" + id.ToString() + "_" + Convert.ToString(flx[flx.RowSel, "avatar_path"]) + ".jpeg";
+                //Box.InfoBox(path);
+                member.delete(id);
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+
                 Box.InfoBox("User deleted successfully.");
                 loadData();
             }
@@ -96,5 +104,7 @@ namespace LendingSystem
         {
             btnDelete_Click(sender, e);
         }
+
+      
     }
 }

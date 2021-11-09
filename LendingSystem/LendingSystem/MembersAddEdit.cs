@@ -47,7 +47,7 @@ namespace LendingSystem
         void save()
         {
             member.lname = txtlname.Text;
-            member.fname = txtlname.Text;
+            member.fname = txtfname.Text;
             member.mname = txtmname.Text;
             member.sex = cmbSex.Text;
             member.bdate = dtBdate.Value.ToString("yyyy-MM-dd");
@@ -73,7 +73,7 @@ namespace LendingSystem
         void update()
         {
             member.lname = txtlname.Text;
-            member.fname = txtlname.Text;
+            member.fname = txtfname.Text;
             member.mname = txtmname.Text;
             member.sex = cmbSex.Text;
             member.bdate = dtBdate.Value.ToString("yyyy-MM-dd");
