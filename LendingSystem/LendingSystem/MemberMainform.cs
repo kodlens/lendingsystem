@@ -109,5 +109,11 @@ namespace LendingSystem
         {
             loadData();
         }
+
+        private void viewMemberProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportMemberProfileForm frm = new ReportMemberProfileForm();
+            frm.ShowDialog();
+        }
     }
 }
