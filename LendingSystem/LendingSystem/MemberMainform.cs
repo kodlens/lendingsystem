@@ -43,7 +43,7 @@ namespace LendingSystem
         
         public void loadData()
         {
-            member.all(flx);
+            member.find(flx, txtlname.Text, txtfname.Text);
         }
 
        
@@ -105,6 +105,9 @@ namespace LendingSystem
             btnDelete_Click(sender, e);
         }
 
-      
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
     }
 }

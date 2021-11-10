@@ -43,22 +43,28 @@ namespace LendingSystem
             this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtlname = new System.Windows.Forms.TextBox();
+            this.txtfname = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.flx)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flx
             // 
+            this.flx.AllowEditing = false;
             this.flx.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle;
             this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
             this.flx.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.flx.Location = new System.Drawing.Point(14, 92);
+            this.flx.Location = new System.Drawing.Point(14, 117);
             this.flx.Name = "flx";
             this.flx.Rows.DefaultSize = 22;
             this.flx.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.flx.Size = new System.Drawing.Size(816, 419);
+            this.flx.Size = new System.Drawing.Size(816, 394);
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
             this.flx.TabIndex = 1;
             // 
@@ -173,11 +179,58 @@ namespace LendingSystem
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Lastname:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 15);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Firstname:";
+            // 
+            // txtlname
+            // 
+            this.txtlname.Location = new System.Drawing.Point(91, 59);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(196, 23);
+            this.txtlname.TabIndex = 26;
+            // 
+            // txtfname
+            // 
+            this.txtfname.Location = new System.Drawing.Point(91, 88);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(196, 23);
+            this.txtfname.TabIndex = 27;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(755, 53);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 33);
+            this.btnSearch.TabIndex = 28;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // MemberMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 600);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtfname);
+            this.Controls.Add(this.txtlname);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
@@ -195,6 +248,7 @@ namespace LendingSystem
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -212,5 +266,10 @@ namespace LendingSystem
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtlname;
+        private System.Windows.Forms.TextBox txtfname;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

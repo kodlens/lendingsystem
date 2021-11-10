@@ -85,7 +85,7 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
-
+            saveImage(id);
             if (member.update(id) > 0)
             {
                 Box.InfoBox("Member successfully updated!");

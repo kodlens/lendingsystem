@@ -35,12 +35,14 @@ namespace LendingSystem
 
         public string avatar_path {set;get;}
 
-        public void all(C1FlexGrid flx)
+        public void find(C1FlexGrid flx, string vlname, string vfname)
         {
             con = Connection.con();
             con.Open();
-            query = "SELECT * FROM members";
+            query = "SELECT * FROM members WHERE lname LIKE ?lname and fname LIKE ?fname";
             cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?lname", vlname + "%");
+            cmd.Parameters.AddWithValue("?fname", vfname + "%");
             DataTable dt = new DataTable();
             MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
             adptr.Fill(dt);
