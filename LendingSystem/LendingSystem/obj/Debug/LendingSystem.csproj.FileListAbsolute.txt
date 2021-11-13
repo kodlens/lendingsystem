@@ -105,7 +105,6 @@ C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debu
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\stdole.dll
-C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\AxShockwaveFlashObjects.dll
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\bin\Debug\ShockwaveFlashObjects.dll

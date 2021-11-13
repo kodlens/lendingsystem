@@ -30,17 +30,19 @@ namespace LendingSystem
 
         private void ReportMemberProfileForm_Load(object sender, EventArgs e)
         {
-            
+
             //rpt.SetDataSource();
+            loadReport();
         }
 
         void loadReport()
         {
             con = Connection.con();
             con.Open();
-            query = "select * from members where member_id = ?id";
+            query = "proc_select_member";
             cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("?id", id);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("?vid", id);
             DataTable dt = new DataTable();
             MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
             adptr.Fill(dt);
@@ -52,6 +54,7 @@ namespace LendingSystem
 
             ReportMemberProfileRpt rpt = new ReportMemberProfileRpt();
             rpt.SetDataSource(dt);
+            crystalReportViewer1.ReportSource = rpt;
         }
     }
 }

@@ -113,6 +113,7 @@ namespace LendingSystem
         private void viewMemberProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportMemberProfileForm frm = new ReportMemberProfileForm();
+            frm.id = Convert.ToInt64(flx[flx.RowSel, "member_id"]);
             frm.ShowDialog();
         }
     }
