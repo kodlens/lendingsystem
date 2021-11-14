@@ -36,25 +36,52 @@ namespace LendingSystem
 
 
 
-        public void find(C1FlexGrid flx, string kLname)
+        //public void find(C1FlexGrid flx, string kLname)
+        //{
+        //    con = Connection.con();
+        //    con.Open();
+        //    query = "SELECT * FROM members WHERE lname LIKE ?lname";
+        //    cmd = new MySqlCommand(query, con);
+        //    cmd.Parameters.AddWithValue("?lname", kLname + "%");
+        //    DataTable dt = new DataTable();
+        //    MySqlDataAdapter adtpr = new MySqlDataAdapter(cmd);
+        //    adtpr.Fill(dt);
+        //    adtpr.Dispose();
+        //    cmd.Dispose();
+        //    con.Close();
+        //    con.Dispose();
+
+        //    flx.AutoGenerateColumns = false;
+        //    flx.DataSource = dt;
+        //}
+
+
+
+
+        public void emje(C1FlexGrid flx)
         {
             con = Connection.con();
             con.Open();
-            query = "SELECT * FROM members WHERE lname LIKE ?lname";
+
+            query = "SELECT * FROM members";
             cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("?lname", kLname + "%");
+
             DataTable dt = new DataTable();
-            MySqlDataAdapter adtpr = new MySqlDataAdapter(cmd);
-            adtpr.Fill(dt);
-            adtpr.Dispose();
+            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+
+            adptr.Fill(dt);
+
+            adptr.Dispose();
             cmd.Dispose();
             con.Close();
             con.Dispose();
 
+
             flx.AutoGenerateColumns = false;
             flx.DataSource = dt;
-        }
 
+
+        }
 
         public int save()
         {

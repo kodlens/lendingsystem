@@ -12,15 +12,25 @@ namespace LendingSystem
 {
     public partial class MemberMainForm : Form
     {
+
+        Member m;
+
         public MemberMainForm()
         {
             InitializeComponent();
+
+            m = new Member();
         }
 
         private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MembersAddEdit frm = new MembersAddEdit();
             frm.ShowDialog();
+        }
+
+        private void MemberMainForm_Load(object sender, EventArgs e)
+        {
+            m.emje(flx);
         }
     }
 }

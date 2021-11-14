@@ -49,6 +49,7 @@ namespace LendingSystem
             this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
+            this.flx.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.flx.Location = new System.Drawing.Point(14, 92);
             this.flx.Name = "flx";
             this.flx.Rows.DefaultSize = 22;
@@ -146,6 +147,7 @@ namespace LendingSystem
             this.Name = "MemberMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MEMBER";
+            this.Load += new System.EventHandler(this.MemberMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
