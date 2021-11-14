@@ -115,7 +115,7 @@ namespace LendingSystem
             this.dtBdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtBdate.Location = new System.Drawing.Point(105, 147);
             this.dtBdate.Name = "dtBdate";
-            this.dtBdate.Size = new System.Drawing.Size(200, 23);
+            this.dtBdate.Size = new System.Drawing.Size(204, 23);
             this.dtBdate.TabIndex = 4;
             // 
             // label4
@@ -320,6 +320,7 @@ namespace LendingSystem
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(237, 23);
             this.cmbCity.TabIndex = 1;
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // cmbProvince
             // 
@@ -331,6 +332,7 @@ namespace LendingSystem
             this.cmbProvince.Name = "cmbProvince";
             this.cmbProvince.Size = new System.Drawing.Size(237, 23);
             this.cmbProvince.TabIndex = 0;
+            this.cmbProvince.SelectedIndexChanged += new System.EventHandler(this.cmbProvince_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -382,8 +384,9 @@ namespace LendingSystem
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(95, 40);
             this.btnCapture.TabIndex = 10;
-            this.btnCapture.Text = "Capture";
+            this.btnCapture.Text = "Take Pic";
             this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // btnClear
             // 
@@ -544,6 +547,7 @@ namespace LendingSystem
             this.Name = "MembersAddEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add / Edit";
+            this.Load += new System.EventHandler(this.MembersAddEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -590,7 +594,6 @@ namespace LendingSystem
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbBarangay;
         private System.Windows.Forms.ComboBox cmbCity;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblHeader;
@@ -605,5 +608,6 @@ namespace LendingSystem
         private System.Windows.Forms.TextBox txtref1_contact;
         private System.Windows.Forms.CheckBox checkActive;
         private System.Windows.Forms.Button btnDebug;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

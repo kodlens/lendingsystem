@@ -48,6 +48,11 @@ namespace LendingSystem
         {
             Application.Exit();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

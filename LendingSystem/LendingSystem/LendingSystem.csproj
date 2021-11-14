@@ -56,13 +56,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20141.822, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="mysql.data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\mysql.data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,12 +81,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePasswordMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordMainForm.Designer.cs">
+      <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Box.cs" />
     <Compile Include="Class\Connection.cs" />
+    <Compile Include="Class\Helper.cs" />
     <Compile Include="Class\Member.cs" />
     <Compile Include="Class\Sample.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Login.cs" />
+    <Compile Include="ApplyLoanBrowseMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyLoanBrowseMember.Designer.cs">
+      <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyLoanMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyLoanMainForm.Designer.cs">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +118,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member.cs" />
     <Compile Include="MemberMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,19 +130,27 @@
     <Compile Include="MembersAddEdit.Designer.cs">
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\NAddress.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleAddEdit.cs">
+
+    <Compile Include="Report\ReportMemberProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SampleAddEdit.Designer.cs">
-      <DependentUpon>SampleAddEdit.cs</DependentUpon>
+    <Compile Include="Report\ReportMemberProfileForm.Designer.cs">
+      <DependentUpon>ReportMemberProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SampleMainForm.cs">
+    <Compile Include="Report\ReportMemberProfileRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportMemberProfileRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TakePicMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SampleMainForm.Designer.cs">
-      <DependentUpon>SampleMainForm.cs</DependentUpon>
+    <Compile Include="TakePicMainForm.Designer.cs">
+      <DependentUpon>TakePicMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAddEdit.cs">
       <SubType>Form</SubType>
@@ -131,6 +164,15 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePasswordMainForm.resx">
+      <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyLoanBrowseMember.resx">
+      <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyLoanMainForm.resx">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,11 +196,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SampleAddEdit.resx">
-      <DependentUpon>SampleAddEdit.cs</DependentUpon>
+
+    <EmbeddedResource Include="Report\ReportMemberProfileForm.resx">
+      <DependentUpon>ReportMemberProfileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SampleMainForm.resx">
-      <DependentUpon>SampleMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Report\ReportMemberProfileRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportMemberProfileRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TakePicMainForm.resx">
+      <DependentUpon>TakePicMainForm.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="UserAddEdit.resx">
       <DependentUpon>UserAddEdit.cs</DependentUpon>
@@ -202,6 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash-register-icon64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

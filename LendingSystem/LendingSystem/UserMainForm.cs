@@ -12,14 +12,23 @@ namespace LendingSystem
 {
     public partial class UserMainForm : Form
     {
+        User user;
+
         public UserMainForm()
         {
             InitializeComponent();
+
+            user = new User();
         }
 
         private void SampleForm_Load(object sender, EventArgs e)
         {
-            new User().all(this.flx);
+            loadData();
+        }
+
+        public void loadData()
+        {
+            user.all(flx);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -34,6 +43,48 @@ namespace LendingSystem
             UserAddEdit frm = new UserAddEdit(this);
             frm.id = Convert.ToInt64(flx[flx.RowSel, "user_id"]);
             frm.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(Box.QBox("Are you sure you want to delete this data?"))
+            {
+                long id = Convert.ToInt64(flx[flx.RowSel, "user_id"]);
+                user.delete(id);
+                Box.InfoBox("User deleted successfully.");
+                loadData();
+            }
+        }
+
+        private void modifyUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(sender, e);
+        }
+
+        private void newMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnNew_Click(sender, e);
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePasswordMainForm frm = new ChangePasswordMainForm();
+            frm.ShowDialog();
+        }
+
+        private void flx_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
