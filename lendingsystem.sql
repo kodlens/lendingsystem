@@ -43758,12 +43758,16 @@ CREATE TABLE `members` (
   `reference_2` varchar(255) DEFAULT NULL,
   `reference_1_contact` varchar(100) DEFAULT NULL,
   `reference_2_contact` varchar(100) DEFAULT NULL,
+  `avatar_path` varbinary(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`member_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `members` */
+
+insert  into `members`(`member_id`,`lname`,`fname`,`mname`,`sex`,`bdate`,`email`,`contact_no`,`store_name`,`store_address`,`province`,`city`,`barangay`,`street`,`is_active`,`reference_1`,`reference_2`,`reference_1_contact`,`reference_2_contact`,`avatar_path`,`created_at`,`updated_at`) values 
+(1,'asda','ads','asd','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `provinces` */
 
@@ -43905,6 +43909,26 @@ insert  into `regions`(`id`,`psgcCode`,`regDesc`,`regCode`) values
 (16,'150000000','AUTONOMOUS REGION IN MUSLIM MINDANAO (ARMM)','15'),
 (17,'160000000','REGION XIII (Caraga)','16');
 
+/*Table structure for table `samples` */
+
+DROP TABLE IF EXISTS `samples`;
+
+CREATE TABLE `samples` (
+  `sample_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `lname` varchar(100) DEFAULT NULL,
+  `fname` varchar(100) DEFAULT NULL,
+  `mname` varchar(100) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`sample_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `samples` */
+
+insert  into `samples`(`sample_id`,`lname`,`fname`,`mname`,`sex`) values 
+(1,'amparado','etienne wayne','asas','MALE'),
+(6,'bbb','mar','bb','MALE'),
+(7,'cc','jeff','cc','MALE');
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -43929,6 +43953,19 @@ CREATE TABLE `users` (
 insert  into `users`(`user_id`,`username`,`password`,`lname`,`fname`,`mname`,`sex`,`role`,`created_at`,`updated_at`) values 
 (2,'admin','d033e22ae348aeb5660fc2140aec35850c4da997','AMPARADO','ETIENNE',NULL,'MALE','ADMINISTRATOR','2021-09-05 19:00:44','2021-11-02 12:37:50'),
 (8,'sec','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','SEC','SEC','SEC','FEMAILE','STAFF','2021-10-20 07:13:36','2021-11-02 12:37:52');
+
+/* Procedure structure for procedure `proc_select_member` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `proc_select_member` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_select_member`(vid bigint)
+BEGIN
+    
+	SELECT * FROM members a WHERE a.member_id = vid;
+    END */$$
+DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
