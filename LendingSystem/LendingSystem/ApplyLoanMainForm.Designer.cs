@@ -92,7 +92,10 @@ namespace LendingSystem
             this.label8.Size = new System.Drawing.Size(259, 21);
             this.label8.TabIndex = 9;
             this.label8.Text = "No. of Days/Months of Payment:";
+<<<<<<< HEAD
             this.label8.Click += new System.EventHandler(this.label8_Click);
+=======
+>>>>>>> 2a86e57656e225285c6059a8f3530efd8883e651
             // 
             // txtboxAmountToPay
             // 
@@ -273,6 +276,10 @@ namespace LendingSystem
             this.btnApply.TabIndex = 21;
             this.btnApply.Text = "APPLY";
             this.btnApply.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+>>>>>>> 2a86e57656e225285c6059a8f3530efd8883e651
             // 
             // ApplyLoanMainForm
             // 
@@ -290,7 +297,6 @@ namespace LendingSystem
             this.Name = "ApplyLoanMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan";
-            this.Load += new System.EventHandler(this.ApplyLoanMainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
