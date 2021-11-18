@@ -30,6 +30,9 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,17 +46,21 @@ namespace LendingSystem
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txtboxAmountToPay = new System.Windows.Forms.TextBox();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtboxAmountToPay);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -64,16 +71,43 @@ namespace LendingSystem
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 268);
+            this.groupBox1.Size = new System.Drawing.Size(397, 331);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(192, 48);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(97, 23);
+            this.numericUpDown2.TabIndex = 4;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(189, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 15);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Interest(%)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 238);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Amount to Pay:";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(24, 111);
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 188);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -88,7 +122,7 @@ namespace LendingSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 87);
+            this.label5.Location = new System.Drawing.Point(20, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 21);
             this.label5.TabIndex = 4;
@@ -112,7 +146,7 @@ namespace LendingSystem
             this.comboBox1.Location = new System.Drawing.Point(24, 48);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 23);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -154,7 +188,8 @@ namespace LendingSystem
             this.textBox3.Location = new System.Drawing.Point(103, 109);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(224, 23);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.TabIndex = 2;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label2
             // 
@@ -170,7 +205,7 @@ namespace LendingSystem
             this.textBox2.Location = new System.Drawing.Point(103, 80);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(224, 23);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 1;
             // 
             // label1
             // 
@@ -186,7 +221,7 @@ namespace LendingSystem
             this.textBox1.Location = new System.Drawing.Point(103, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 23);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             // 
             // lblHeader
             // 
@@ -202,38 +237,49 @@ namespace LendingSystem
             this.lblHeader.Text = "APPLY LOAN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // txtboxAmountToPay
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 161);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Amount to Pay:";
+            this.txtboxAmountToPay.Location = new System.Drawing.Point(24, 274);
+            this.txtboxAmountToPay.Name = "txtboxAmountToPay";
+            this.txtboxAmountToPay.Size = new System.Drawing.Size(358, 23);
+            this.txtboxAmountToPay.TabIndex = 6;
+            this.txtboxAmountToPay.AcceptsTabChanged += new System.EventHandler(this.txtboxAmountToPay_AcceptsTabChanged);
+            this.txtboxAmountToPay.TextChanged += new System.EventHandler(this.txtboxAmountToPay_TextChanged);
             // 
-            // label7
+            // btnApply
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(189, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 15);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Interest(%)";
+            this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.Location = new System.Drawing.Point(12, 387);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(397, 45);
+            this.btnApply.TabIndex = 21;
+            this.btnApply.Text = "APPLY";
+            this.btnApply.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // textBox4
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(192, 48);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(97, 23);
-            this.numericUpDown2.TabIndex = 8;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.Location = new System.Drawing.Point(24, 119);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(111, 23);
+            this.textBox4.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(259, 21);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "No. of Days/Months of Payment:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // ApplyLoanMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 498);
+            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -244,12 +290,13 @@ namespace LendingSystem
             this.Name = "ApplyLoanMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan";
+            this.Load += new System.EventHandler(this.ApplyLoanMainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +320,9 @@ namespace LendingSystem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtboxAmountToPay;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label8;
     }
 }

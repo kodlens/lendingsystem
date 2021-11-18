@@ -30,6 +30,7 @@ namespace LendingSystem
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkShowPassword = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace LendingSystem
             this.label9 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkShowPassword = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,17 @@ namespace LendingSystem
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
+            // 
+            // checkShowPassword
+            // 
+            this.checkShowPassword.AutoSize = true;
+            this.checkShowPassword.Location = new System.Drawing.Point(122, 109);
+            this.checkShowPassword.Name = "checkShowPassword";
+            this.checkShowPassword.Size = new System.Drawing.Size(109, 19);
+            this.checkShowPassword.TabIndex = 17;
+            this.checkShowPassword.Text = "Show Password";
+            this.checkShowPassword.UseVisualStyleBackColor = true;
+            this.checkShowPassword.CheckedChanged += new System.EventHandler(this.checkShowPassword_CheckedChanged);
             // 
             // label8
             // 
@@ -170,6 +181,7 @@ namespace LendingSystem
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(237, 23);
             this.cmbSex.TabIndex = 6;
+            this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -268,17 +280,6 @@ namespace LendingSystem
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkShowPassword
-            // 
-            this.checkShowPassword.AutoSize = true;
-            this.checkShowPassword.Location = new System.Drawing.Point(122, 109);
-            this.checkShowPassword.Name = "checkShowPassword";
-            this.checkShowPassword.Size = new System.Drawing.Size(109, 19);
-            this.checkShowPassword.TabIndex = 17;
-            this.checkShowPassword.Text = "Show Password";
-            this.checkShowPassword.UseVisualStyleBackColor = true;
-            this.checkShowPassword.CheckedChanged += new System.EventHandler(this.checkShowPassword_CheckedChanged);
             // 
             // UserAddEdit
             // 

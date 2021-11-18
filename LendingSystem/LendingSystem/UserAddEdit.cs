@@ -164,5 +164,10 @@ namespace LendingSystem
                 txtRPassword.PasswordChar = '*';
             }
         }
+
+        private void cmbSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
