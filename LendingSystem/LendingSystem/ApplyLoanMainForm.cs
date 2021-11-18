@@ -35,19 +35,6 @@ namespace LendingSystem
         private void txtboxAmountToPay_TextChanged(object sender, EventArgs e)
         {
 
-            int months_days, roi, amt, interest, ins;
-
-
-
-            amt = Convert.ToInt32(numericUpDown1.Value);
-            interest = Convert.ToInt32(numericUpDown2.Value);
-            months_days = Convert.ToInt32(textBox4.Text);
-
-
-            roi = amt * interest;
-            ins = amt / months_days + roi;
-
-            txtboxAmountToPay.Text = ins.ToString();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -60,10 +47,22 @@ namespace LendingSystem
 
         }
 
-        private void txtboxAmountToPay_AcceptsTabChanged(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
-            
+            int months_days, roi, amt, interest, ins;
+
+
+
+            amt = Convert.ToInt32(numericUpDown1.Value);
+            interest = Convert.ToInt32(numericUpDown2.Value);
+            months_days = Convert.ToInt32(textBox4.Text);
+
+
+            roi = amt / interest;
+            ins = amt / months_days + roi;
+
+            txtboxAmountToPay.Text = ins.ToString();
         }
     }
 }
