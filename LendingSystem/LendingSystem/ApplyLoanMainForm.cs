@@ -50,20 +50,9 @@ namespace LendingSystem
             txtboxAmountToPay.Text = ins.ToString();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void btnApply_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void ApplyLoanMainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtboxAmountToPay_AcceptsTabChanged(object sender, EventArgs e)
-        {
-
-            
         }
     }
 }
