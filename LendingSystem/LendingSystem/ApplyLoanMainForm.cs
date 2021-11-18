@@ -45,7 +45,7 @@ namespace LendingSystem
 
 
             roi = amt * interest;
-            ins = amt / months_days + interest;
+            ins = amt / months_days + roi;
 
             txtboxAmountToPay.Text = ins.ToString();
         }
