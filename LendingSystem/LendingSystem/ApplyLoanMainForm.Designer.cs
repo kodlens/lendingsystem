@@ -92,10 +92,7 @@ namespace LendingSystem
             this.label8.Size = new System.Drawing.Size(259, 21);
             this.label8.TabIndex = 9;
             this.label8.Text = "No. of Days/Months of Payment:";
-<<<<<<< HEAD
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-=======
->>>>>>> 2a86e57656e225285c6059a8f3530efd8883e651
+
             // 
             // txtboxAmountToPay
             // 
@@ -103,7 +100,7 @@ namespace LendingSystem
             this.txtboxAmountToPay.Name = "txtboxAmountToPay";
             this.txtboxAmountToPay.Size = new System.Drawing.Size(358, 23);
             this.txtboxAmountToPay.TabIndex = 6;
-            this.txtboxAmountToPay.TextChanged += new System.EventHandler(this.txtboxAmountToPay_TextChanged);
+          
             // 
             // numericUpDown2
             // 
@@ -219,7 +216,7 @@ namespace LendingSystem
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(224, 23);
             this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            
             // 
             // label2
             // 
@@ -276,10 +273,7 @@ namespace LendingSystem
             this.btnApply.TabIndex = 21;
             this.btnApply.Text = "APPLY";
             this.btnApply.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
->>>>>>> 2a86e57656e225285c6059a8f3530efd8883e651
+
             // 
             // ApplyLoanMainForm
             // 

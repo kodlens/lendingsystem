@@ -16,8 +16,6 @@ namespace LendingSystem
         public ApplyLoanMainForm()
         {
             InitializeComponent();
-            
-
 
         }
 
@@ -27,26 +25,6 @@ namespace LendingSystem
             frm.ShowDialog();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtboxAmountToPay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-
-        }
-<<<<<<< HEAD
-
-        private void ApplyLoanMainForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -65,7 +43,6 @@ namespace LendingSystem
 
             txtboxAmountToPay.Text = ins.ToString();
         }
-=======
->>>>>>> 2a86e57656e225285c6059a8f3530efd8883e651
+
     }
 }
