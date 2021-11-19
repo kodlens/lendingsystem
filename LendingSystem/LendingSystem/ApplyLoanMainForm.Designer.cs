@@ -29,17 +29,19 @@ namespace LendingSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyLoanMainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtboxAmountToPay = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.btnCompute = new System.Windows.Forms.Button();
+            this.numDayMonth = new System.Windows.Forms.NumericUpDown();
+            this.lblAmountToPay = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numInterest = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numAmountToLoan = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBrowseMember = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,65 +52,84 @@ namespace LendingSystem
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
+            this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmountToLoan)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flx)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtboxAmountToPay);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.btnCompute);
+            this.groupBox1.Controls.Add(this.numDayMonth);
+            this.groupBox1.Controls.Add(this.lblAmountToPay);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.numInterest);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.numAmountToLoan);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbLoanType);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 50);
+            this.groupBox1.Location = new System.Drawing.Point(381, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 331);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(570, 209);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
             // 
-            // textBox4
+            // btnCompute
             // 
-            this.textBox4.Location = new System.Drawing.Point(24, 119);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(111, 23);
-            this.textBox4.TabIndex = 8;
+            this.btnCompute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompute.Location = new System.Drawing.Point(297, 106);
+            this.btnCompute.Name = "btnCompute";
+            this.btnCompute.Size = new System.Drawing.Size(118, 34);
+            this.btnCompute.TabIndex = 5;
+            this.btnCompute.Text = "COMPUTE";
+            this.btnCompute.UseVisualStyleBackColor = true;
+            this.btnCompute.Click += new System.EventHandler(this.btnCompute_Click);
             // 
-            // label8
+            // numDayMonth
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 95);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(259, 21);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "No. of Days/Months of Payment:";
-
+            this.numDayMonth.Location = new System.Drawing.Point(297, 48);
+            this.numDayMonth.Name = "numDayMonth";
+            this.numDayMonth.Size = new System.Drawing.Size(118, 23);
+            this.numDayMonth.TabIndex = 3;
+            this.numDayMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtboxAmountToPay
+            // lblAmountToPay
             // 
-            this.txtboxAmountToPay.Location = new System.Drawing.Point(24, 274);
-            this.txtboxAmountToPay.Name = "txtboxAmountToPay";
-            this.txtboxAmountToPay.Size = new System.Drawing.Size(358, 23);
-            this.txtboxAmountToPay.TabIndex = 6;
-          
+            this.lblAmountToPay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountToPay.ForeColor = System.Drawing.Color.Red;
+            this.lblAmountToPay.Location = new System.Drawing.Point(362, 157);
+            this.lblAmountToPay.Name = "lblAmountToPay";
+            this.lblAmountToPay.Size = new System.Drawing.Size(202, 36);
+            this.lblAmountToPay.TabIndex = 11;
+            this.lblAmountToPay.Text = "0000.00";
+            this.lblAmountToPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // numericUpDown2
+            // label9
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(192, 48);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(97, 23);
-            this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(292, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 15);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "No. Days/Months";
+            // 
+            // numInterest
+            // 
+            this.numInterest.Location = new System.Drawing.Point(192, 48);
+            this.numInterest.Name = "numInterest";
+            this.numInterest.Size = new System.Drawing.Size(97, 23);
+            this.numInterest.TabIndex = 2;
+            this.numInterest.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -123,33 +144,32 @@ namespace LendingSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 238);
+            this.label6.Location = new System.Drawing.Point(228, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Amount to Pay:";
             // 
-            // numericUpDown1
+            // numAmountToLoan
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(24, 188);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numAmountToLoan.DecimalPlaces = 2;
+            this.numAmountToLoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numAmountToLoan.Location = new System.Drawing.Point(24, 109);
+            this.numAmountToLoan.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(358, 29);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numAmountToLoan.Name = "numAmountToLoan";
+            this.numAmountToLoan.Size = new System.Drawing.Size(265, 29);
+            this.numAmountToLoan.TabIndex = 4;
+            this.numAmountToLoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 164);
+            this.label5.Location = new System.Drawing.Point(20, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 21);
             this.label5.TabIndex = 4;
@@ -164,16 +184,16 @@ namespace LendingSystem
             this.label4.TabIndex = 3;
             this.label4.Text = "Loan Type";
             // 
-            // comboBox1
+            // cmbLoanType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbLoanType.FormattingEnabled = true;
+            this.cmbLoanType.Items.AddRange(new object[] {
             "DAILY",
             "MONTHLY"});
-            this.comboBox1.Location = new System.Drawing.Point(24, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 23);
-            this.comboBox1.TabIndex = 3;
+            this.cmbLoanType.Location = new System.Drawing.Point(24, 48);
+            this.cmbLoanType.Name = "cmbLoanType";
+            this.cmbLoanType.Size = new System.Drawing.Size(163, 23);
+            this.cmbLoanType.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -184,10 +204,11 @@ namespace LendingSystem
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(415, 50);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 162);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.Size = new System.Drawing.Size(363, 209);
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Information";
             // 
@@ -206,7 +227,7 @@ namespace LendingSystem
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Middlename:";
             // 
@@ -216,14 +237,13 @@ namespace LendingSystem
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(224, 23);
             this.textBox3.TabIndex = 2;
-            
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(36, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Firstname:";
             // 
@@ -239,7 +259,7 @@ namespace LendingSystem
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(37, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 15);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Lastname:";
             // 
@@ -267,19 +287,45 @@ namespace LendingSystem
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.Location = new System.Drawing.Point(12, 387);
+            this.btnApply.Location = new System.Drawing.Point(554, 618);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(397, 45);
             this.btnApply.TabIndex = 21;
             this.btnApply.Text = "APPLY";
             this.btnApply.UseVisualStyleBackColor = true;
-
+            // 
+            // flx
+            // 
+            this.flx.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle;
+            this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
+            this.flx.ExtendLastCol = true;
+            this.flx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.flx.Location = new System.Drawing.Point(6, 22);
+            this.flx.Name = "flx";
+            this.flx.Rows.Count = 1;
+            this.flx.Rows.DefaultSize = 19;
+            this.flx.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
+            this.flx.Size = new System.Drawing.Size(927, 308);
+            this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
+            this.flx.TabIndex = 22;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.flx);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(12, 265);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(939, 349);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Computation";
             // 
             // ApplyLoanMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 498);
+            this.ClientSize = new System.Drawing.Size(963, 665);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox2);
@@ -293,10 +339,13 @@ namespace LendingSystem
             this.Text = "Loan";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmountToLoan)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -304,7 +353,7 @@ namespace LendingSystem
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbLoanType;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
@@ -315,14 +364,17 @@ namespace LendingSystem
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnBrowseMember;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numAmountToLoan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numInterest;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtboxAmountToPay;
         private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private C1.Win.C1FlexGrid.C1FlexGrid flx;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblAmountToPay;
+        private System.Windows.Forms.NumericUpDown numDayMonth;
+        private System.Windows.Forms.Button btnCompute;
     }
 }

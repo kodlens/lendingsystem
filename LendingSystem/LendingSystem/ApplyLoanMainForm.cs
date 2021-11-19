@@ -26,23 +26,84 @@ namespace LendingSystem
         }
 
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+
+
+        void loadDailyToFlxGrid(decimal amtToPay)
         {
-
-            int months_days, roi, amt, interest, ins;
-
-
-
-            amt = Convert.ToInt32(numericUpDown1.Value);
-            interest = Convert.ToInt32(numericUpDown2.Value);
-            months_days = Convert.ToInt32(textBox4.Text);
-
-
-            roi = amt / interest;
-            ins = amt / months_days + roi;
-
-            txtboxAmountToPay.Text = ins.ToString();
+            flx.Rows.Count = flx.Rows.Fixed;
+            for(int row = 1; row <= numDayMonth.Value; row++)
+            {
+                flx.Rows.Add();
+                var addedDateTime = DateTime.Now.AddDays(row);
+                flx[row, "date_month"] = addedDateTime;
+                flx[row, "amountToPay"] = amtToPay;
+            }
+           
         }
 
+        void loadMonthlyToFlxGrid(decimal amtToPay)
+        {
+            flx.Rows.Count = flx.Rows.Fixed;
+            for (int row = 1; row <= numDayMonth.Value; row++)
+            {
+                flx.Rows.Add();
+                var addedDateTime = DateTime.Now.AddMonths(row);
+                flx[row, "date_month"] = addedDateTime;
+                flx[row, "amountToPay"] = amtToPay;
+            }
+        }
+
+        private void btnCompute_Click(object sender, EventArgs e)
+        {
+            //compute
+            try
+            {
+                if (String.IsNullOrEmpty(this.cmbLoanType.Text))
+                {
+                    Box.WarnBox("Please select loan type.");
+                    return;
+                }
+
+                if (numInterest.Value < 1)
+                {
+                    Box.WarnBox("Please input interest.");
+                    return;
+                }
+
+                if (numDayMonth.Value < 1)
+                {
+                    Box.WarnBox("Please input no of day or month.");
+                    return;
+                }
+
+
+                decimal months_days, roi, amt, interest, ins;
+                amt = numAmountToLoan.Value;
+                interest = numInterest.Value;
+                months_days = numDayMonth.Value;
+                roi = amt / interest;
+                ins = amt / months_days + roi;
+
+                lblAmountToPay.Text = String.Format("{0:n}", ins);
+
+                if (this.cmbLoanType.Text == "DAILY")
+                {
+                    loadDailyToFlxGrid(ins);
+                }
+
+                if (this.cmbLoanType.Text == "MONTHLY")
+                {
+                    loadMonthlyToFlxGrid(ins);
+                }
+
+            }
+            catch (Exception er)
+            {
+                Box.ErrBox(er.Message);
+                //throw;
+            }
+        }
+
+        
     }
 }
