@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.14 (64 bit)
-MySQL - 10.4.21-MariaDB : Database - lendingsystem
+MySQL - 10.4.13-MariaDB : Database - lendingsystem
 *********************************************************************
 */
 
@@ -43734,6 +43734,57 @@ insert  into `cities`(`id`,`psgcCode`,`citymunDesc`,`regDesc`,`provCode`,`citymu
 (1646,'168506000','SAN JOSE (Capital)','16','1685','168506',NULL,1),
 (1647,'168507000','TUBAJON','16','1685','168507',NULL,1);
 
+/*Table structure for table `loan_details` */
+
+DROP TABLE IF EXISTS `loan_details`;
+
+CREATE TABLE `loan_details` (
+  `loan_detail_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `loan_id` bigint(20) unsigned NOT NULL,
+  `date_month` date DEFAULT NULL,
+  `amount_to_pay` double DEFAULT NULL,
+  `amount_paid` double DEFAULT NULL,
+  `balance` double DEFAULT NULL,
+  PRIMARY KEY (`loan_detail_id`),
+  KEY `loan_details_ibfk_1` (`loan_id`),
+  CONSTRAINT `loan_details_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `loan_details` */
+
+insert  into `loan_details`(`loan_detail_id`,`loan_id`,`date_month`,`amount_to_pay`,`amount_paid`,`balance`) values 
+(1,1,'0000-00-00',2000,0,0),
+(2,1,'0000-00-00',2000,0,0),
+(3,1,'0000-00-00',2000,0,0),
+(4,1,'0000-00-00',2000,0,0),
+(5,1,'0000-00-00',2000,0,0),
+(6,2,'2021-11-21',1500,0,0),
+(7,2,'2021-11-22',1500,0,0),
+(8,2,'2021-11-23',1500,0,0),
+(9,2,'2021-11-24',1500,0,0),
+(10,2,'2021-11-25',1500,0,0);
+
+/*Table structure for table `loans` */
+
+DROP TABLE IF EXISTS `loans`;
+
+CREATE TABLE `loans` (
+  `loan_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `loan_title` varchar(255) DEFAULT NULL,
+  `loan_type` varchar(20) DEFAULT NULL,
+  `interest` int(11) DEFAULT NULL,
+  `no_days_month` int(11) DEFAULT NULL,
+  `amount_to_loan` double DEFAULT NULL,
+  PRIMARY KEY (`loan_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `loans` */
+
+insert  into `loans`(`loan_id`,`user_id`,`loan_title`,`loan_type`,`interest`,`no_days_month`,`amount_to_loan`) values 
+(1,0,'test','DAILY',5,5,5000),
+(2,0,'test2','DAILY',10,5,5000);
+
 /*Table structure for table `members` */
 
 DROP TABLE IF EXISTS `members`;
@@ -43767,7 +43818,7 @@ CREATE TABLE `members` (
 /*Data for the table `members` */
 
 insert  into `members`(`member_id`,`lname`,`fname`,`mname`,`sex`,`bdate`,`email`,`contact_no`,`store_name`,`store_address`,`province`,`city`,`barangay`,`street`,`is_active`,`reference_1`,`reference_2`,`reference_1_contact`,`reference_2_contact`,`avatar_path`,`created_at`,`updated_at`) values 
-(1,'asda','ads','asd','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(1,'AMPARADO','ETIENNE','NAMOCATCAT','MALE','1988-08-08','et@gmail.com','09167789585',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','MALORO',NULL,1,'REF 1','REF 2','CONTACT 1','CONTACT 2',NULL,NULL,NULL);
 
 /*Table structure for table `provinces` */
 

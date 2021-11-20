@@ -55,7 +55,7 @@ namespace LendingSystem
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLoanTitle = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
@@ -82,7 +82,7 @@ namespace LendingSystem
             this.groupBox1.Location = new System.Drawing.Point(381, 94);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(570, 165);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
             // 
@@ -210,7 +210,7 @@ namespace LendingSystem
             this.groupBox2.Location = new System.Drawing.Point(12, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(363, 165);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Information";
             // 
@@ -292,9 +292,10 @@ namespace LendingSystem
             this.btnApply.Location = new System.Drawing.Point(554, 618);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(397, 45);
-            this.btnApply.TabIndex = 21;
+            this.btnApply.TabIndex = 4;
             this.btnApply.Text = "APPLY";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // flx
             // 
@@ -318,7 +319,7 @@ namespace LendingSystem
             this.groupBox3.Location = new System.Drawing.Point(12, 265);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(939, 349);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Computation";
             // 
@@ -332,12 +333,12 @@ namespace LendingSystem
             this.label8.TabIndex = 23;
             this.label8.Text = "Loan Title:";
             // 
-            // textBox4
+            // txtLoanTitle
             // 
-            this.textBox4.Location = new System.Drawing.Point(101, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(845, 23);
-            this.textBox4.TabIndex = 22;
+            this.txtLoanTitle.Location = new System.Drawing.Point(101, 55);
+            this.txtLoanTitle.Name = "txtLoanTitle";
+            this.txtLoanTitle.Size = new System.Drawing.Size(845, 23);
+            this.txtLoanTitle.TabIndex = 0;
             // 
             // ApplyLoanMainForm
             // 
@@ -345,7 +346,7 @@ namespace LendingSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 665);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtLoanTitle);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.lblHeader);
@@ -399,6 +400,6 @@ namespace LendingSystem
         private System.Windows.Forms.NumericUpDown numDayMonth;
         private System.Windows.Forms.Button btnCompute;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLoanTitle;
     }
 }
