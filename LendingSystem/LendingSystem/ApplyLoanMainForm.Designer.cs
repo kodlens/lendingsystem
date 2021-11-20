@@ -54,6 +54,8 @@ namespace LendingSystem
             this.btnApply = new System.Windows.Forms.Button();
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
@@ -77,9 +79,9 @@ namespace LendingSystem
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbLoanType);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(381, 50);
+            this.groupBox1.Location = new System.Drawing.Point(381, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 209);
+            this.groupBox1.Size = new System.Drawing.Size(570, 165);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
@@ -87,7 +89,7 @@ namespace LendingSystem
             // btnCompute
             // 
             this.btnCompute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompute.Location = new System.Drawing.Point(297, 106);
+            this.btnCompute.Location = new System.Drawing.Point(298, 85);
             this.btnCompute.Name = "btnCompute";
             this.btnCompute.Size = new System.Drawing.Size(118, 34);
             this.btnCompute.TabIndex = 5;
@@ -97,7 +99,7 @@ namespace LendingSystem
             // 
             // numDayMonth
             // 
-            this.numDayMonth.Location = new System.Drawing.Point(297, 48);
+            this.numDayMonth.Location = new System.Drawing.Point(300, 38);
             this.numDayMonth.Name = "numDayMonth";
             this.numDayMonth.Size = new System.Drawing.Size(118, 23);
             this.numDayMonth.TabIndex = 3;
@@ -107,7 +109,7 @@ namespace LendingSystem
             // 
             this.lblAmountToPay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmountToPay.ForeColor = System.Drawing.Color.Red;
-            this.lblAmountToPay.Location = new System.Drawing.Point(362, 157);
+            this.lblAmountToPay.Location = new System.Drawing.Point(363, 122);
             this.lblAmountToPay.Name = "lblAmountToPay";
             this.lblAmountToPay.Size = new System.Drawing.Size(202, 36);
             this.lblAmountToPay.TabIndex = 11;
@@ -117,7 +119,7 @@ namespace LendingSystem
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(292, 26);
+            this.label9.Location = new System.Drawing.Point(297, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 15);
             this.label9.TabIndex = 10;
@@ -125,7 +127,7 @@ namespace LendingSystem
             // 
             // numInterest
             // 
-            this.numInterest.Location = new System.Drawing.Point(192, 48);
+            this.numInterest.Location = new System.Drawing.Point(195, 38);
             this.numInterest.Name = "numInterest";
             this.numInterest.Size = new System.Drawing.Size(97, 23);
             this.numInterest.TabIndex = 2;
@@ -134,7 +136,7 @@ namespace LendingSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(189, 29);
+            this.label7.Location = new System.Drawing.Point(192, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
             this.label7.TabIndex = 7;
@@ -144,7 +146,7 @@ namespace LendingSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(228, 165);
+            this.label6.Location = new System.Drawing.Point(229, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 21);
             this.label6.TabIndex = 6;
@@ -154,7 +156,7 @@ namespace LendingSystem
             // 
             this.numAmountToLoan.DecimalPlaces = 2;
             this.numAmountToLoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numAmountToLoan.Location = new System.Drawing.Point(24, 109);
+            this.numAmountToLoan.Location = new System.Drawing.Point(25, 88);
             this.numAmountToLoan.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -169,7 +171,7 @@ namespace LendingSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 83);
+            this.label5.Location = new System.Drawing.Point(21, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 21);
             this.label5.TabIndex = 4;
@@ -178,7 +180,7 @@ namespace LendingSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 30);
+            this.label4.Location = new System.Drawing.Point(24, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 3;
@@ -190,7 +192,7 @@ namespace LendingSystem
             this.cmbLoanType.Items.AddRange(new object[] {
             "DAILY",
             "MONTHLY"});
-            this.cmbLoanType.Location = new System.Drawing.Point(24, 48);
+            this.cmbLoanType.Location = new System.Drawing.Point(27, 38);
             this.cmbLoanType.Name = "cmbLoanType";
             this.cmbLoanType.Size = new System.Drawing.Size(163, 23);
             this.cmbLoanType.TabIndex = 1;
@@ -205,9 +207,9 @@ namespace LendingSystem
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 50);
+            this.groupBox2.Location = new System.Drawing.Point(12, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(363, 209);
+            this.groupBox2.Size = new System.Drawing.Size(363, 165);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Information";
@@ -320,11 +322,30 @@ namespace LendingSystem
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Computation";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(21, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 15);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Loan Title:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(101, 55);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(845, 23);
+            this.textBox4.TabIndex = 22;
+            // 
             // ApplyLoanMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 665);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.lblHeader);
@@ -347,6 +368,7 @@ namespace LendingSystem
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -376,5 +398,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label lblAmountToPay;
         private System.Windows.Forms.NumericUpDown numDayMonth;
         private System.Windows.Forms.Button btnCompute;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
