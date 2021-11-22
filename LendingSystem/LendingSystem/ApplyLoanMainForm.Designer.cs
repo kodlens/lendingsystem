@@ -289,9 +289,9 @@ namespace LendingSystem
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.Location = new System.Drawing.Point(554, 618);
+            this.btnApply.Location = new System.Drawing.Point(554, 620);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(397, 45);
+            this.btnApply.Size = new System.Drawing.Size(397, 43);
             this.btnApply.TabIndex = 4;
             this.btnApply.Text = "APPLY";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -344,7 +344,7 @@ namespace LendingSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 665);
+            this.ClientSize = new System.Drawing.Size(963, 669);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtLoanTitle);
             this.Controls.Add(this.groupBox3);
