@@ -101,11 +101,11 @@
     <Compile Include="ApplyLoanBrowseMember.Designer.cs">
       <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplyLoanMainForm.cs">
+    <Compile Include="ApplyLoanAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplyLoanMainForm.Designer.cs">
-      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    <Compile Include="ApplyLoanAddEdit.Designer.cs">
+      <DependentUpon>ApplyLoanAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="ApplyLoanBrowseMember.resx">
       <DependentUpon>ApplyLoanBrowseMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplyLoanMainForm.resx">
-      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="ApplyLoanAddEdit.resx">
+      <DependentUpon>ApplyLoanAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

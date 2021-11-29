@@ -71,14 +71,14 @@ namespace LendingSystem
         {
             foreach (Form form in Application.OpenForms)
             {
-                if (form.GetType() == typeof(ApplyLoanMainForm))
+                if (form.GetType() == typeof(ApplyLoanAddEdit))
                 {
                     form.Activate();
                     return;
                 }
             }
 
-            Form frm = new ApplyLoanMainForm();
+            Form frm = new ApplyLoanAddEdit();
             frm.Show();
         }
 

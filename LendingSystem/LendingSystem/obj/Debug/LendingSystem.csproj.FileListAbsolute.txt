@@ -24,7 +24,6 @@ C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\bin\Debu
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\bin\Debug\C1.Win.C1FlexGrid.4.xml
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ChangePasswordMainForm.resources
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanBrowseMember.resources
-C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanMainForm.resources
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.LoginForm.resources
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MainForm.resources
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MemberMainForm.resources
@@ -41,3 +40,4 @@ C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debu
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.pdb
 C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.AssemblyReference.cache
+C:\Users\wayne\Desktop\GitHub\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ApplyLoanAddEdit.resources

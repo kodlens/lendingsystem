@@ -13,12 +13,12 @@ namespace LendingSystem
     
     public partial class ApplyLoanBrowseMember : Form
     {
-        ApplyLoanMainForm _frm;
+        ApplyLoanAddEdit _frm;
 
         Member member;
 
 
-        public ApplyLoanBrowseMember(ApplyLoanMainForm _frm)
+        public ApplyLoanBrowseMember(ApplyLoanAddEdit _frm)
         {
             InitializeComponent();
 
