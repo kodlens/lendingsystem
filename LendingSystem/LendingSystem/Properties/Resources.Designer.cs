@@ -123,6 +123,16 @@ namespace LendingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plateno {
+            get {
+                object obj = ResourceManager.GetObject("plateno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_icon_png16x16 {
             get {
                 object obj = ResourceManager.GetObject("save-icon.png16x16", resourceCulture);

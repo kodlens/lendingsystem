@@ -380,11 +380,8 @@ namespace LendingSystem
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtlname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtfname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtmname;
         private System.Windows.Forms.Button btnBrowseMember;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numAmountToLoan;
@@ -401,5 +398,8 @@ namespace LendingSystem
         private System.Windows.Forms.Button btnCompute;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLoanTitle;
+        public System.Windows.Forms.TextBox txtlname;
+        public System.Windows.Forms.TextBox txtfname;
+        public System.Windows.Forms.TextBox txtmname;
     }
 }

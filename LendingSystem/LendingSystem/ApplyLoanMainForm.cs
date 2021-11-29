@@ -137,9 +137,10 @@ namespace LendingSystem
             //here na nako gebutang.. getapulan nako buhat class hahaha
             con = Connection.con();
             con.Open();
-            query = "INSERT INTO loans SET loan_title = ?ltitle, loan_type=?ltype, interest=?interest, no_days_month=?ndm, amount_to_loan=?atl;" +
+            query = "INSERT INTO loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, no_days_month=?ndm, amount_to_loan=?atl;" +
                 "select last_insert_id();";
             cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?mid", member_id);
             cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
             cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
             cmd.Parameters.AddWithValue("?interest", numInterest.Value);

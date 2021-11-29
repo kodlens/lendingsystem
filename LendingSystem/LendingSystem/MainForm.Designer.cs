@@ -34,6 +34,7 @@ namespace LendingSystem
             this.toolStripButtonMembers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLoan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@ namespace LendingSystem
             this.toolStripButtonUsers,
             this.toolStripButtonMembers,
             this.toolStripButtonLoan,
+            this.toolStripButton1,
             this.toolStripButtonLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -94,6 +96,16 @@ namespace LendingSystem
             this.toolStripButtonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButtonLogout.Click += new System.EventHandler(this.toolStripButtonLogout_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::LendingSystem.Properties.Resources.plateno;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(68, 83);
+            this.toolStripButton1.Text = "Pay Loan";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +131,7 @@ namespace LendingSystem
         private System.Windows.Forms.ToolStripButton toolStripButtonMembers;
         private System.Windows.Forms.ToolStripButton toolStripButtonLogout;
         private System.Windows.Forms.ToolStripButton toolStripButtonLoan;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
