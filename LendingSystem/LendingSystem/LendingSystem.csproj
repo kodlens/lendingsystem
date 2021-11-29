@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyLoanMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyLoanMainForm.Designer.cs">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePasswordMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplyLoanMainForm.resx">
+      <DependentUpon>ApplyLoanMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordMainForm.resx">
       <DependentUpon>ChangePasswordMainForm.cs</DependentUpon>
     </EmbeddedResource>
