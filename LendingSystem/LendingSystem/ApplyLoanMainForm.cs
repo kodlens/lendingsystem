@@ -22,7 +22,10 @@ namespace LendingSystem
 
 
         public long id;
-   
+        public long member_id;
+
+
+
         public ApplyLoanMainForm()
         {
             InitializeComponent();

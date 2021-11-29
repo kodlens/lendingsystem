@@ -15,11 +15,27 @@ namespace LendingSystem
     {
         ApplyLoanMainForm _frm;
 
+        Member member;
+
+
         public ApplyLoanBrowseMember(ApplyLoanMainForm _frm)
         {
             InitializeComponent();
 
             this._frm = _frm;
+            member = new Member();
+        }
+
+        private void ApplyLoanBrowseMember_Load(object sender, EventArgs e)
+        {
+            member.find(flx, "", "");
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            _frm.member_id = Convert.ToInt64(flx[flx.RowSel, "member_id"]);
+            
+            this.Close();
         }
     }
 }

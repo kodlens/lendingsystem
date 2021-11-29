@@ -45,11 +45,11 @@ namespace LendingSystem
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBrowseMember = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtmname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtfname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtlname = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -201,11 +201,11 @@ namespace LendingSystem
             // 
             this.groupBox2.Controls.Add(this.btnBrowseMember);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtmname);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtfname);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtlname);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 94);
             this.groupBox2.Name = "groupBox2";
@@ -233,12 +233,12 @@ namespace LendingSystem
             this.label3.TabIndex = 6;
             this.label3.Text = "Middlename:";
             // 
-            // textBox3
+            // txtmname
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 109);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(224, 23);
-            this.textBox3.TabIndex = 2;
+            this.txtmname.Location = new System.Drawing.Point(103, 109);
+            this.txtmname.Name = "txtmname";
+            this.txtmname.Size = new System.Drawing.Size(224, 23);
+            this.txtmname.TabIndex = 2;
             // 
             // label2
             // 
@@ -249,12 +249,12 @@ namespace LendingSystem
             this.label2.TabIndex = 4;
             this.label2.Text = "Firstname:";
             // 
-            // textBox2
+            // txtfname
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 23);
-            this.textBox2.TabIndex = 1;
+            this.txtfname.Location = new System.Drawing.Point(103, 80);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(224, 23);
+            this.txtfname.TabIndex = 1;
             // 
             // label1
             // 
@@ -265,12 +265,12 @@ namespace LendingSystem
             this.label1.TabIndex = 2;
             this.label1.Text = "Lastname:";
             // 
-            // textBox1
+            // txtlname
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtlname.Location = new System.Drawing.Point(103, 51);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(224, 23);
+            this.txtlname.TabIndex = 0;
             // 
             // lblHeader
             // 
@@ -380,11 +380,11 @@ namespace LendingSystem
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtlname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtfname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtmname;
         private System.Windows.Forms.Button btnBrowseMember;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numAmountToLoan;
