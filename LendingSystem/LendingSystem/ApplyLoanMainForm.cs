@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LendingSystem
 {
     public partial class ApplyLoanMainForm : Form
@@ -47,6 +48,34 @@ namespace LendingSystem
                 frm.id = Convert.ToInt64(flx[flx.RowSel, "loan_id"]);
                 frm.ShowDialog();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(this.flx.Rows.Count > 1)
+            {
+                if(Box.QBox("Are you sure you want to delete this record?"))
+                {
+                    long id = Convert.ToInt64(flx[flx.RowSel, "loan_id"]);
+                    loan.delete(id);
+                    loadData();
+                }
+            }
+        }
+
+        private void deleteLoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(null, null);
+        }
+
+        private void updateLoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnUpdateLoan_Click(null, null);
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

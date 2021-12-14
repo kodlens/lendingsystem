@@ -26,7 +26,7 @@ namespace LendingSystem
 
         ApplyLoanMainForm _frm;
 
-        decimal months_days, roi, amt, interest, ins;
+        decimal months_days, roi, amt, interest, ins, insAmount;
 
         public ApplyLoanAddEdit(ApplyLoanMainForm _frm)
         {
@@ -53,6 +53,7 @@ namespace LendingSystem
                 flx[row, "date_month"] = addedDateTime;
                 flx[row, "amountPaid"] = 0.00;
                 flx[row, "amountToPay"] = amtToPay;
+                flx[row, "balance"] = amtToPay;
             }
            
         }
@@ -67,6 +68,7 @@ namespace LendingSystem
                 flx[row, "date_month"] = addedDateTime;
                 flx[row, "amountToPay"] = amtToPay;
                 flx[row, "amountPaid"] = 0.00;
+                flx[row, "balance"] = amtToPay;
             }
         }
 
@@ -141,10 +143,18 @@ namespace LendingSystem
                 return;
             }
 
-            save();
+            if(id > 0)
+            {
+                update();
+                Box.InfoBox("Loan successfully updated.");
+            }
+            else
+            {
+                save();
+                Box.InfoBox("Loan successfully saved.");
+            }
 
-            Box.InfoBox("Loan successfully saved.");
-
+            _frm.loadData();
         }
 
 
@@ -185,6 +195,41 @@ namespace LendingSystem
             
             con.Close();
             con.Dispose();
+        }
+
+        void update()
+        {
+            con = Connection.con();
+            con.Open();
+            query = @"UPDATE loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, no_days_month=?ndm, amount_to_loan=?atl WHERE loan_id=?id";
+            cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?mid", member_id);
+            cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
+            cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
+            cmd.Parameters.AddWithValue("?interest", numInterest.Value);
+            cmd.Parameters.AddWithValue("?ndm", numDayMonth.Value);
+            cmd.Parameters.AddWithValue("?atl", numAmountToLoan.Value);
+            cmd.Parameters.AddWithValue("?id", this.id);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+
+
+            query = @"UPDATE loan_details SET loan_id=?lid, date_month=?dmonth, amount_to_pay=?atopay, amount_paid=?apaid, balance=?bal WHERE loan_detail_id=?id";
+            cmd = new MySqlCommand(query, con);
+            for (int row = 1; row < flx.Rows.Count; row++)
+            {
+                cmd.Parameters.AddWithValue("?lid", id);
+                cmd.Parameters.AddWithValue("?dmonth", Convert.ToDateTime(flx[row, "date_month"]));
+                cmd.Parameters.AddWithValue("?atopay", Convert.ToDouble(flx[row, "amountToPay"]));
+                cmd.Parameters.AddWithValue("?apaid", Convert.ToDouble(flx[row, "amountPaid"]));
+                cmd.Parameters.AddWithValue("?bal", Convert.ToString(flx[row, "balance"]));
+                cmd.Parameters.AddWithValue("?id", Convert.ToString(flx[row, "loan_detail_id"]));
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+            }
+
+            con.Close();
+            con.Dispose();
 
         }
 
@@ -210,6 +255,7 @@ namespace LendingSystem
             }
         }
 
+     
 
         void getData()
         {
@@ -231,6 +277,7 @@ namespace LendingSystem
 
             if(dt.Rows.Count > 0)
             {
+                this.member_id = Convert.ToInt64(dt.Rows[0]["member_id"]);
                 this.txtLoanTitle.Text = Convert.ToString(dt.Rows[0]["loan_title"]);
                 this.txtlname.Text = Convert.ToString(dt.Rows[0]["lname"]);
                 this.txtfname.Text = Convert.ToString(dt.Rows[0]["fname"]);
@@ -266,7 +313,30 @@ namespace LendingSystem
             if(id > 0)
             {
                 getData();
+                disableFields();
             }
+        }
+
+        void disableFields()
+        {
+            this.numInterest.ReadOnly = true;
+            this.numDayMonth.ReadOnly = true;
+            this.numAmountToLoan.ReadOnly = true;
+            this.txtLoanTitle.ReadOnly = true;
+            this.cmbLoanType.Enabled = false;
+            this.btnCompute.Enabled = false;
+            this.btnBrowseMember.Enabled = false;
+        }
+        void enableFields()
+        {
+            this.numInterest.ReadOnly = false;
+            this.numDayMonth.ReadOnly = false;
+            this.numAmountToLoan.ReadOnly = false;
+            this.txtLoanTitle.ReadOnly = false;
+            this.cmbLoanType.Enabled = true;
+            this.btnCompute.Enabled = true;
+            this.btnBrowseMember.Enabled = true;
+
         }
     }
 }

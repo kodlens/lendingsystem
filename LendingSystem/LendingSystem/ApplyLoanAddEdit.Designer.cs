@@ -31,6 +31,7 @@ namespace LendingSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyLoanAddEdit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblInterestAmount = new System.Windows.Forms.Label();
             this.btnCompute = new System.Windows.Forms.Button();
             this.numDayMonth = new System.Windows.Forms.NumericUpDown();
             this.lblAmountToPay = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@ namespace LendingSystem
             this.label10 = new System.Windows.Forms.Label();
             this.txtReference = new System.Windows.Forms.TextBox();
             this.btnDebug = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
@@ -70,6 +72,8 @@ namespace LendingSystem
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.lblInterestAmount);
             this.groupBox1.Controls.Add(this.btnCompute);
             this.groupBox1.Controls.Add(this.numDayMonth);
             this.groupBox1.Controls.Add(this.lblAmountToPay);
@@ -88,6 +92,17 @@ namespace LendingSystem
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
+            // 
+            // lblInterestAmount
+            // 
+            this.lblInterestAmount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterestAmount.ForeColor = System.Drawing.Color.Blue;
+            this.lblInterestAmount.Location = new System.Drawing.Point(81, 122);
+            this.lblInterestAmount.Name = "lblInterestAmount";
+            this.lblInterestAmount.Size = new System.Drawing.Size(154, 36);
+            this.lblInterestAmount.TabIndex = 12;
+            this.lblInterestAmount.Text = "0000.00";
+            this.lblInterestAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCompute
             // 
@@ -112,9 +127,9 @@ namespace LendingSystem
             // 
             this.lblAmountToPay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmountToPay.ForeColor = System.Drawing.Color.Red;
-            this.lblAmountToPay.Location = new System.Drawing.Point(363, 122);
+            this.lblAmountToPay.Location = new System.Drawing.Point(390, 122);
             this.lblAmountToPay.Name = "lblAmountToPay";
-            this.lblAmountToPay.Size = new System.Drawing.Size(202, 36);
+            this.lblAmountToPay.Size = new System.Drawing.Size(175, 36);
             this.lblAmountToPay.TabIndex = 11;
             this.lblAmountToPay.Text = "0000.00";
             this.lblAmountToPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,7 +164,7 @@ namespace LendingSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(229, 130);
+            this.label6.Location = new System.Drawing.Point(256, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 21);
             this.label6.TabIndex = 6;
@@ -375,6 +390,15 @@ namespace LendingSystem
             this.btnDebug.UseVisualStyleBackColor = true;
             this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
             // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 122);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 35);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Interest Amount:";
+            // 
             // ApplyLoanAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -443,5 +467,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtReference;
         private System.Windows.Forms.Button btnDebug;
+        private System.Windows.Forms.Label lblInterestAmount;
+        private System.Windows.Forms.Label label12;
     }
 }

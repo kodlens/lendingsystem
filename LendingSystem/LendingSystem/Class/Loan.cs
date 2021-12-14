@@ -54,5 +54,20 @@ namespace LendingSystem
             flx.AutoGenerateColumns = false;
             flx.DataSource = dt;
         }
+
+        public int delete(long id)
+        {
+            int i = 0;
+            con = Connection.con();
+            con.Open();
+            query = "DELETE FROM loans WHERE loan_id=?id";
+            cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?id", id);
+            i = cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+            return i;
+        }
     }
 }
