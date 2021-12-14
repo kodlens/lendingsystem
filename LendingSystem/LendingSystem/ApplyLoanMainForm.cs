@@ -24,7 +24,29 @@ namespace LendingSystem
 
         private void ApplyLoanMainForm_Load(object sender, EventArgs e)
         {
+            loadData();
+        }
+
+        public void loadData()
+        {
             loan.find(flx, "", "");
+        }
+
+        private void btnApplyLoan_Click(object sender, EventArgs e)
+        {
+            ApplyLoanAddEdit frm = new ApplyLoanAddEdit(this);
+            frm.id = 0;
+            frm.ShowDialog();
+        }
+
+        private void btnUpdateLoan_Click(object sender, EventArgs e)
+        {
+            if(this.flx.Rows.Count > 1)
+            {
+                ApplyLoanAddEdit frm = new ApplyLoanAddEdit(this);
+                frm.id = Convert.ToInt64(flx[flx.RowSel, "loan_id"]);
+                frm.ShowDialog();
+            }
         }
     }
 }

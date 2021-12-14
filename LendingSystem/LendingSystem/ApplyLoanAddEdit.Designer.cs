@@ -397,6 +397,7 @@ namespace LendingSystem
             this.Name = "ApplyLoanAddEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan";
+            this.Load += new System.EventHandler(this.ApplyLoanAddEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).EndInit();

@@ -37,7 +37,9 @@ namespace LendingSystem
         {
             con = Connection.con();
             con.Open();
-            query = "SELECT * FROM loans a join members b on a.member_id = b.member_id WHERE b.lname LIKE ?lname and b.fname LIKE ?fname";
+            query = @"SELECT *, amount_to_loan - (SELECT SUM(amount_paid) FROM loan_details WHERE loan_details.loan_id = a.loan_id) AS balance
+                    FROM loans a join members b on a.member_id = b.member_id WHERE b.lname LIKE ?lname and b.fname LIKE ?fname 
+                    ORDER BY loan_id desc";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", lname + "%");
             cmd.Parameters.AddWithValue("?fname", fname + "%");

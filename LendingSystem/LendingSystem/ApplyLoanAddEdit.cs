@@ -24,12 +24,14 @@ namespace LendingSystem
         public long id;
         public long member_id;
 
+        ApplyLoanMainForm _frm;
 
+        decimal months_days, roi, amt, interest, ins;
 
-        public ApplyLoanAddEdit()
+        public ApplyLoanAddEdit(ApplyLoanMainForm _frm)
         {
             InitializeComponent();
-
+            this._frm = _frm;
         }
 
         private void btnBrowseMember_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace LendingSystem
                 flx.Rows.Add();
                 var addedDateTime = DateTime.Now.AddDays(row);
                 flx[row, "date_month"] = addedDateTime;
+                flx[row, "amountPaid"] = 0.00;
                 flx[row, "amountToPay"] = amtToPay;
             }
            
@@ -63,6 +66,7 @@ namespace LendingSystem
                 var addedDateTime = DateTime.Now.AddMonths(row);
                 flx[row, "date_month"] = addedDateTime;
                 flx[row, "amountToPay"] = amtToPay;
+                flx[row, "amountPaid"] = 0.00;
             }
         }
 
@@ -90,12 +94,7 @@ namespace LendingSystem
                 }
 
 
-                decimal months_days, roi, amt, interest, ins;
-                amt = numAmountToLoan.Value;
-                interest = numInterest.Value;
-                months_days = numDayMonth.Value;
-                roi = amt / interest;
-                ins = amt / months_days + roi;
+                compute();
 
                 lblAmountToPay.Text = String.Format("{0:n}", ins);
 
@@ -115,6 +114,17 @@ namespace LendingSystem
                 Box.ErrBox(er.Message);
                 //throw;
             }
+        }
+
+        void compute()
+        {
+            amt = numAmountToLoan.Value;
+            interest = numInterest.Value;
+            months_days = numDayMonth.Value;
+            roi = amt / interest;
+            ins = amt / months_days + roi;
+            ins = Decimal.Round(ins, 2);
+            lblAmountToPay.Text = String.Format("{0:n}", ins);
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -195,8 +205,67 @@ namespace LendingSystem
             {
                 double amountToPay = Convert.ToDouble(flx[flx.RowSel, "amountToPay"]);
                 double amountPaid = Convert.ToDouble(flx[flx.RowSel, "amountPaid"]);
+                
+                flx[e.Row, 5] = (amountToPay - amountPaid) > 0 ? amountToPay - amountPaid : 0;
+            }
+        }
 
-                flx[e.Row, 5] = amountToPay - amountPaid;
+
+        void getData()
+        {
+            con = Connection.con();
+            con.Open();
+            query = @"SELECT * FROM loans a join loan_details b on a.loan_id = b.loan_id 
+                    join members c on a.member_id = c.member_id WHERE a.loan_id = ?lid";
+            cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?lid", this.id);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+            adptr.Fill(dt);
+
+            adptr.Dispose();
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+
+
+            if(dt.Rows.Count > 0)
+            {
+                this.txtLoanTitle.Text = Convert.ToString(dt.Rows[0]["loan_title"]);
+                this.txtlname.Text = Convert.ToString(dt.Rows[0]["lname"]);
+                this.txtfname.Text = Convert.ToString(dt.Rows[0]["fname"]);
+                this.txtfname.Text = Convert.ToString(dt.Rows[0]["mname"]);
+                this.cmbLoanType.Text = Convert.ToString(dt.Rows[0]["loan_type"]);
+                this.numInterest.Value = Convert.ToInt32(dt.Rows[0]["interest"]);
+                this.numDayMonth.Value = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
+                this.numAmountToLoan.Value = Convert.ToDecimal(dt.Rows[0]["amount_to_loan"]);
+
+                //compute
+                this.compute();
+
+                flx.Rows.Count = flx.Rows.Fixed;
+                int monthDay = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
+                for (int row = 1; row <= monthDay; row++)
+                {
+                    flx.Rows.Add();
+                    flx[row, "loan_detail_id"] = Convert.ToInt64(dt.Rows[row-1]["loan_detail_id"]);
+                    flx[row, "date_month"] = Convert.ToString(dt.Rows[row - 1]["date_month"]);
+                    flx[row, "amountToPay"] = Convert.ToString(dt.Rows[row - 1]["amount_to_pay"]);
+                    flx[row, "amountPaid"] = Convert.ToDouble(dt.Rows[row - 1]["amount_paid"]);
+                    flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]);
+
+                    //flx[row, "date_month"] = addedDateTime;
+                    //flx[row, "amountToPay"] = amtToPay;
+                }
+
+            }
+        }
+
+        private void ApplyLoanAddEdit_Load(object sender, EventArgs e)
+        {
+            if(id > 0)
+            {
+                getData();
             }
         }
     }
