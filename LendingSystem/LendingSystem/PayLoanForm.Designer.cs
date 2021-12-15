@@ -51,7 +51,7 @@ namespace LendingSystem
             this.label12 = new System.Windows.Forms.Label();
             this.lblInterestAmount = new System.Windows.Forms.Label();
             this.numDayMonth = new System.Windows.Forms.NumericUpDown();
-            this.lblAmountToPay = new System.Windows.Forms.Label();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.numInterest = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -125,6 +125,7 @@ namespace LendingSystem
             this.flx.Size = new System.Drawing.Size(878, 308);
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
             this.flx.TabIndex = 22;
+            this.flx.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.flx_AfterEdit);
             // 
             // txtReference
             // 
@@ -143,6 +144,7 @@ namespace LendingSystem
             this.btnApply.TabIndex = 30;
             this.btnApply.Text = "SAVE (F5)";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // lblHeader
             // 
@@ -155,7 +157,7 @@ namespace LendingSystem
             this.lblHeader.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.lblHeader.Size = new System.Drawing.Size(1168, 43);
             this.lblHeader.TabIndex = 31;
-            this.lblHeader.Text = "APPLY LOAN";
+            this.lblHeader.Text = "LOAN PAYMENT";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox2
@@ -251,7 +253,7 @@ namespace LendingSystem
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.lblInterestAmount);
             this.groupBox1.Controls.Add(this.numDayMonth);
-            this.groupBox1.Controls.Add(this.lblAmountToPay);
+            this.groupBox1.Controls.Add(this.lblTotalAmount);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.numInterest);
             this.groupBox1.Controls.Add(this.label7);
@@ -297,16 +299,16 @@ namespace LendingSystem
             this.numDayMonth.TabIndex = 3;
             this.numDayMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblAmountToPay
+            // lblTotalAmount
             // 
-            this.lblAmountToPay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountToPay.ForeColor = System.Drawing.Color.Red;
-            this.lblAmountToPay.Location = new System.Drawing.Point(390, 122);
-            this.lblAmountToPay.Name = "lblAmountToPay";
-            this.lblAmountToPay.Size = new System.Drawing.Size(175, 36);
-            this.lblAmountToPay.TabIndex = 11;
-            this.lblAmountToPay.Text = "0000.00";
-            this.lblAmountToPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalAmount.Location = new System.Drawing.Point(390, 122);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(175, 36);
+            this.lblTotalAmount.TabIndex = 11;
+            this.lblTotalAmount.Text = "0000.00";
+            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -341,9 +343,9 @@ namespace LendingSystem
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(256, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 21);
+            this.label6.Size = new System.Drawing.Size(118, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Amount to Pay:";
+            this.label6.Text = "Total Amount:";
             // 
             // numAmountToLoan
             // 
@@ -376,7 +378,7 @@ namespace LendingSystem
             this.flxMember.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle;
             this.flxMember.ColumnInfo = resources.GetString("flxMember.ColumnInfo");
             this.flxMember.ExtendLastCol = true;
-            this.flxMember.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flxMember.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F);
             this.flxMember.Location = new System.Drawing.Point(6, 52);
             this.flxMember.Name = "flxMember";
             this.flxMember.Rows.Count = 1;
@@ -463,7 +465,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblInterestAmount;
         private System.Windows.Forms.NumericUpDown numDayMonth;
-        private System.Windows.Forms.Label lblAmountToPay;
+        private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown numInterest;
         private System.Windows.Forms.Label label7;

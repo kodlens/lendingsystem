@@ -20,18 +20,21 @@ namespace LendingSystem
         MySqlCommand cmd;
         string query;
 
+        Loan loan;
+
 
         public long id;
         public long member_id;
 
         ApplyLoanMainForm _frm;
 
-        decimal months_days, interest_value, principal_amount, interest, interest_amount, amount_to_pay;
+        decimal months_days, interest_value, principal_amount, interest, interest_amount, total_amount;
 
         public ApplyLoanAddEdit(ApplyLoanMainForm _frm)
         {
             InitializeComponent();
             this._frm = _frm;
+            loan = new Loan();
         }
 
         private void btnBrowseMember_Click(object sender, EventArgs e)
@@ -123,17 +126,17 @@ namespace LendingSystem
             interest = numInterest.Value;
             months_days = numDayMonth.Value;
 
-            interest_value = principal_amount * (interest / 100); //0.02 //100 for 5000
+            interest_value = principal_amount * (interest / 100); //0.02 //100 for 5000, interest value from percentage
          
 
             
 
-            amount_to_pay = Decimal.Round(principal_amount + (interest_value * months_days), 2);
-            interest_amount = amount_to_pay / months_days;
+            total_amount = Decimal.Round(principal_amount + (interest_value * months_days), 2); //total amount with interest
+            interest_amount = total_amount / months_days; //monthly or daily interest amount
 
 
-            lblAmountToPay.Text = String.Format("{0:n}", amount_to_pay);
-            lblInterestAmount.Text = String.Format("{0:n}", interest_value * months_days);
+            lblTotalAmount.Text = String.Format("{0:n}", total_amount); //total amount with interest
+            lblInterestAmount.Text = String.Format("{0:n}", interest_value * months_days); //total interest
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -152,12 +155,30 @@ namespace LendingSystem
 
             if(id > 0)
             {
-                update();
+                loan.member_id = this.member_id;
+                loan.loan_title = this.txtLoanTitle.Text;
+                loan.loan_type = this.cmbLoanType.Text;
+                loan.interest = (double)this.numInterest.Value;
+                loan.interest_amount = (double)(this.interest_value * months_days);
+                loan.no_days_month = (int)this.numDayMonth.Value;
+                loan.amount_to_loan = (double)this.principal_amount;
+                loan.total_amount = (double)this.total_amount;
+
+                loan.update(this.flx, id);
                 Box.InfoBox("Loan successfully updated.");
             }
             else
             {
-                save();
+                loan.member_id = this.member_id;
+                loan.loan_title = this.txtLoanTitle.Text;
+                loan.loan_type = this.cmbLoanType.Text;
+                loan.interest = (double)this.numInterest.Value;
+                loan.interest_amount = (double)(this.interest_value * months_days);
+                loan.no_days_month = (int)this.numDayMonth.Value;
+                loan.amount_to_loan = (double)this.principal_amount;
+                loan.total_amount = (double)this.total_amount;
+                loan.save(this.flx);
+                this.txtReference.Text = loan.loan_id.ToString("00000000");
                 Box.InfoBox("Loan successfully saved.");
             }
 
@@ -165,82 +186,9 @@ namespace LendingSystem
         }
 
 
-        void save()
-        {
-            //here na nako gebutang.. getapulan nako buhat class hahaha
-            con = Connection.con();
-            con.Open();
-            query = "INSERT INTO loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, interest_amount=?insamt,  no_days_month=?ndm, amount_to_loan=?atl;" +
-                "select last_insert_id();";
-            cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("?mid", member_id);
-            cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
-            cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
-            cmd.Parameters.AddWithValue("?interest", numInterest.Value);
-            cmd.Parameters.AddWithValue("?insamt", interest_value * months_days);
-            cmd.Parameters.AddWithValue("?ndm", numDayMonth.Value);
-            cmd.Parameters.AddWithValue("?atl", numAmountToLoan.Value);
-            id = Convert.ToInt64(cmd.ExecuteScalar());
-            txtReference.Text = id.ToString("00000000");
-            cmd.Dispose();
+        
 
-            query = "INSERT INTO loan_details SET loan_id=?lid, date_month=?dmonth, amount_to_pay=?atopay, amount_paid=?apaid, balance=?bal;" +
-                "select last_insert_id();";
-            cmd = new MySqlCommand(query, con);
-            for(int row = 1; row < flx.Rows.Count; row++)
-            {
-                cmd.Parameters.AddWithValue("?lid", id);
-                cmd.Parameters.AddWithValue("?dmonth", Convert.ToDateTime(flx[row, "date_month"]));
-                cmd.Parameters.AddWithValue("?atopay", Convert.ToDouble(flx[row, "amountToPay"]));
-                cmd.Parameters.AddWithValue("?apaid", Convert.ToDouble(flx[row, "amountPaid"]));
-                cmd.Parameters.AddWithValue("?bal", Convert.ToString(flx[row, "balance"]));
-                long loan_detail_id = Convert.ToInt64(cmd.ExecuteScalar());
-                flx[row, "loan_detail_id"] = loan_detail_id;
-                cmd.Parameters.Clear();
-            }
-
-            cmd.Dispose();
-            
-            con.Close();
-            con.Dispose();
-        }
-
-        void update()
-        {
-            con = Connection.con();
-            con.Open();
-            query = @"UPDATE loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, interest_amount=?insamt, no_days_month=?ndm, amount_to_loan=?atl WHERE loan_id=?id";
-            cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("?mid", member_id);
-            cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
-            cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
-            cmd.Parameters.AddWithValue("?interest", numInterest.Value);
-            cmd.Parameters.AddWithValue("?insamt", interest_value * months_days);
-            cmd.Parameters.AddWithValue("?ndm", numDayMonth.Value);
-            cmd.Parameters.AddWithValue("?atl", numAmountToLoan.Value);
-            cmd.Parameters.AddWithValue("?id", this.id);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-
-
-            query = @"UPDATE loan_details SET loan_id=?lid, date_month=?dmonth, amount_to_pay=?atopay, amount_paid=?apaid, balance=?bal WHERE loan_detail_id=?id";
-            cmd = new MySqlCommand(query, con);
-            for (int row = 1; row < flx.Rows.Count; row++)
-            {
-                cmd.Parameters.AddWithValue("?lid", id);
-                cmd.Parameters.AddWithValue("?dmonth", Convert.ToDateTime(flx[row, "date_month"]));
-                cmd.Parameters.AddWithValue("?atopay", Convert.ToDouble(flx[row, "amountToPay"]));
-                cmd.Parameters.AddWithValue("?apaid", Convert.ToDouble(flx[row, "amountPaid"]));
-                cmd.Parameters.AddWithValue("?bal", Convert.ToString(flx[row, "balance"]));
-                cmd.Parameters.AddWithValue("?id", Convert.ToString(flx[row, "loan_detail_id"]));
-                cmd.ExecuteNonQuery();
-                cmd.Parameters.Clear();
-            }
-
-            con.Close();
-            con.Dispose();
-
-        }
+        
 
         private void btnDebug_Click(object sender, EventArgs e)
         {

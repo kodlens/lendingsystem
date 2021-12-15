@@ -35,7 +35,7 @@ namespace LendingSystem
             this.lblInterestAmount = new System.Windows.Forms.Label();
             this.btnCompute = new System.Windows.Forms.Button();
             this.numDayMonth = new System.Windows.Forms.NumericUpDown();
-            this.lblAmountToPay = new System.Windows.Forms.Label();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.numInterest = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@ namespace LendingSystem
             this.groupBox1.Controls.Add(this.lblInterestAmount);
             this.groupBox1.Controls.Add(this.btnCompute);
             this.groupBox1.Controls.Add(this.numDayMonth);
-            this.groupBox1.Controls.Add(this.lblAmountToPay);
+            this.groupBox1.Controls.Add(this.lblTotalAmount);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.numInterest);
             this.groupBox1.Controls.Add(this.label7);
@@ -132,16 +132,16 @@ namespace LendingSystem
             this.numDayMonth.TabIndex = 3;
             this.numDayMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblAmountToPay
+            // lblTotalAmount
             // 
-            this.lblAmountToPay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountToPay.ForeColor = System.Drawing.Color.Red;
-            this.lblAmountToPay.Location = new System.Drawing.Point(390, 122);
-            this.lblAmountToPay.Name = "lblAmountToPay";
-            this.lblAmountToPay.Size = new System.Drawing.Size(175, 36);
-            this.lblAmountToPay.TabIndex = 11;
-            this.lblAmountToPay.Text = "0000.00";
-            this.lblAmountToPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalAmount.Location = new System.Drawing.Point(390, 122);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(175, 36);
+            this.lblTotalAmount.TabIndex = 11;
+            this.lblTotalAmount.Text = "0000.00";
+            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -173,11 +173,11 @@ namespace LendingSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(256, 128);
+            this.label6.Location = new System.Drawing.Point(270, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 21);
+            this.label6.Size = new System.Drawing.Size(118, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Amount to Pay:";
+            this.label6.Text = "Total Amount:";
             // 
             // numAmountToLoan
             // 
@@ -456,7 +456,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label label9;
         private C1.Win.C1FlexGrid.C1FlexGrid flx;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lblAmountToPay;
+        private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.NumericUpDown numDayMonth;
         private System.Windows.Forms.Button btnCompute;
         private System.Windows.Forms.Label label8;

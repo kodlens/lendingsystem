@@ -36,18 +36,35 @@ namespace LendingSystem
 
             if(dt.Rows.Count > 0)
             {
+                this.member_id = Convert.ToInt64(dt.Rows[0]["member_id"]);
                 this.fname = Convert.ToString(dt.Rows[0]["fname"]);
                 this.mname = Convert.ToString(dt.Rows[0]["mname"]);
                 this.lname = Convert.ToString(dt.Rows[0]["lname"]);
                 this.loan_title = Convert.ToString(dt.Rows[0]["loan_title"]);
                 this.loan_type = Convert.ToString(dt.Rows[0]["loan_type"]);
-                this.interest = Convert.ToDouble(dt.Rows[0]["interes"]);
+                this.interest = Convert.ToDouble(dt.Rows[0]["interest"]);
                 this.interest_amount = Convert.ToDouble(dt.Rows[0]["interest_amount"]);
                 this.no_days_month = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
                 this.amount_to_loan = Convert.ToDouble(dt.Rows[0]["amount_to_loan"]);
+                this.total_amount = Convert.ToDouble(dt.Rows[0]["total_amount"]);
 
 
+                flx.Rows.Count = flx.Rows.Fixed;
+                int monthDay = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
+                for (int row = 1; row <= monthDay; row++)
+                {
+                    flx.Rows.Add();
+                    flx[row, "loan_detail_id"] = Convert.ToInt64(dt.Rows[row - 1]["loan_detail_id"]);
+                    flx[row, "date_month"] = Convert.ToString(dt.Rows[row - 1]["date_month"]);
+                    flx[row, "amountToPay"] = Convert.ToString(dt.Rows[row - 1]["amount_to_pay"]);
+                    flx[row, "amountPaid"] = Convert.ToDouble(dt.Rows[row - 1]["amount_paid"]);
+                    flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]);
+                }
+                
             }
+
+
+
         }
 
     }
