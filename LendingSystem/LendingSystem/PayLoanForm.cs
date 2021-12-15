@@ -21,7 +21,7 @@ namespace LendingSystem
             loan = new PayLoan();
         }
 
-        long member_id;
+        long member_id = 0;
         double principal_amount = 0, total_amount = 0;
 
 
@@ -53,7 +53,7 @@ namespace LendingSystem
 
             this.lblTotalAmount.Text = String.Format("{0:n}", loan.total_amount);
             total_amount = loan.total_amount;
-           
+
         }
 
         private void flx_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
@@ -73,6 +73,7 @@ namespace LendingSystem
             {
                 update();
                 Box.InfoBox("Record successfully updated.");
+                clear();
             }
             catch (Exception er)
             {
@@ -93,6 +94,27 @@ namespace LendingSystem
             loan.amount_to_loan = this.principal_amount; //principal amount or the amount to loan
             loan.total_amount = this.total_amount; //total amount w/ interest
             loan.update(this.flx, Convert.ToInt64(txtReference.Text));
+
+        }
+
+        void clear()
+        {
+            this.flx.Rows.Count = flx.Rows.Fixed;
+            this.txtReference.Text = "";
+            this.txtLoanTitle.Text = "";
+            this.cmbLoanType.SelectedIndex = -1;
+            this.numInterest.Value = 0;
+            this.numDayMonth.Value = 0;
+            this.numAmountToLoan.Value = 0;
+            this.lblInterestAmount.Text = "0.00";
+            this.lblTotalAmount.Text = "0.00";
+
+
+            this.member_id = 0;
+            this.txtlname.Text = "";
+            this.txtfname.Text = "";
+            this.txtmname.Text = "";
+
         }
 
         

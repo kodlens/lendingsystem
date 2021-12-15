@@ -61,6 +61,7 @@ namespace LendingSystem
             this.flxMember = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flx)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -98,7 +99,7 @@ namespace LendingSystem
             this.txtLoanTitle.Name = "txtLoanTitle";
             this.txtLoanTitle.ReadOnly = true;
             this.txtLoanTitle.Size = new System.Drawing.Size(543, 22);
-            this.txtLoanTitle.TabIndex = 26;
+            this.txtLoanTitle.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -107,7 +108,7 @@ namespace LendingSystem
             this.groupBox3.Location = new System.Drawing.Point(267, 247);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(894, 339);
-            this.groupBox3.TabIndex = 29;
+            this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Computation";
             // 
@@ -132,7 +133,7 @@ namespace LendingSystem
             this.txtReference.Location = new System.Drawing.Point(336, 46);
             this.txtReference.Name = "txtReference";
             this.txtReference.Size = new System.Drawing.Size(190, 22);
-            this.txtReference.TabIndex = 35;
+            this.txtReference.TabIndex = 0;
             this.txtReference.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReference_KeyDown);
             // 
             // btnApply
@@ -172,7 +173,7 @@ namespace LendingSystem
             this.groupBox2.Location = new System.Drawing.Point(267, 76);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(310, 165);
-            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Information";
             // 
@@ -266,7 +267,7 @@ namespace LendingSystem
             this.groupBox1.Location = new System.Drawing.Point(586, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(570, 165);
-            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
             // 
@@ -396,7 +397,7 @@ namespace LendingSystem
             this.groupBox4.Location = new System.Drawing.Point(12, 49);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(249, 586);
-            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Member";
             // 
@@ -407,11 +408,22 @@ namespace LendingSystem
             this.textBox1.Size = new System.Drawing.Size(236, 23);
             this.textBox1.TabIndex = 24;
             // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(274, 593);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 36);
+            this.btnClear.TabIndex = 35;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
             // PayLoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 647);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -475,5 +487,6 @@ namespace LendingSystem
         private C1.Win.C1FlexGrid.C1FlexGrid flxMember;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnClear;
     }
 }
