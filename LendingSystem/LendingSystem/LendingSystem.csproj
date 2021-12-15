@@ -98,6 +98,7 @@
     <Compile Include="Class\Helper.cs" />
     <Compile Include="Class\Loan.cs" />
     <Compile Include="Class\Member.cs" />
+    <Compile Include="Class\PayLoan.cs" />
     <Compile Include="Class\Sample.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Login.cs" />
@@ -138,6 +139,12 @@
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\NAddress.cs" />
+    <Compile Include="PayLoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayLoanForm.Designer.cs">
+      <DependentUpon>PayLoanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\ReportMemberProfileForm.cs">
@@ -193,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MembersAddEdit.resx">
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayLoanForm.resx">
+      <DependentUpon>PayLoanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

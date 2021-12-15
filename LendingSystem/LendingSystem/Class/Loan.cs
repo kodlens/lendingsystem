@@ -12,16 +12,18 @@ namespace LendingSystem
     class Loan
     {
 
-        MySqlCommand cmd;
-        MySqlConnection con;
-        string query;
+        protected MySqlCommand cmd;
+        protected MySqlConnection con;
+        protected string query;
 
         public long member_id { set; get; }
         public string loan_title { set; get; }
         public string loan_type { set; get; }
 
         public double interest { set; get; }
-        public double no_days_month { set; get; }
+        public double interest_amount { set; get; }
+
+        public int no_days_month { set; get; }
         public double amount_to_loan { set; get; }
 
         //child
@@ -37,7 +39,7 @@ namespace LendingSystem
         {
             con = Connection.con();
             con.Open();
-            query = @"SELECT *, amount_to_loan - (SELECT SUM(amount_paid) FROM loan_details WHERE loan_details.loan_id = a.loan_id) AS balance
+            query = @"SELECT *, (amount_to_loan + interest_amount) - (SELECT SUM(amount_paid) FROM loan_details WHERE loan_details.loan_id = a.loan_id) AS balance
                     FROM loans a join members b on a.member_id = b.member_id WHERE b.lname LIKE ?lname and b.fname LIKE ?fname 
                     ORDER BY loan_id desc";
             cmd = new MySqlCommand(query, con);

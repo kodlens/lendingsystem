@@ -86,5 +86,20 @@ namespace LendingSystem
         {
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(PayLoanForm))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form frm = new PayLoanForm();
+            frm.Show();
+        }
     }
 }

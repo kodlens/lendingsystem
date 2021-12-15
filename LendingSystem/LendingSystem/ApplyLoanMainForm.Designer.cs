@@ -32,17 +32,17 @@ namespace LendingSystem
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyLoanMainForm));
             this.flx = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.btnApplyLoan = new System.Windows.Forms.Button();
-            this.btnUpdateLoan = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.applyNewLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnApplyLoan = new System.Windows.Forms.Button();
+            this.btnUpdateLoan = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,6 +68,49 @@ namespace LendingSystem
             this.flx.Size = new System.Drawing.Size(1075, 400);
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
             this.flx.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.applyNewLoanToolStripMenuItem,
+            this.updateLoanToolStripMenuItem,
+            this.refreshToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.deleteLoanToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 98);
+            // 
+            // applyNewLoanToolStripMenuItem
+            // 
+            this.applyNewLoanToolStripMenuItem.Name = "applyNewLoanToolStripMenuItem";
+            this.applyNewLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.applyNewLoanToolStripMenuItem.Text = "Apply New Loan";
+            // 
+            // updateLoanToolStripMenuItem
+            // 
+            this.updateLoanToolStripMenuItem.Name = "updateLoanToolStripMenuItem";
+            this.updateLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.updateLoanToolStripMenuItem.Text = "Update Loan";
+            this.updateLoanToolStripMenuItem.Click += new System.EventHandler(this.updateLoanToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
+            // 
+            // deleteLoanToolStripMenuItem
+            // 
+            this.deleteLoanToolStripMenuItem.Name = "deleteLoanToolStripMenuItem";
+            this.deleteLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.deleteLoanToolStripMenuItem.Text = "Delete Loan";
+            this.deleteLoanToolStripMenuItem.Click += new System.EventHandler(this.deleteLoanToolStripMenuItem_Click);
             // 
             // btnApplyLoan
             // 
@@ -115,49 +158,6 @@ namespace LendingSystem
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.applyNewLoanToolStripMenuItem,
-            this.updateLoanToolStripMenuItem,
-            this.refreshToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.deleteLoanToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 98);
-            // 
-            // applyNewLoanToolStripMenuItem
-            // 
-            this.applyNewLoanToolStripMenuItem.Name = "applyNewLoanToolStripMenuItem";
-            this.applyNewLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.applyNewLoanToolStripMenuItem.Text = "Apply New Loan";
-            // 
-            // updateLoanToolStripMenuItem
-            // 
-            this.updateLoanToolStripMenuItem.Name = "updateLoanToolStripMenuItem";
-            this.updateLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.updateLoanToolStripMenuItem.Text = "Update Loan";
-            this.updateLoanToolStripMenuItem.Click += new System.EventHandler(this.updateLoanToolStripMenuItem_Click);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
-            // 
-            // deleteLoanToolStripMenuItem
-            // 
-            this.deleteLoanToolStripMenuItem.Name = "deleteLoanToolStripMenuItem";
-            this.deleteLoanToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.deleteLoanToolStripMenuItem.Text = "Delete Loan";
-            this.deleteLoanToolStripMenuItem.Click += new System.EventHandler(this.deleteLoanToolStripMenuItem_Click);
             // 
             // label2
             // 

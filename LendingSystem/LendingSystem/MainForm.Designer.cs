@@ -33,8 +33,8 @@ namespace LendingSystem
             this.toolStripButtonUsers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonMembers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLoan = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,17 @@ namespace LendingSystem
             this.toolStripButtonLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButtonLoan.Click += new System.EventHandler(this.toolStripButtonLoan_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::LendingSystem.Properties.Resources.plateno;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(68, 83);
+            this.toolStripButton1.Text = "Pay Loan";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripButtonLogout
             // 
             this.toolStripButtonLogout.Image = global::LendingSystem.Properties.Resources.logout_icon64x64;
@@ -95,16 +106,6 @@ namespace LendingSystem
             this.toolStripButtonLogout.Text = "Logout";
             this.toolStripButtonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButtonLogout.Click += new System.EventHandler(this.toolStripButtonLogout_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::LendingSystem.Properties.Resources.plateno;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 83);
-            this.toolStripButton1.Text = "Pay Loan";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // MainForm
             // 

@@ -31,6 +31,7 @@ namespace LendingSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyLoanAddEdit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblInterestAmount = new System.Windows.Forms.Label();
             this.btnCompute = new System.Windows.Forms.Button();
             this.numDayMonth = new System.Windows.Forms.NumericUpDown();
@@ -60,7 +61,6 @@ namespace LendingSystem
             this.label10 = new System.Windows.Forms.Label();
             this.txtReference = new System.Windows.Forms.TextBox();
             this.btnDebug = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
@@ -92,6 +92,15 @@ namespace LendingSystem
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Information";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 122);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 35);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Interest Amount:";
             // 
             // lblInterestAmount
             // 
@@ -302,7 +311,7 @@ namespace LendingSystem
             this.lblHeader.Location = new System.Drawing.Point(0, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblHeader.Size = new System.Drawing.Size(963, 47);
+            this.lblHeader.Size = new System.Drawing.Size(963, 43);
             this.lblHeader.TabIndex = 20;
             this.lblHeader.Text = "APPLY LOAN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,15 +398,6 @@ namespace LendingSystem
             this.btnDebug.Text = "Debug";
             this.btnDebug.UseVisualStyleBackColor = true;
             this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(22, 122);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 35);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Interest Amount:";
             // 
             // ApplyLoanAddEdit
             // 

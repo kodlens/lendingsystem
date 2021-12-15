@@ -26,7 +26,7 @@ namespace LendingSystem
 
         ApplyLoanMainForm _frm;
 
-        decimal months_days, roi, amt, interest, ins, insAmount;
+        decimal months_days, interest_value, principal_amount, interest, interest_amount, amount_to_pay;
 
         public ApplyLoanAddEdit(ApplyLoanMainForm _frm)
         {
@@ -43,7 +43,7 @@ namespace LendingSystem
 
 
 
-        void loadDailyToFlxGrid(decimal amtToPay)
+        void loadDailyToFlxGrid()
         {
             flx.Rows.Count = flx.Rows.Fixed;
             for(int row = 1; row <= numDayMonth.Value; row++)
@@ -52,13 +52,13 @@ namespace LendingSystem
                 var addedDateTime = DateTime.Now.AddDays(row);
                 flx[row, "date_month"] = addedDateTime;
                 flx[row, "amountPaid"] = 0.00;
-                flx[row, "amountToPay"] = amtToPay;
-                flx[row, "balance"] = amtToPay;
+                flx[row, "amountToPay"] = interest_amount;
+                flx[row, "balance"] = interest_amount;
             }
            
         }
 
-        void loadMonthlyToFlxGrid(decimal amtToPay)
+        void loadMonthlyToFlxGrid()
         {
             flx.Rows.Count = flx.Rows.Fixed;
             for (int row = 1; row <= numDayMonth.Value; row++)
@@ -66,9 +66,9 @@ namespace LendingSystem
                 flx.Rows.Add();
                 var addedDateTime = DateTime.Now.AddMonths(row);
                 flx[row, "date_month"] = addedDateTime;
-                flx[row, "amountToPay"] = amtToPay;
+                flx[row, "amountToPay"] = interest_amount;
                 flx[row, "amountPaid"] = 0.00;
-                flx[row, "balance"] = amtToPay;
+                flx[row, "balance"] = interest_amount;
             }
         }
 
@@ -98,16 +98,15 @@ namespace LendingSystem
 
                 compute();
 
-                lblAmountToPay.Text = String.Format("{0:n}", ins);
 
                 if (this.cmbLoanType.Text == "DAILY")
                 {
-                    loadDailyToFlxGrid(ins);
+                    loadDailyToFlxGrid();
                 }
 
                 if (this.cmbLoanType.Text == "MONTHLY")
                 {
-                    loadMonthlyToFlxGrid(ins);
+                    loadMonthlyToFlxGrid();
                 }
 
             }
@@ -120,13 +119,21 @@ namespace LendingSystem
 
         void compute()
         {
-            amt = numAmountToLoan.Value;
+            principal_amount = numAmountToLoan.Value;
             interest = numInterest.Value;
             months_days = numDayMonth.Value;
-            roi = amt / interest;
-            ins = amt / months_days + roi;
-            ins = Decimal.Round(ins, 2);
-            lblAmountToPay.Text = String.Format("{0:n}", ins);
+
+            interest_value = principal_amount * (interest / 100); //0.02 //100 for 5000
+         
+
+            
+
+            amount_to_pay = Decimal.Round(principal_amount + (interest_value * months_days), 2);
+            interest_amount = amount_to_pay / months_days;
+
+
+            lblAmountToPay.Text = String.Format("{0:n}", amount_to_pay);
+            lblInterestAmount.Text = String.Format("{0:n}", interest_value * months_days);
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -163,13 +170,14 @@ namespace LendingSystem
             //here na nako gebutang.. getapulan nako buhat class hahaha
             con = Connection.con();
             con.Open();
-            query = "INSERT INTO loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, no_days_month=?ndm, amount_to_loan=?atl;" +
+            query = "INSERT INTO loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, interest_amount=?insamt,  no_days_month=?ndm, amount_to_loan=?atl;" +
                 "select last_insert_id();";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?mid", member_id);
             cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
             cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
             cmd.Parameters.AddWithValue("?interest", numInterest.Value);
+            cmd.Parameters.AddWithValue("?insamt", interest_value * months_days);
             cmd.Parameters.AddWithValue("?ndm", numDayMonth.Value);
             cmd.Parameters.AddWithValue("?atl", numAmountToLoan.Value);
             id = Convert.ToInt64(cmd.ExecuteScalar());
@@ -201,12 +209,13 @@ namespace LendingSystem
         {
             con = Connection.con();
             con.Open();
-            query = @"UPDATE loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, no_days_month=?ndm, amount_to_loan=?atl WHERE loan_id=?id";
+            query = @"UPDATE loans SET member_id=?mid, loan_title = ?ltitle, loan_type=?ltype, interest=?interest, interest_amount=?insamt, no_days_month=?ndm, amount_to_loan=?atl WHERE loan_id=?id";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?mid", member_id);
             cmd.Parameters.AddWithValue("?ltitle", txtLoanTitle.Text);
             cmd.Parameters.AddWithValue("?ltype", cmbLoanType.Text);
             cmd.Parameters.AddWithValue("?interest", numInterest.Value);
+            cmd.Parameters.AddWithValue("?insamt", interest_value * months_days);
             cmd.Parameters.AddWithValue("?ndm", numDayMonth.Value);
             cmd.Parameters.AddWithValue("?atl", numAmountToLoan.Value);
             cmd.Parameters.AddWithValue("?id", this.id);
@@ -277,6 +286,7 @@ namespace LendingSystem
 
             if(dt.Rows.Count > 0)
             {
+                this.txtReference.Text = Convert.ToInt64(dt.Rows[0]["loan_id"]).ToString("00000000");
                 this.member_id = Convert.ToInt64(dt.Rows[0]["member_id"]);
                 this.txtLoanTitle.Text = Convert.ToString(dt.Rows[0]["loan_title"]);
                 this.txtlname.Text = Convert.ToString(dt.Rows[0]["lname"]);
