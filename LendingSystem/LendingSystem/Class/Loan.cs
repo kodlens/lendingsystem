@@ -151,5 +151,10 @@ namespace LendingSystem
             con.Dispose();
 
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

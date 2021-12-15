@@ -64,7 +64,11 @@ namespace LendingSystem
             long i = member.save();
             if (i > 0)
             {
-                saveImage(i);
+                if(this.pictureBox1.Image != null)
+                {
+                    saveImage(i);
+                }
+                
                 Box.InfoBox("Member successfully saved!");
 
             }
@@ -85,7 +89,11 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
-            saveImage(id);
+            if (this.pictureBox1.Image != null)
+            {
+                saveImage(id);
+            }
+                
             if (member.update(id) > 0)
             {
                 Box.InfoBox("Member successfully updated!");

@@ -18,7 +18,7 @@ namespace LendingSystem
         public string lname { set; get; }
 
 
-        public void getData(C1FlexGrid flx, long id)
+        public int getData(C1FlexGrid flx, long id)
         {
             con = Connection.con();
             con.Open();
@@ -63,8 +63,7 @@ namespace LendingSystem
                 
             }
 
-
-
+            return dt.Rows.Count;
         }
 
     }

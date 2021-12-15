@@ -61,12 +61,12 @@ namespace LendingSystem
                     foreach (FilterInfo device in videoDevices)
                     {
                         listCamera.Add(device.Name);
-
                     }
                 }
                 else
                 {
                     MessageBox.Show("Camera devices found");
+                    this.Close();
                 }
 
                 videoDevice = new VideoCaptureDevice(videoDevices[Convert.ToInt32(usbcamera)].MonikerString);
@@ -93,7 +93,7 @@ namespace LendingSystem
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.ToString());
+                //MessageBox.Show(err.ToString());
             }
 
         }
@@ -109,7 +109,6 @@ namespace LendingSystem
                 foreach (FilterInfo device in videoDevices)
                 {
                     comboBox1.Items.Add(device.Name);
-
                 }
             }
             else

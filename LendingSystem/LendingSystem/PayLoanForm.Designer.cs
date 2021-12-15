@@ -127,6 +127,7 @@ namespace LendingSystem
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
             this.flx.TabIndex = 22;
             this.flx.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.flx_AfterEdit);
+            this.flx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.flx_KeyDown);
             // 
             // txtReference
             // 
@@ -417,6 +418,7 @@ namespace LendingSystem
             this.btnClear.TabIndex = 35;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // PayLoanForm
             // 
@@ -438,6 +440,7 @@ namespace LendingSystem
             this.Name = "PayLoanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PayLoanForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PayLoanForm_KeyDown);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.flx)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -72,11 +72,11 @@ CREATE TABLE `loan_details` (
   PRIMARY KEY (`loan_detail_id`),
   KEY `loan_details_ibfk_1` (`loan_id`),
   CONSTRAINT `loan_details_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `loan_details` */
 
-insert  into `loan_details`(`loan_detail_id`,`loan_id`,`date_month`,`amount_to_pay`,`amount_paid`,`balance`) values (1,1,'0000-00-00',2000,0,0),(2,1,'0000-00-00',2000,0,0),(3,1,'0000-00-00',2000,0,0),(4,1,'0000-00-00',2000,0,0),(5,1,'0000-00-00',2000,0,0),(6,2,'2021-11-21',1500,0,0),(7,2,'2021-11-22',1500,0,0),(8,2,'2021-11-23',1500,0,0),(9,2,'2021-11-24',1500,0,0),(10,2,'2021-11-25',1500,0,0),(117,19,'2022-01-15',1100,1100,0),(118,19,'2022-02-15',1100,1100,0),(119,19,'2022-03-15',1100,1100,0),(120,19,'2022-04-15',1100,1100,0),(121,19,'2022-05-15',1100,1100,0);
+insert  into `loan_details`(`loan_detail_id`,`loan_id`,`date_month`,`amount_to_pay`,`amount_paid`,`balance`) values (182,32,'2022-01-15',1100,1100,0),(183,32,'2022-02-15',1100,500,600),(184,32,'2022-03-15',1100,0,1100),(185,32,'2022-04-15',1100,0,1100),(186,32,'2022-05-15',1100,0,1100);
 
 /*Table structure for table `loans` */
 
@@ -92,12 +92,14 @@ CREATE TABLE `loans` (
   `no_days_month` int(11) DEFAULT NULL,
   `amount_to_loan` double DEFAULT NULL,
   `total_amount` double DEFAULT NULL,
-  PRIMARY KEY (`loan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`loan_id`),
+  KEY `member_id` (`member_id`),
+  CONSTRAINT `loans_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`member_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `loans` */
 
-insert  into `loans`(`loan_id`,`member_id`,`loan_title`,`loan_type`,`interest`,`interest_amount`,`no_days_month`,`amount_to_loan`,`total_amount`) values (1,0,'test','DAILY',5,NULL,5,5000,NULL),(2,0,'test2','DAILY',10,NULL,5,5000,NULL),(19,1,'re test loan','MONTHLY',2,500,5,5000,NULL);
+insert  into `loans`(`loan_id`,`member_id`,`loan_title`,`loan_type`,`interest`,`interest_amount`,`no_days_month`,`amount_to_loan`,`total_amount`) values (32,6,'TEST ONLY','MONTHLY',2,100,5,5000,5500);
 
 /*Table structure for table `members` */
 
@@ -127,11 +129,11 @@ CREATE TABLE `members` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `members` */
 
-insert  into `members`(`member_id`,`lname`,`fname`,`mname`,`sex`,`bdate`,`email`,`contact_no`,`store_name`,`store_address`,`province`,`city`,`barangay`,`street`,`is_active`,`reference_1`,`reference_2`,`reference_1_contact`,`reference_2_contact`,`avatar_path`,`created_at`,`updated_at`) values (1,'AMPARADO','ETIENNE','NAMOCATCAT','MALE','1988-08-08','et@gmail.com','09167789585',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','MALORO',NULL,1,'REF 1','REF 2','CONTACT 1','CONTACT 2',NULL,NULL,NULL),(2,'SELATONA','ARNIEL','','MALE','1988-08-08','etienne@gmail.com','09167789585','SAMPLE STORE','SAMPLE ADDRESS MALORO TANGUB CITY','MISAMIS OCCIDENTAL','TANGUB CITY','MALORO','P-BOUGAINVILLA STREET',0,NULL,NULL,NULL,NULL,'SELATONA_ARNIEL',NULL,NULL);
+insert  into `members`(`member_id`,`lname`,`fname`,`mname`,`sex`,`bdate`,`email`,`contact_no`,`store_name`,`store_address`,`province`,`city`,`barangay`,`street`,`is_active`,`reference_1`,`reference_2`,`reference_1_contact`,`reference_2_contact`,`avatar_path`,`created_at`,`updated_at`) values (4,'AMPARADO','ETIENNE','','MALE','1988-08-08','etienne@gmail.com','09167789585','SAMPLE STORE','SAMPLE ADDRESS MALORO TANGUB CITY','MISAMIS OCCIDENTAL','TANGUB CITY','MALORO','P-BOUGAINVILLA STREET',0,NULL,NULL,NULL,NULL,'AMPARADO_ETIENNE',NULL,NULL),(5,'SELATONA','ARNIEL','','MALE','1988-08-08','etienne@gmail.com','09167789585','SAMPLE STORE','SAMPLE ADDRESS MALORO TANGUB CITY','MISAMIS OCCIDENTAL','TANGUB CITY','MALORO','P-BOUGAINVILLA STREET',0,NULL,NULL,NULL,NULL,'SELATONA_ARNIEL',NULL,NULL),(6,'CENAS','VINCENT DAN','','MALE','1988-08-08','etienne@gmail.com','09167789585','SAMPLE STORE','SAMPLE ADDRESS MALORO TANGUB CITY','MISAMIS OCCIDENTAL','TANGUB CITY','MALORO','P-BOUGAINVILLA STREET',0,NULL,NULL,NULL,NULL,'CENAS_VINCENT DAN',NULL,NULL);
 
 /*Table structure for table `provinces` */
 

@@ -18,7 +18,7 @@ namespace LendingSystem
         {
             InitializeComponent();
 
-            loan = new PayLoan();
+            
         }
 
         long member_id = 0;
@@ -29,30 +29,58 @@ namespace LendingSystem
         {
             if(e.KeyCode == Keys.Enter)
             {
-                getData();
+                try
+                {
+                    getData();
+                }
+               
+                catch (FormatException)
+                {
+                    Box.ErrBox("Inputted reference number is invallid. Please check your input.");
+                }
+                catch (Exception err)
+                {
+
+                    //throw;
+                    Box.ErrBox(err.Message);
+                }
+
+
             }
         }
 
         void getData()
         {
-            loan.getData(this.flx, Convert.ToInt64(txtReference.Text));
+            loan = new PayLoan();
+
+            if(loan.getData(this.flx, Convert.ToInt64(txtReference.Text)) > 0)
+            {
+                member_id = loan.member_id;
+                txtfname.Text = loan.fname;
+                txtlname.Text = loan.lname;
+                txtmname.Text = loan.mname;
+                this.cmbLoanType.Text = loan.loan_type;
+                this.txtLoanTitle.Text = loan.loan_title;
+                this.numInterest.Value = (decimal)loan.interest;
+                this.numDayMonth.Value = loan.no_days_month;
+                this.numAmountToLoan.Value = (decimal)loan.amount_to_loan;
+                principal_amount = loan.amount_to_loan;
+
+
+                this.lblInterestAmount.Text = String.Format("{0:n}", loan.interest_amount);
+
+                this.lblTotalAmount.Text = String.Format("{0:n}", loan.total_amount);
+                total_amount = loan.total_amount;
+            }
+            else
+            {
+                Box.WarnBox("No data found.");
+                clear();
+                loan = null;
+            }
+            
            
-            member_id = loan.member_id;
-            txtfname.Text = loan.fname;
-            txtlname.Text = loan.lname;
-            txtmname.Text = loan.mname;
-            this.cmbLoanType.Text = loan.loan_type;
-            this.txtLoanTitle.Text = loan.loan_title;
-            this.numInterest.Value = (decimal)loan.interest;
-            this.numDayMonth.Value = loan.no_days_month;
-            this.numAmountToLoan.Value = (decimal)loan.amount_to_loan;
-            principal_amount = loan.amount_to_loan;
-
-
-            this.lblInterestAmount.Text = String.Format("{0:n}",loan.interest_amount);
-
-            this.lblTotalAmount.Text = String.Format("{0:n}", loan.total_amount);
-            total_amount = loan.total_amount;
+            
 
         }
 
@@ -72,8 +100,6 @@ namespace LendingSystem
             try
             {
                 update();
-                Box.InfoBox("Record successfully updated.");
-                clear();
             }
             catch (Exception er)
             {
@@ -95,6 +121,30 @@ namespace LendingSystem
             loan.total_amount = this.total_amount; //total amount w/ interest
             loan.update(this.flx, Convert.ToInt64(txtReference.Text));
 
+            //clear things
+            Box.InfoBox("Record successfully updated.");
+            clear();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void PayLoanForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F5)
+            {
+                update();
+            }
+        }
+
+        private void flx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                update();
+            }
         }
 
         void clear()
@@ -115,6 +165,9 @@ namespace LendingSystem
             this.txtfname.Text = "";
             this.txtmname.Text = "";
 
+            loan = null;
+
+            this.txtReference.Focus();
         }
 
         
