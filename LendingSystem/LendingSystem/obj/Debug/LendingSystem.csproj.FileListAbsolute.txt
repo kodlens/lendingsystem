@@ -131,3 +131,4 @@ C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.cspr
 C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.csproj.CopyComplete
 C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe
 C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.pdb
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.PayLoanForm.resources
