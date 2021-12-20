@@ -71,20 +71,30 @@ namespace LendingSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (Box.QBox("Are you sure you want to delete this data?"))
+            try
             {
-                long id = Convert.ToInt64(flx[flx.RowSel, "member_id"]);
-                string path = Application.StartupPath + "/" + "img/" + id.ToString() + "_" + Convert.ToString(flx[flx.RowSel, "avatar_path"]) + ".jpeg";
-                //Box.InfoBox(path);
-                member.delete(id);
-                if (File.Exists(path))
+                if (Box.QBox("Are you sure you want to delete this data?"))
                 {
-                    File.Delete(path);
-                }
+                    long id = Convert.ToInt64(flx[flx.RowSel, "member_id"]);
+                    string path = Application.StartupPath + "/" + "img/" + id.ToString() + "_" + Convert.ToString(flx[flx.RowSel, "avatar_path"]) + ".jpeg";
+                    //Box.InfoBox(path);
+                    member.delete(id);
+                    if (File.Exists(path))
+                    {
+                        File.Delete(path);
+                    }
 
-                Box.InfoBox("User deleted successfully.");
-                loadData();
+                    Box.InfoBox("User deleted successfully.");
+                    loadData();
+                }
             }
+            catch (Exception err)
+            {
+
+                //throw;
+                Box.ErrBox(err.Message + ". Or maybe you cannot delete this member because it has a loan record. Please delete the loan first before deleting this member.");
+            }
+            
         }
 
         private void btnNew_Click(object sender, EventArgs e)

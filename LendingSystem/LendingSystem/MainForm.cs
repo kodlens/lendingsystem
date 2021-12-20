@@ -101,5 +101,20 @@ namespace LendingSystem
             Form frm = new PayLoanForm();
             frm.Show();
         }
+
+        private void toolStripButtonMultiplePayLoan_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(MultiplePaymentForm))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form frm = new MultiplePaymentForm();
+            frm.Show();
+        }
     }
 }

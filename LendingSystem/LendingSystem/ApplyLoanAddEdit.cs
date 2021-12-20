@@ -52,27 +52,46 @@ namespace LendingSystem
             for(int row = 1; row <= numDayMonth.Value; row++)
             {
                 flx.Rows.Add();
-                var addedDateTime = DateTime.Now.AddDays(row);
+                //var addedDateTime = DateTime.Now.AddDays(row);
+                var addedDateTime = dtLoan.Value.AddDays(row);
                 flx[row, "date_month"] = addedDateTime;
                 flx[row, "amountPaid"] = 0.00;
                 flx[row, "amountToPay"] = interest_amount;
-                flx[row, "balance"] = interest_amount;
+                flx[row, "balance"] = (double)interest_amount - Convert.ToDouble(flx[row, "amountPaid"]);
             }
            
         }
 
         void loadMonthlyToFlxGrid()
         {
-            flx.Rows.Count = flx.Rows.Fixed;
-            for (int row = 1; row <= numDayMonth.Value; row++)
+            if(id > 0)
             {
-                flx.Rows.Add();
-                var addedDateTime = DateTime.Now.AddMonths(row);
-                flx[row, "date_month"] = addedDateTime;
-                flx[row, "amountToPay"] = interest_amount;
-                flx[row, "amountPaid"] = 0.00;
-                flx[row, "balance"] = interest_amount;
+                //update
+                for (int row = 0; row < this.flx.Rows.Count - 1; row++)
+                {
+                    var addedDateTime = dtLoan.Value.AddMonths(row + 1);
+                    flx[row + 1, "date_month"] = addedDateTime;
+                    flx[row + 1, "amountToPay"] = interest_amount;
+                    //flx[row, "amountPaid"] = 0.00;
+                    flx[row, "balance"] = (double)interest_amount - Convert.ToDouble(flx[row, "amountPaid"]);
+                }
             }
+            else
+            {
+                //insert
+                flx.Rows.Count = flx.Rows.Fixed;
+                for (int row = 1; row <= numDayMonth.Value; row++)
+                {
+                    flx.Rows.Add();
+                    //var addedDateTime = DateTime.Now.AddMonths(row);
+                    var addedDateTime = dtLoan.Value.AddMonths(row);
+                    flx[row, "date_month"] = addedDateTime;
+                    flx[row, "amountToPay"] = interest_amount;
+                    flx[row, "amountPaid"] = 0.00;
+                    flx[row, "balance"] = (double)interest_amount - Convert.ToDouble(flx[row, "amountPaid"]);
+                }
+            }
+            
         }
 
         private void btnCompute_Click(object sender, EventArgs e)
@@ -101,7 +120,6 @@ namespace LendingSystem
 
                 compute();
 
-
                 if (this.cmbLoanType.Text == "DAILY")
                 {
                     loadDailyToFlxGrid();
@@ -118,6 +136,7 @@ namespace LendingSystem
                 Box.ErrBox(er.Message);
                 //throw;
             }
+           
         }
 
         void compute()
@@ -127,9 +146,6 @@ namespace LendingSystem
             months_days = numDayMonth.Value;
 
             interest_value = principal_amount * (interest / 100); //0.02 //100 for 5000, interest value from percentage
-         
-
-            
 
             total_amount = Decimal.Round(principal_amount + (interest_value * months_days), 2); //total amount with interest
             interest_amount = total_amount / months_days; //monthly or daily interest amount
@@ -147,13 +163,32 @@ namespace LendingSystem
                 return;
             }
 
+            if(this.flx.Rows.Count < 2)
+            {
+                Box.WarnBox("No record(s) found.");
+                return;
+            }
+
             if(member_id < 1)
             {
                 Box.WarnBox("Please select a member.");
                 return;
             }
 
-            if(id > 0)
+            //re compute again before saving
+            //btnCompute_Click(null, null);
+            
+            if(Box.QBox("Please make sure you setup the loan properly, you cannot update the record anymore. Do you want to continue?"))
+            {
+                save();
+                _frm.loadData();
+            }
+        }
+
+
+        void save()
+        {
+            if (id > 0)
             {
                 loan.member_id = this.member_id;
                 loan.loan_title = this.txtLoanTitle.Text;
@@ -163,6 +198,7 @@ namespace LendingSystem
                 loan.no_days_month = (int)this.numDayMonth.Value;
                 loan.amount_to_loan = (double)this.principal_amount;
                 loan.total_amount = (double)this.total_amount;
+                loan.loan_date = dtLoan.Value;
 
                 loan.update(this.flx, id);
                 Box.InfoBox("Loan successfully updated.");
@@ -177,29 +213,39 @@ namespace LendingSystem
                 loan.no_days_month = (int)this.numDayMonth.Value;
                 loan.amount_to_loan = (double)this.principal_amount;
                 loan.total_amount = (double)this.total_amount;
+                loan.loan_date = dtLoan.Value;
+
                 loan.save(this.flx);
+                id = loan.loan_id;
                 this.txtReference.Text = loan.loan_id.ToString("00000000");
                 Box.InfoBox("Loan successfully saved.");
             }
-
-            _frm.loadData();
         }
 
-
         
-
-        
-
-        private void btnDebug_Click(object sender, EventArgs e)
+        void debug()
         {
-            txtLoanTitle.Text = "TEST ONLY";
+
+            btnBrowseMember_Click(null, null);
+            txtLoanTitle.Text = "TEST ONLY (FOR DEBUGGING)";
             cmbLoanType.Text = "MONTHLY";
-            numInterest.Value = 10;
+            numInterest.Value = 2;
             numDayMonth.Value = 5;
             numAmountToLoan.Value = 5000;
-
-            btnCompute_Click(sender, e);
+            btnCompute_Click(null, null);
         }
+        
+
+
+        private void txtLoanTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F10)
+            {
+                debug();
+            }
+        }
+
+     
 
         private void flx_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
         {
@@ -216,54 +262,63 @@ namespace LendingSystem
 
         void getData()
         {
-            con = Connection.con();
-            con.Open();
-            query = @"SELECT * FROM loans a join loan_details b on a.loan_id = b.loan_id 
-                    join members c on a.member_id = c.member_id WHERE a.loan_id = ?lid";
-            cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("?lid", this.id);
-            DataTable dt = new DataTable();
-            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
-            adptr.Fill(dt);
-
-            adptr.Dispose();
-            cmd.Dispose();
-            con.Close();
-            con.Dispose();
-
-
-            if(dt.Rows.Count > 0)
+            try
             {
-                this.txtReference.Text = Convert.ToInt64(dt.Rows[0]["loan_id"]).ToString("00000000");
-                this.member_id = Convert.ToInt64(dt.Rows[0]["member_id"]);
-                this.txtLoanTitle.Text = Convert.ToString(dt.Rows[0]["loan_title"]);
-                this.txtlname.Text = Convert.ToString(dt.Rows[0]["lname"]);
-                this.txtfname.Text = Convert.ToString(dt.Rows[0]["fname"]);
-                this.txtfname.Text = Convert.ToString(dt.Rows[0]["mname"]);
-                this.cmbLoanType.Text = Convert.ToString(dt.Rows[0]["loan_type"]);
-                this.numInterest.Value = Convert.ToInt32(dt.Rows[0]["interest"]);
-                this.numDayMonth.Value = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
-                this.numAmountToLoan.Value = Convert.ToDecimal(dt.Rows[0]["amount_to_loan"]);
+                con = Connection.con();
+                con.Open();
+                query = @"SELECT * FROM loans a join loan_details b on a.loan_id = b.loan_id 
+                    join members c on a.member_id = c.member_id WHERE a.loan_id = ?lid";
+                cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?lid", this.id);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+                adptr.Fill(dt);
 
-                //compute
-                this.compute();
+                adptr.Dispose();
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
 
-                flx.Rows.Count = flx.Rows.Fixed;
-                int monthDay = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
-                for (int row = 1; row <= monthDay; row++)
+
+                if (dt.Rows.Count > 0)
                 {
-                    flx.Rows.Add();
-                    flx[row, "loan_detail_id"] = Convert.ToInt64(dt.Rows[row-1]["loan_detail_id"]);
-                    flx[row, "date_month"] = Convert.ToString(dt.Rows[row - 1]["date_month"]);
-                    flx[row, "amountToPay"] = Convert.ToString(dt.Rows[row - 1]["amount_to_pay"]);
-                    flx[row, "amountPaid"] = Convert.ToDouble(dt.Rows[row - 1]["amount_paid"]);
-                    flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]);
+                    this.txtReference.Text = Convert.ToInt64(dt.Rows[0]["loan_id"]).ToString("00000000");
+                    this.member_id = Convert.ToInt64(dt.Rows[0]["member_id"]);
+                    this.txtLoanTitle.Text = Convert.ToString(dt.Rows[0]["loan_title"]);
+                    this.txtlname.Text = Convert.ToString(dt.Rows[0]["lname"]);
+                    this.txtfname.Text = Convert.ToString(dt.Rows[0]["fname"]);
+                    this.txtmname.Text = Convert.ToString(dt.Rows[0]["mname"]);
+                    this.cmbLoanType.Text = Convert.ToString(dt.Rows[0]["loan_type"]);
+                    this.numInterest.Value = Convert.ToInt32(dt.Rows[0]["interest"]);
+                    this.numDayMonth.Value = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
+                    this.numAmountToLoan.Value = Convert.ToDecimal(dt.Rows[0]["amount_to_loan"]);
+                    this.dtLoan.Value = Convert.ToDateTime(dt.Rows[0]["loan_date"]);
+                    //compute
+                    this.compute();
+                    
+                    flx.Rows.Count = flx.Rows.Fixed;
+                    int monthDay = Convert.ToInt32(dt.Rows[0]["no_days_month"]);
+                    for (int row = 1; row <= monthDay; row++)
+                    {
+                        flx.Rows.Add();
+                        flx[row, "loan_detail_id"] = Convert.ToInt64(dt.Rows[row - 1]["loan_detail_id"]);
+                        flx[row, "date_month"] = Convert.ToString(dt.Rows[row - 1]["date_month"]);
+                        flx[row, "amountToPay"] = Convert.ToString(dt.Rows[row - 1]["amount_to_pay"]);
+                        flx[row, "amountPaid"] = Convert.ToDouble(dt.Rows[row - 1]["amount_paid"]);
+                        flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]) - Convert.ToDouble(flx[row, "amountPaid"]);
 
-                    //flx[row, "date_month"] = addedDateTime;
-                    //flx[row, "amountToPay"] = amtToPay;
+                        //flx[row, "date_month"] = addedDateTime;
+                        //flx[row, "amountToPay"] = amtToPay;
+                    }
+
                 }
-
             }
+            catch (Exception err)
+            {
+
+                Box.ErrBox(err.Message);
+            }
+            
         }
 
         private void ApplyLoanAddEdit_Load(object sender, EventArgs e)
@@ -284,6 +339,7 @@ namespace LendingSystem
             this.cmbLoanType.Enabled = false;
             this.btnCompute.Enabled = false;
             this.btnBrowseMember.Enabled = false;
+            this.dtLoan.Enabled = false;
         }
         void enableFields()
         {
@@ -294,6 +350,7 @@ namespace LendingSystem
             this.cmbLoanType.Enabled = true;
             this.btnCompute.Enabled = true;
             this.btnBrowseMember.Enabled = true;
+            this.dtLoan.Enabled = true;
 
         }
     }

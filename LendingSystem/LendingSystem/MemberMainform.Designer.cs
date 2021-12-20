@@ -36,6 +36,7 @@ namespace LendingSystem
             this.newMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMemberProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace LendingSystem
             this.txtlname = new System.Windows.Forms.TextBox();
             this.txtfname = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.viewMemberProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.flx)).BeginInit();
@@ -61,11 +61,9 @@ namespace LendingSystem
             this.flx.ContextMenuStrip = this.contextMenuStrip1;
             this.flx.ExtendLastCol = true;
             this.flx.Font = new System.Drawing.Font("Segoe UI", 9F);
-
             this.flx.Location = new System.Drawing.Point(14, 121);
-
             this.flx.Name = "flx";
-            this.flx.Rows.DefaultSize = 26;
+            this.flx.Rows.DefaultSize = 22;
             this.flx.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.flx.Size = new System.Drawing.Size(816, 390);
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
@@ -82,37 +80,44 @@ namespace LendingSystem
             this.toolStripSeparator1,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 120);
             // 
             // newMemberToolStripMenuItem
             // 
             this.newMemberToolStripMenuItem.Name = "newMemberToolStripMenuItem";
-            this.newMemberToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.newMemberToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.newMemberToolStripMenuItem.Text = "New Member";
             this.newMemberToolStripMenuItem.Click += new System.EventHandler(this.newMemberToolStripMenuItem_Click);
             // 
             // modifyMemberToolStripMenuItem
             // 
             this.modifyMemberToolStripMenuItem.Name = "modifyMemberToolStripMenuItem";
-            this.modifyMemberToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.modifyMemberToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.modifyMemberToolStripMenuItem.Text = "Modify Member";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // viewMemberProfileToolStripMenuItem
+            // 
+            this.viewMemberProfileToolStripMenuItem.Name = "viewMemberProfileToolStripMenuItem";
+            this.viewMemberProfileToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.viewMemberProfileToolStripMenuItem.Text = "View Member Profile";
+            this.viewMemberProfileToolStripMenuItem.Click += new System.EventHandler(this.viewMemberProfileToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -133,11 +138,15 @@ namespace LendingSystem
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Image = global::LendingSystem.Properties.Resources.save_icon_png16x16;
+            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNew.Location = new System.Drawing.Point(15, 546);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(114, 45);
+            this.btnNew.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnNew.Size = new System.Drawing.Size(97, 45);
             this.btnNew.TabIndex = 16;
             this.btnNew.Text = "NEW";
+            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -159,7 +168,7 @@ namespace LendingSystem
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 24;
             this.label2.Text = "Lastname:";
             // 
@@ -168,7 +177,7 @@ namespace LendingSystem
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 25;
             this.label3.Text = "Firstname:";
             // 
@@ -176,14 +185,14 @@ namespace LendingSystem
             // 
             this.txtlname.Location = new System.Drawing.Point(91, 59);
             this.txtlname.Name = "txtlname";
-            this.txtlname.Size = new System.Drawing.Size(196, 27);
+            this.txtlname.Size = new System.Drawing.Size(196, 23);
             this.txtlname.TabIndex = 26;
             // 
             // txtfname
             // 
             this.txtfname.Location = new System.Drawing.Point(91, 88);
             this.txtfname.Name = "txtfname";
-            this.txtfname.Size = new System.Drawing.Size(196, 27);
+            this.txtfname.Size = new System.Drawing.Size(196, 23);
             this.txtfname.TabIndex = 27;
             // 
             // btnSearch
@@ -196,19 +205,12 @@ namespace LendingSystem
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // viewMemberProfileToolStripMenuItem
-            // 
-            this.viewMemberProfileToolStripMenuItem.Name = "viewMemberProfileToolStripMenuItem";
-            this.viewMemberProfileToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
-            this.viewMemberProfileToolStripMenuItem.Text = "View Member Profile";
-            this.viewMemberProfileToolStripMenuItem.Click += new System.EventHandler(this.viewMemberProfileToolStripMenuItem_Click);
-            // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::LendingSystem.Properties.Resources.Pencil_icon16x16;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(132, 547);
+            this.btnEdit.Location = new System.Drawing.Point(118, 546);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.btnEdit.Size = new System.Drawing.Size(93, 45);
@@ -223,7 +225,7 @@ namespace LendingSystem
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::LendingSystem.Properties.Resources.delete_icon;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(231, 547);
+            this.btnDelete.Location = new System.Drawing.Point(217, 546);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.btnDelete.Size = new System.Drawing.Size(110, 45);
@@ -235,7 +237,7 @@ namespace LendingSystem
             // 
             // MemberMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 600);
             this.Controls.Add(this.btnSearch);

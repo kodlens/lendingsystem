@@ -47,6 +47,8 @@ namespace LendingSystem
             this.flx.ColumnInfo = resources.GetString("flx.ColumnInfo");
             this.flx.ExtendLastCol = true;
             this.flx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.flx.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.None;
+            this.flx.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveDown;
             this.flx.Location = new System.Drawing.Point(12, 50);
             this.flx.Name = "flx";
             this.flx.Rows.DefaultSize = 19;
@@ -54,6 +56,7 @@ namespace LendingSystem
             this.flx.Size = new System.Drawing.Size(776, 371);
             this.flx.StyleInfo = resources.GetString("flx.StyleInfo");
             this.flx.TabIndex = 19;
+            this.flx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.flx_KeyDown);
             // 
             // txtfname
             // 
@@ -89,15 +92,16 @@ namespace LendingSystem
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(713, 11);
+            this.btnSearch.Location = new System.Drawing.Point(685, 11);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 32);
+            this.btnSearch.Size = new System.Drawing.Size(103, 32);
             this.btnSearch.TabIndex = 32;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnSelect
             // 
+            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.Location = new System.Drawing.Point(685, 427);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(103, 32);

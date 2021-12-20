@@ -34,6 +34,7 @@ namespace LendingSystem
             this.toolStripButtonMembers = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLoan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonMultiplePayLoan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@ namespace LendingSystem
             this.toolStripButtonMembers,
             this.toolStripButtonLoan,
             this.toolStripButton1,
+            this.toolStripButtonMultiplePayLoan,
             this.toolStripButtonLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -96,6 +98,17 @@ namespace LendingSystem
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripButtonMultiplePayLoan
+            // 
+            this.toolStripButtonMultiplePayLoan.Image = global::LendingSystem.Properties.Resources.plateno;
+            this.toolStripButtonMultiplePayLoan.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonMultiplePayLoan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonMultiplePayLoan.Name = "toolStripButtonMultiplePayLoan";
+            this.toolStripButtonMultiplePayLoan.Size = new System.Drawing.Size(106, 83);
+            this.toolStripButtonMultiplePayLoan.Text = "Multiple Pay Loan";
+            this.toolStripButtonMultiplePayLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonMultiplePayLoan.Click += new System.EventHandler(this.toolStripButtonMultiplePayLoan_Click);
+            // 
             // toolStripButtonLogout
             // 
             this.toolStripButtonLogout.Image = global::LendingSystem.Properties.Resources.logout_icon64x64;
@@ -116,6 +129,7 @@ namespace LendingSystem
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LENDING SYSTEM";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -133,6 +147,7 @@ namespace LendingSystem
         private System.Windows.Forms.ToolStripButton toolStripButtonLogout;
         private System.Windows.Forms.ToolStripButton toolStripButtonLoan;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonMultiplePayLoan;
     }
 }
 

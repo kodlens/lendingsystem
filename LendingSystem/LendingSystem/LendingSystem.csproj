@@ -140,6 +140,18 @@
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\NAddress.cs" />
+    <Compile Include="MultiplePaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiplePaymentForm.Designer.cs">
+      <DependentUpon>MultiplePaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayLoanBrowseLoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayLoanBrowseLoanForm.Designer.cs">
+      <DependentUpon>PayLoanBrowseLoanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayLoanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportMemberProfileRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ToPayListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ToPayListForm.Designer.cs">
+      <DependentUpon>ToPayListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ToPayListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToPayListReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TakePicMainForm.cs">
@@ -202,6 +226,12 @@
     <EmbeddedResource Include="MembersAddEdit.resx">
       <DependentUpon>MembersAddEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MultiplePaymentForm.resx">
+      <DependentUpon>MultiplePaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayLoanBrowseLoanForm.resx">
+      <DependentUpon>PayLoanBrowseLoanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayLoanForm.resx">
       <DependentUpon>PayLoanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +252,13 @@
     <EmbeddedResource Include="Report\ReportMemberProfileRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportMemberProfileRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ToPayListForm.resx">
+      <DependentUpon>ToPayListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ToPayListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ToPayListReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TakePicMainForm.resx">
       <DependentUpon>TakePicMainForm.cs</DependentUpon>
