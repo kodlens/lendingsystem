@@ -32,6 +32,7 @@ namespace LendingSystem
                 try
                 {
                     getData();
+
                 }
                
                 catch (FormatException)
@@ -44,8 +45,12 @@ namespace LendingSystem
                     //throw;
                     Box.ErrBox(err.Message);
                 }
+            }
 
-
+            if(e.KeyCode == Keys.F1)
+            {
+                PayLoanBrowseLoanForm frm = new PayLoanBrowseLoanForm(this);
+                frm.ShowDialog();
             }
         }
 
@@ -71,6 +76,9 @@ namespace LendingSystem
 
                 this.lblTotalAmount.Text = String.Format("{0:n}", loan.total_amount);
                 total_amount = loan.total_amount;
+
+
+                this.flx.Focus();
             }
             else
             {
@@ -99,6 +107,12 @@ namespace LendingSystem
         {
             try
             {
+                if(this.flx.Rows.Count < 2)
+                {
+                    Box.WarnBox("No record(s) found.");
+                    return;
+                }
+
                 update();
             }
             catch (Exception er)
@@ -145,6 +159,14 @@ namespace LendingSystem
             {
                 update();
             }
+
+            
+        }
+
+        private void PayLoanForm_Load(object sender, EventArgs e)
+        {
+            //Whatever is going to happen, i know it will turn out good.
+            //this.flx.item
         }
 
         void clear()
@@ -158,7 +180,6 @@ namespace LendingSystem
             this.numAmountToLoan.Value = 0;
             this.lblInterestAmount.Text = "0.00";
             this.lblTotalAmount.Text = "0.00";
-
 
             this.member_id = 0;
             this.txtlname.Text = "";

@@ -33,6 +33,13 @@ namespace LendingSystem
         public string street { set; get; }
         public byte is_active { set; get; }
 
+        public string reference1 { set; get; }
+        public string reference2 { set; get; }
+
+        public string reference_1_contact { set; get; }
+        public string reference_2_contact { set; get; }
+
+
         public string avatar_path {set;get;}
 
         public void find(C1FlexGrid flx, string vlname, string vfname)
@@ -40,6 +47,26 @@ namespace LendingSystem
             con = Connection.con();
             con.Open();
             query = "SELECT * FROM members WHERE lname LIKE ?lname and fname LIKE ?fname";
+            cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("?lname", vlname + "%");
+            cmd.Parameters.AddWithValue("?fname", vfname + "%");
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adptr = new MySqlDataAdapter(cmd);
+            adptr.Fill(dt);
+            adptr.Dispose();
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+
+            flx.AutoGenerateColumns = false;
+            flx.DataSource = dt;
+        }
+
+        public void findActive(C1FlexGrid flx, string vlname, string vfname)
+        {
+            con = Connection.con();
+            con.Open();
+            query = "SELECT * FROM members WHERE lname LIKE ?lname and fname LIKE ?fname and is_active = 1";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", vlname + "%");
             cmd.Parameters.AddWithValue("?fname", vfname + "%");
@@ -106,7 +133,11 @@ namespace LendingSystem
             long i = 0;
             con = Connection.con();
             con.Open();
-            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=?is_active, avatar_path=?apath; SELECT LAST_INSERT_ID();";
+            query = @"INSERT INTO members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
+                    contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, 
+                    barangay=?barangay, street=?street, is_active=?is_active, 
+                    reference_1=?ref1, reference_2=?ref2, reference_1_contact=?ref1contact, reference_2_contact=?ref2contact, 
+                    avatar_path=?apath; SELECT LAST_INSERT_ID();";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -122,6 +153,12 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?barangay", this.barangay);
             cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
+
+            cmd.Parameters.AddWithValue("?ref1", this.reference1);
+            cmd.Parameters.AddWithValue("?ref2", this.reference2);
+            cmd.Parameters.AddWithValue("?ref1contact", this.reference_1_contact);
+            cmd.Parameters.AddWithValue("?ref2contact", this.reference_2_contact);
+
             cmd.Parameters.AddWithValue("?apath", this.lname + "_" + this.fname);
             //i = cmd.ExecuteNonQuery();
             i = Convert.ToInt64(cmd.ExecuteScalar());
@@ -140,7 +177,10 @@ namespace LendingSystem
             con = Connection.con();
             con.Open();
             query = @"UPDATE members SET lname=?lname, fname=?fname, mname=?mname, sex=?sex, bdate=?bdate, email=?email, 
-                        contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, city=?city, barangay=?barangay, street=?street, is_active=is_active, avatar_path=?apath WHERE member_id = ?id";
+                    contact_no=?contact_no, store_name=?store_name, store_address=?store_address, province=?province, 
+                    city=?city, barangay=?barangay, street=?street, is_active=?is_active, 
+                    reference_1=?ref1, reference_2=?ref2, reference_1_contact=?ref1contact, reference_2_contact=?ref2contact, 
+                    avatar_path=?apath WHERE member_id = ?id";
             cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("?lname", this.lname);
             cmd.Parameters.AddWithValue("?fname", this.fname);
@@ -156,6 +196,12 @@ namespace LendingSystem
             cmd.Parameters.AddWithValue("?barangay", this.barangay);
             cmd.Parameters.AddWithValue("?street", this.street);
             cmd.Parameters.AddWithValue("?is_active", this.is_active);
+
+            cmd.Parameters.AddWithValue("?ref1", this.reference1);
+            cmd.Parameters.AddWithValue("?ref2", this.reference2);
+            cmd.Parameters.AddWithValue("?ref1contact", this.reference_1_contact);
+            cmd.Parameters.AddWithValue("?ref2contact", this.reference_2_contact);
+
             cmd.Parameters.AddWithValue("?apath", this.lname + "_" + this.fname);
             cmd.Parameters.AddWithValue("?id", id);
 
@@ -217,6 +263,13 @@ namespace LendingSystem
                 this.city = Convert.ToString(dt.Rows[0]["city"]);
                 this.barangay = Convert.ToString(dt.Rows[0]["barangay"]);
                 this.street = Convert.ToString(dt.Rows[0]["street"]);
+                this.is_active = Convert.ToByte(dt.Rows[0]["is_active"]);
+
+                this.reference1 = Convert.ToString(dt.Rows[0]["reference_1"]);
+                this.reference2 = Convert.ToString(dt.Rows[0]["reference_2"]);
+                this.reference_1_contact = Convert.ToString(dt.Rows[0]["reference_1_contact"]);
+                this.reference_2_contact = Convert.ToString(dt.Rows[0]["reference_2_contact"]);
+
                 this.avatar_path = Convert.ToString(dt.Rows[0]["avatar_path"]);
 
             }

@@ -58,7 +58,8 @@ namespace LendingSystem
                     flx[row, "date_month"] = Convert.ToString(dt.Rows[row - 1]["date_month"]);
                     flx[row, "amountToPay"] = Convert.ToString(dt.Rows[row - 1]["amount_to_pay"]);
                     flx[row, "amountPaid"] = Convert.ToDouble(dt.Rows[row - 1]["amount_paid"]);
-                    flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]);
+                    //flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]);
+                    flx[row, "balance"] = Convert.ToDouble(dt.Rows[row - 1]["balance"]) - Convert.ToDouble(flx[row, "amountPaid"]);
                 }
                 
             }

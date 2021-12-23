@@ -27,8 +27,9 @@ namespace LendingSystem
         Member member;
         public long id;
 
-       
 
+
+        string img_path;
 
 
         public MembersAddEdit(MemberMainForm _frm)
@@ -36,10 +37,9 @@ namespace LendingSystem
             InitializeComponent();
             this._frm = _frm;
             member = new Member();
-
             address = new NAddress();
-          
-           
+            
+            
         }
 
 
@@ -59,19 +59,41 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
-            
+            member.reference1 = txtref1.Text;
+            member.reference2 = txtref2.Text;
+            member.reference_1_contact = txtref1_contact.Text;
+            member.reference_2_contact = txtref2_contact.Text;
+            member.is_active = checkActive.Checked ? (byte)1 : (byte)0;
 
-            long i = member.save();
-            if (i > 0)
-            {
-                if(this.pictureBox1.Image != null)
+            //Box.InfoBox(member.is_active.ToString());
+
+            if (id > 0)
+            { 
+                //update
+                if (member.update(id) > 0)
                 {
-                    saveImage(i);
+                    if (this.pictureBox1.Image != null)
+                    {
+                        saveImage(id); //update with id
+                    }
+                    Box.InfoBox("Member successfully updated!");
                 }
-                
-                Box.InfoBox("Member successfully saved!");
-
             }
+            else
+            {
+                //insert
+                long i = member.save();
+                if (i > 0)
+                {
+                    if (this.pictureBox1.Image != null)
+                    {
+                        saveImage(i); //insert but first get the id return from insert and then save
+                    }
+
+                    Box.InfoBox("Member successfully saved!");
+                }
+            }
+
         }
 
         void update()
@@ -89,6 +111,11 @@ namespace LendingSystem
             member.city = cmbCity.Text;
             member.barangay = cmbBarangay.Text;
             member.street = txtStreet.Text;
+            member.reference1 = txtref1.Text;
+            member.reference2 = txtref2.Text;
+            member.reference_1_contact = txtref1_contact.Text;
+            member.reference_2_contact = txtref2_contact.Text;
+
             if (this.pictureBox1.Image != null)
             {
                 saveImage(id);
@@ -123,7 +150,6 @@ namespace LendingSystem
 
             txtref2.Text = "REF 2 SAMPLE";
             txtref2_contact.Text = "09161235687";
-
         }
 
 
@@ -232,47 +258,35 @@ namespace LendingSystem
 
 
             //if id is greater than zero, update mode, else insert mode
-            if (id > 0)
-            {
-                update();
-            }
-            else
-            {
-                save();
-            }
-
+            save();
+           
             _frm.loadData();
             this.Close();
         }
 
 
 
-        //for debugging purpose only
-        private void btnDebug_Click(object sender, EventArgs e)
-        {
-            debug();
-        }
-
         private void MembersAddEdit_Load(object sender, EventArgs e)
         {
             //load data from database to combobox
+            this.checkActive.Checked = true;
             con = Connection.con();
             con.Open();
-         address.fillCmbProvince(con, cmbProvince);
+            address.fillCmbProvince(con, cmbProvince);
            
             con.Close();
             con.Dispose();
 
-           
-
             if (id > 0)
             {
+                
                 getData();
             }
         }
 
         void getData()
         {
+            btnPrint.Visible = true;
             member.getData(id);
             txtlname.Text = member.lname;
             txtfname.Text = member.fname;
@@ -287,7 +301,27 @@ namespace LendingSystem
             cmbCity.Text = member.city;
             cmbBarangay.Text = member.barangay;
             txtStreet.Text = member.street;
+            img_path = member.avatar_path;
+
+            txtref1.Text = member.reference1;
+            txtref2.Text = member.reference2;
+
+            txtref1_contact.Text = member.reference_1_contact;
+            txtref2_contact.Text = member.reference_2_contact;
+
+            img_path = Application.StartupPath +"\\img\\" + id + "_" + img_path + ".jpeg";
+            pictureBox1.ImageLocation = img_path;
+
+            if (member.is_active == 1)
+                checkActive.Checked = true;
+            else
+                checkActive.Checked = false;
+
+            
         }
+
+
+       
 
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -297,7 +331,6 @@ namespace LendingSystem
             }
             catch (Exception er)
             {
-
                 Box.ErrBox(er.Message);
             }
         }
@@ -311,7 +344,6 @@ namespace LendingSystem
             }
             catch (Exception er)
             {
-
                 Box.ErrBox(er.Message);
             }
         }
@@ -333,6 +365,26 @@ namespace LendingSystem
         {
             TakePicMainForm frm = new TakePicMainForm(this);
             frm.ShowDialog();
+        }
+
+        private void txtlname_KeyDown(object sender, KeyEventArgs e)
+        { 
+            if(e.KeyCode == Keys.F10)
+            {
+                debug();
+            }
+        }
+
+        void printDetail()
+        {
+            ReportMemberProfileForm frm = new ReportMemberProfileForm();
+            frm.id = this.id;
+            frm.ShowDialog();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printDetail();
         }
     }
 }      

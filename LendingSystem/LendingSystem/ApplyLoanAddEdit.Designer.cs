@@ -60,7 +60,8 @@ namespace LendingSystem
             this.txtLoanTitle = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtReference = new System.Windows.Forms.TextBox();
-            this.btnDebug = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtLoan = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDayMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterest)).BeginInit();
@@ -319,11 +320,11 @@ namespace LendingSystem
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.Location = new System.Drawing.Point(650, 601);
+            this.btnApply.Location = new System.Drawing.Point(737, 601);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(301, 43);
+            this.btnApply.Size = new System.Drawing.Size(214, 43);
             this.btnApply.TabIndex = 4;
-            this.btnApply.Text = "APPLY";
+            this.btnApply.Text = "APPLY (F9)";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -368,8 +369,9 @@ namespace LendingSystem
             // 
             this.txtLoanTitle.Location = new System.Drawing.Point(354, 55);
             this.txtLoanTitle.Name = "txtLoanTitle";
-            this.txtLoanTitle.Size = new System.Drawing.Size(592, 23);
+            this.txtLoanTitle.Size = new System.Drawing.Size(399, 23);
             this.txtLoanTitle.TabIndex = 0;
+            this.txtLoanTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoanTitle_KeyDown);
             // 
             // label10
             // 
@@ -389,22 +391,32 @@ namespace LendingSystem
             this.txtReference.Size = new System.Drawing.Size(190, 23);
             this.txtReference.TabIndex = 25;
             // 
-            // btnDebug
+            // label11
             // 
-            this.btnDebug.Location = new System.Drawing.Point(18, 601);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(75, 27);
-            this.btnDebug.TabIndex = 23;
-            this.btnDebug.Text = "Debug";
-            this.btnDebug.UseVisualStyleBackColor = true;
-            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(759, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 15);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Date:";
+            // 
+            // dtLoan
+            // 
+            this.dtLoan.CustomFormat = "yyyy-MM-dd";
+            this.dtLoan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtLoan.Location = new System.Drawing.Point(802, 56);
+            this.dtLoan.Name = "dtLoan";
+            this.dtLoan.Size = new System.Drawing.Size(139, 23);
+            this.dtLoan.TabIndex = 27;
             // 
             // ApplyLoanAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 653);
-            this.Controls.Add(this.btnDebug);
+            this.Controls.Add(this.dtLoan);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtReference);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -466,8 +478,9 @@ namespace LendingSystem
         public System.Windows.Forms.TextBox txtmname;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtReference;
-        private System.Windows.Forms.Button btnDebug;
         private System.Windows.Forms.Label lblInterestAmount;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtLoan;
     }
 }

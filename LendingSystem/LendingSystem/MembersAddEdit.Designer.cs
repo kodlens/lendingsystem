@@ -73,7 +73,7 @@ namespace LendingSystem
             this.txtref1 = new System.Windows.Forms.TextBox();
             this.checkActive = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDebug = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -188,14 +188,20 @@ namespace LendingSystem
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(446, 23);
             this.txtlname.TabIndex = 0;
+            this.txtlname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlname_KeyDown);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(667, 611);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::LendingSystem.Properties.Resources.save_icon1;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(692, 611);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(124, 38);
+            this.btnSave.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnSave.Size = new System.Drawing.Size(99, 38);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "SAVE";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -380,6 +386,7 @@ namespace LendingSystem
             // 
             // btnCapture
             // 
+            this.btnCapture.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapture.Location = new System.Drawing.Point(12, 248);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(95, 40);
@@ -390,6 +397,7 @@ namespace LendingSystem
             // 
             // btnClear
             // 
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(118, 248);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(95, 40);
@@ -497,7 +505,7 @@ namespace LendingSystem
             // checkActive
             // 
             this.checkActive.AutoSize = true;
-            this.checkActive.Location = new System.Drawing.Point(12, 630);
+            this.checkActive.Location = new System.Drawing.Point(12, 622);
             this.checkActive.Name = "checkActive";
             this.checkActive.Size = new System.Drawing.Size(59, 19);
             this.checkActive.TabIndex = 4;
@@ -514,22 +522,28 @@ namespace LendingSystem
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDebug
+            // btnPrint
             // 
-            this.btnDebug.Location = new System.Drawing.Point(573, 618);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(68, 25);
-            this.btnDebug.TabIndex = 13;
-            this.btnDebug.Text = "DEBUG";
-            this.btnDebug.UseVisualStyleBackColor = true;
-            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Image = global::LendingSystem.Properties.Resources.save_icon1;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.Location = new System.Drawing.Point(94, 611);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnPrint.Size = new System.Drawing.Size(99, 38);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // MembersAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 661);
-            this.Controls.Add(this.btnDebug);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.checkActive);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.lblHeader);
@@ -607,7 +621,7 @@ namespace LendingSystem
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtref1_contact;
         private System.Windows.Forms.CheckBox checkActive;
-        private System.Windows.Forms.Button btnDebug;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

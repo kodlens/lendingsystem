@@ -132,3 +132,6 @@ C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.cspr
 C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.exe
 C:\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.pdb
 C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.PayLoanForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.PayLoanBrowseLoanForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.MultiplePaymentForm.resources
+C:\Users\eshen\Desktop\Github\lendingsystem\LendingSystem\LendingSystem\obj\Debug\LendingSystem.ToPayListForm.resources

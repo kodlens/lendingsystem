@@ -30,7 +30,17 @@ namespace LendingSystem
 
         public void loadData()
         {
-            loan.find(flx, "", "");
+            try
+            {
+                loan.find(flx ,this.txtRef.Text, this.txtlname.Text, this.txtfname.Text);
+
+            }
+            catch (Exception err)
+            {
+                Box.ErrBox(err.Message);
+                //throw;
+            }
+            
         }
 
         private void btnApplyLoan_Click(object sender, EventArgs e)
@@ -76,6 +86,56 @@ namespace LendingSystem
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void closeLoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Box.QBox("Are you sure you want to close this loan transaction?"))
+            {
+                long i = Convert.ToInt64(flx[flx.RowSel, "loan_id"]);
+                loan.closeLoan(i);
+                loadData();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void openLaonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Box.QBox("Are you sure you want to open this loan transaction?"))
+            {
+                long i = Convert.ToInt64(flx[flx.RowSel, "loan_id"]);
+                loan.openLoan(i);
+                loadData();
+            }
+        }
+
+        private void txtlname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                loadData();
+            }
+           
+        }
+
+        private void txtfname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loadData();
+            }
+        }
+
+        private void txtRef_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loadData();
+            }
         }
     }
 }
